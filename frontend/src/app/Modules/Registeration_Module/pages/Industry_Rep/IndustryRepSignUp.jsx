@@ -392,7 +392,7 @@ const IndustryRepresentativeRegister = () => {
         exit="exit"
         variants={variants}
         transition={{ duration: 0.5 }}
-        className="md:w-1/2 w-full bg-purple-600 text-white flex items-center justify-center p-6"
+        className="md:w-1/2 w-full bg-brand-600 text-white flex items-center justify-center p-6"
     >
         <h1 className="text-5xl font-bold text-center">Collaborative Edge</h1>
     </motion.div>

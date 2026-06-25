@@ -346,7 +346,7 @@ const ProjectForm = ({ theme }) => {
                 {/* Header Section */}
                 <div
                     className={`relative p-4 sm:p-8 ${theme === "dark"
-                        ? "rounded-t-2xl shadow-md bg-gradient-to-r from-gray-800 to-purple-900"
+                        ? "rounded-t-2xl shadow-md bg-gradient-to-r from-gray-800 to-brand-900"
                         : ""
                         }`}
                 >
@@ -367,7 +367,7 @@ const ProjectForm = ({ theme }) => {
                         disabled={formSubmitLoading}
                         className={`w-full sm:w-48 px-4 sm:px-6 py-3 sm:py-4 font-semibold text-base sm:text-lg rounded-xl shadow-lg transition-all duration-200 ease-in-out flex items-center justify-center ${formSubmitLoading
                             ? "bg-gray-400 cursor-not-allowed"
-                            : "bg-gradient-to-r from-blue-600 to-blue-500 text-white hover:from-blue-500 hover:to-blue-400 focus:ring-4 focus:ring-blue-500"
+                            : "bg-gradient-to-r from-brand-600 to-brand-500 text-white hover:from-brand-500 hover:to-brand-400 focus:ring-4 focus:ring-brand-500"
                             }`}
                     >
                         {formSubmitLoading ? (
@@ -413,7 +413,7 @@ const ProjectForm = ({ theme }) => {
                                 onChange={(e) => setTitle(e.target.value)}
                                 placeholder="Enter project title"
                                 required
-                                className={`border-2 mt-2 w-full rounded-xl border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-base placeholder-gray-400 px-4 py-3 ${theme === "dark" ? "bg-gray-700 text-white" : "bg-white"}`}
+                                className={`border-2 mt-2 w-full rounded-xl border-gray-300 shadow-sm focus:ring-brand-500 focus:border-brand-500 sm:text-base placeholder-gray-400 px-4 py-3 ${theme === "dark" ? "bg-gray-700 text-white" : "bg-white"}`}
                             />
                         </div>
                     </div>
@@ -427,7 +427,7 @@ const ProjectForm = ({ theme }) => {
                                 value={projectType}
                                 onChange={(e) => setProjectType(e.target.value)}
                                 required
-                                className={`border-2 mt-2 w-full rounded-xl border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-base px-4 py-3 ${theme === "dark" ? "bg-gray-700 text-white" : "bg-white"}`}
+                                className={`border-2 mt-2 w-full rounded-xl border-gray-300 shadow-sm focus:ring-brand-500 focus:border-brand-500 sm:text-base px-4 py-3 ${theme === "dark" ? "bg-gray-700 text-white" : "bg-white"}`}
                             >
                                 <option value="" disabled>Select type</option>
                                 {filteredTypes.map((type) => (
@@ -469,7 +469,7 @@ const ProjectForm = ({ theme }) => {
                                 value={difficultyLevel}
                                 onChange={(e) => setDifficultyLevel(e.target.value)}
                                 required
-                                className={`border-2 w-full rounded-xl border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-base px-4 py-3 ${theme === "dark" ? "bg-gray-700 text-white" : "bg-white"}`}
+                                className={`border-2 w-full rounded-xl border-gray-300 shadow-sm focus:ring-brand-500 focus:border-brand-500 sm:text-base px-4 py-3 ${theme === "dark" ? "bg-gray-700 text-white" : "bg-white"}`}
                             >
                                 <option value="" disabled>Select level</option>
                                 {filteredLevel.map((type) => (
@@ -508,7 +508,7 @@ const ProjectForm = ({ theme }) => {
                                 value={selectedIndustry}
                                 onChange={(e) => setSelectedIndustry(e.target.value)}
                                 required
-                                className={`border-2 w-full rounded-xl border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-base px-4 py-3 ${theme === "dark" ? "bg-gray-700 text-white" : "bg-white"}`}
+                                className={`border-2 w-full rounded-xl border-gray-300 shadow-sm focus:ring-brand-500 focus:border-brand-500 sm:text-base px-4 py-3 ${theme === "dark" ? "bg-gray-700 text-white" : "bg-white"}`}
                             >
 
                                 <option value="" disabled>Select industry</option>
@@ -554,7 +554,7 @@ const ProjectForm = ({ theme }) => {
                         value={selection}
                         onChange={(e) => setSelection(e.target.value)}
                         required
-                        className={`border-2 w-full rounded-xl border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-base px-4 py-3 ${theme === "dark" ? "bg-gray-700 text-white" : "bg-white"}`}
+                        className={`border-2 w-full rounded-xl border-gray-300 shadow-sm focus:ring-brand-500 focus:border-brand-500 sm:text-base px-4 py-3 ${theme === "dark" ? "bg-gray-700 text-white" : "bg-white"}`}
                     >
                         <option value="" disabled>Select level</option>
                         {filteredSelection.map((type) => (
@@ -578,7 +578,7 @@ const ProjectForm = ({ theme }) => {
                                     onChange={(e) => setMaxGroups(Number(e.target.value))}
                                     required
                                     disabled
-                                    className={`border-2 w-full rounded-xl border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-base px-4 py-3 ${theme === "dark" ? "bg-gray-700 text-white" : "bg-white"}`}
+                                    className={`border-2 w-full rounded-xl border-gray-300 shadow-sm focus:ring-brand-500 focus:border-brand-500 sm:text-base px-4 py-3 ${theme === "dark" ? "bg-gray-700 text-white" : "bg-white"}`}
                                     placeholder="Enter max groups"
                                 />
                             </div>
@@ -592,7 +592,7 @@ const ProjectForm = ({ theme }) => {
                                     value={maxStudentsPerGroup}
                                     onChange={(e) => setMaxStudentsPerGroup(Number(e.target.value))}
                                     required
-                                    className={`border-2 w-full rounded-xl border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-base px-4 py-3 ${theme === "dark" ? "bg-gray-700 text-white" : "bg-white"}`}
+                                    className={`border-2 w-full rounded-xl border-gray-300 shadow-sm focus:ring-brand-500 focus:border-brand-500 sm:text-base px-4 py-3 ${theme === "dark" ? "bg-gray-700 text-white" : "bg-white"}`}
                                     placeholder="Enter max students per group"
                                 >
                                     <option value="" disabled>Select max students per group</option>
@@ -626,7 +626,7 @@ const ProjectForm = ({ theme }) => {
                                     required
                                     checked={durationType === "custom"}
                                     onChange={() => setDurationType("custom")}
-                                    className={`border-2 ${theme === "dark" ? "text-blue-400" : "text-blue-600"} focus:ring-blue-500`}
+                                    className={`border-2 ${theme === "dark" ? "text-brand-400" : "text-brand-600"} focus:ring-brand-500`}
                                 />
                                 <span className={theme === "dark" ? "text-white" : "text-gray-800"}>
                                     Specific Start and End Dates
@@ -647,7 +647,7 @@ const ProjectForm = ({ theme }) => {
                                         }))
                                     }
                                     required
-                                    className={`border-2 w-full rounded-xl border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-base px-4 py-3 ${theme === "dark" ? "bg-gray-700 text-white" : "bg-white"}`}
+                                    className={`border-2 w-full rounded-xl border-gray-300 shadow-sm focus:ring-brand-500 focus:border-brand-500 sm:text-base px-4 py-3 ${theme === "dark" ? "bg-gray-700 text-white" : "bg-white"}`}
                                 />
                                 <input
                                     type="date"
@@ -659,7 +659,7 @@ const ProjectForm = ({ theme }) => {
                                         }))
                                     }
                                     required
-                                    className={`border-2 w-full rounded-xl border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-base px-4 py-3 ${theme === "dark" ? "bg-gray-700 text-white" : "bg-white"}`}
+                                    className={`border-2 w-full rounded-xl border-gray-300 shadow-sm focus:ring-brand-500 focus:border-brand-500 sm:text-base px-4 py-3 ${theme === "dark" ? "bg-gray-700 text-white" : "bg-white"}`}
                                 />
                             </div>
                         )}
@@ -678,7 +678,7 @@ const ProjectForm = ({ theme }) => {
                         rows="4"
                         required
                         maxLength={1500}
-                        className={`border-2 mt-2 w-full rounded-xl border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-base placeholder-gray-400 px-4 py-3 resize-none h-32 md:h-48 ${theme === "dark" ? "bg-gray-700 text-white" : "bg-white"}`}
+                        className={`border-2 mt-2 w-full rounded-xl border-gray-300 shadow-sm focus:ring-brand-500 focus:border-brand-500 sm:text-base placeholder-gray-400 px-4 py-3 resize-none h-32 md:h-48 ${theme === "dark" ? "bg-gray-700 text-white" : "bg-white"}`}
                     ></textarea>
 
                     <p className={`mt-1 text-sm ${theme === "dark" ? "text-gray-400" : "text-gray-600"}`}>
@@ -699,7 +699,7 @@ const ProjectForm = ({ theme }) => {
                         {/* Improved File Input Container */}
                         <div
                             onClick={() => fileInputRef.current.click()}
-                            className={`mt-1 flex justify-center px-4 sm:px-6 pt-4 pb-5 sm:pt-5 sm:pb-6 border-2 border-dashed rounded-lg sm:rounded-xl cursor-pointer transition-all duration-200 hover:border-indigo-400 ${theme === "dark"
+                            className={`mt-1 flex justify-center px-4 sm:px-6 pt-4 pb-5 sm:pt-5 sm:pb-6 border-2 border-dashed rounded-lg sm:rounded-xl cursor-pointer transition-all duration-200 hover:border-brand-400 ${theme === "dark"
                                 ? "border-gray-600 bg-gray-800/50 hover:bg-gray-800/70"
                                 : "border-gray-300 bg-gray-50 hover:bg-gray-100"
                                 }`}
@@ -725,8 +725,8 @@ const ProjectForm = ({ theme }) => {
                                 <div className="flex flex-col sm:flex-row text-xs sm:text-sm">
                                     <p
                                         className={`font-medium ${theme === "dark"
-                                            ? "text-indigo-400 hover:text-indigo-300"
-                                            : "text-indigo-600 hover:text-indigo-500"
+                                            ? "text-brand-400 hover:text-brand-300"
+                                            : "text-brand-600 hover:text-brand-500"
                                             }`}
                                     >
                                         Click to upload
@@ -782,8 +782,8 @@ const ProjectForm = ({ theme }) => {
                                         <div className="flex items-center space-x-2 sm:space-x-3 truncate">
                                             <div
                                                 className={`p-1 sm:p-2 rounded-md sm:rounded-lg ${theme === "dark"
-                                                    ? "bg-gray-700 text-blue-400"
-                                                    : "bg-white text-blue-600"
+                                                    ? "bg-gray-700 text-brand-400"
+                                                    : "bg-white text-brand-600"
                                                     }`}
                                             >
                                                 {file.type.includes("image") ? (
@@ -924,7 +924,7 @@ const ProjectForm = ({ theme }) => {
                                 }
                             }
                         }}
-                        className={`border-2 mt-2 w-full rounded-xl border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-base placeholder-gray-400 px-4 py-3 ${theme === "dark" ? "bg-gray-700 text-white" : "bg-white"}`}
+                        className={`border-2 mt-2 w-full rounded-xl border-gray-300 shadow-sm focus:ring-brand-500 focus:border-brand-500 sm:text-base placeholder-gray-400 px-4 py-3 ${theme === "dark" ? "bg-gray-700 text-white" : "bg-white"}`}
                     />
 
                     {/* Display Matching Suggestions */}
@@ -939,9 +939,9 @@ const ProjectForm = ({ theme }) => {
                                         setSkillInput("");
                                         setSkills([...skills, suggestion]);
                                     }}
-                                    className={`block w-full text-left px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-200 ease-in-out ${theme === "dark"
+                                    className={`block w-full text-left px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500 transition-all duration-200 ease-in-out ${theme === "dark"
                                         ? `text-white hover:bg-gray-600 ${highlightedIndex === index ? "bg-gray-600" : ""}`
-                                        : `text-gray-700 hover:bg-blue-100 hover:text-blue-600 ${highlightedIndex === index ? "bg-blue-100 text-blue-600" : ""}`
+                                        : `text-gray-700 hover:bg-brand-100 hover:text-brand-600 ${highlightedIndex === index ? "bg-brand-100 text-brand-600" : ""}`
                                         }`}
                                     onMouseEnter={() => setHighlightedIndex(index)}
                                 >
@@ -956,7 +956,7 @@ const ProjectForm = ({ theme }) => {
                         {skills.map((skill, index) => (
                             <span
                                 key={index}
-                                className={`text-sm font-medium px-3 py-1 rounded-full flex items-center space-x-2 shadow-md transition-all ${theme === "dark" ? "bg-blue-600 text-white hover:bg-blue-700" : "bg-blue-500 text-white hover:bg-blue-600"}`}
+                                className={`text-sm font-medium px-3 py-1 rounded-full flex items-center space-x-2 shadow-md transition-all ${theme === "dark" ? "bg-brand-600 text-white hover:bg-brand-700" : "bg-brand-500 text-white hover:bg-brand-600"}`}
                             >
                                 <span>{skill}</span>
                                 <button
@@ -988,7 +988,7 @@ const ProjectForm = ({ theme }) => {
                         value={additionalInfo}
                         maxLength={1000}
                         onChange={(e) => setAdditionalInfo(e.target.value)}
-                        className={`border-2 resize-none h-32 md:h-48 mt-2 w-full rounded-xl border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-base placeholder-gray-400 px-4 py-3 ${theme === "dark" ? "bg-gray-700 text-white" : "bg-white"}`}
+                        className={`border-2 resize-none h-32 md:h-48 mt-2 w-full rounded-xl border-gray-300 shadow-sm focus:ring-brand-500 focus:border-brand-500 sm:text-base placeholder-gray-400 px-4 py-3 ${theme === "dark" ? "bg-gray-700 text-white" : "bg-white"}`}
                     ></textarea>
 
                     <p className={`mt-1 text-sm ${theme === "dark" ? "text-gray-400" : "text-gray-600"}`}>

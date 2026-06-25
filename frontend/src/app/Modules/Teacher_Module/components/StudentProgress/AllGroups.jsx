@@ -296,7 +296,7 @@ const AllGroups = () => {
                     <p className="text-lg mb-6">You must be logged in to view this content.</p>
                     <button
                         onClick={() => navigate('/login')}
-                        className={`px-6 py-3 ${theme === "dark" ? "bg-gradient-to-r from-blue-600 to-blue-700" : "bg-gradient-to-r from-blue-500 to-blue-600"} text-white rounded-lg hover:from-blue-600 hover:to-blue-700 transition-all duration-300 shadow-lg font-semibold flex items-center justify-center mx-auto`}
+                        className={`px-6 py-3 ${theme === "dark" ? "bg-gradient-to-r from-brand-600 to-brand-700" : "bg-gradient-to-r from-brand-500 to-brand-600"} text-white rounded-lg hover:from-brand-600 hover:to-brand-700 transition-all duration-300 shadow-lg font-semibold flex items-center justify-center mx-auto`}
                     >
                         <LogIn className="w-5 h-5 mr-2" />
                         Log In
@@ -337,7 +337,7 @@ const AllGroups = () => {
                 <p className="text-xl font-medium mt-4 text-center">{error}</p>
                 <button
                     onClick={() => window.location.reload()}
-                    className={`mt-6 px-6 py-2 rounded-lg flex items-center gap-2 transition-all ${theme === "dark" ? "bg-gray-800 hover:bg-gray-700 text-blue-400" : "bg-gray-100 hover:bg-gray-200 text-blue-600"}`}
+                    className={`mt-6 px-6 py-2 rounded-lg flex items-center gap-2 transition-all ${theme === "dark" ? "bg-gray-800 hover:bg-gray-700 text-brand-400" : "bg-gray-100 hover:bg-gray-200 text-brand-600"}`}
                 >
                     Try Again
                 </button>
@@ -354,7 +354,7 @@ const AllGroups = () => {
                 <p className="text-xl font-medium mt-4">Project not found</p>
                 <button
                     onClick={() => navigate(-1)}
-                    className={`mt-6 px-6 py-2 rounded-lg flex items-center gap-2 transition-all ${theme === "dark" ? "bg-gray-800 hover:bg-gray-700 text-blue-400" : "bg-gray-100 hover:bg-gray-200 text-blue-600"}`}
+                    className={`mt-6 px-6 py-2 rounded-lg flex items-center gap-2 transition-all ${theme === "dark" ? "bg-gray-800 hover:bg-gray-700 text-brand-400" : "bg-gray-100 hover:bg-gray-200 text-brand-600"}`}
                 >
                     <ChevronLeft className="w-5 h-5" />
                     Back to Projects
@@ -376,7 +376,7 @@ const AllGroups = () => {
                     <div className="flex items-center justify-between mb-6">
                         <button
                             onClick={handleBackClick}
-                            className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all ${theme === "dark" ? "hover:bg-gray-800/50 text-blue-400" : "hover:bg-gray-100 text-blue-600"}`}
+                            className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all ${theme === "dark" ? "hover:bg-gray-800/50 text-brand-400" : "hover:bg-gray-100 text-brand-600"}`}
                         >
                             <ChevronLeft className="w-5 h-5" />
                             <span className="font-medium">Back</span>
@@ -390,7 +390,7 @@ const AllGroups = () => {
 
                     <div className="mb-8">
                         <h1 className="text-3xl md:text-4xl font-bold mb-2">
-                            <span className="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
+                            <span className="bg-gradient-to-r from-brand-500 to-accent-500 bg-clip-text text-transparent">
                                 Project Groups
                             </span>
                         </h1>
@@ -454,8 +454,8 @@ const AllGroups = () => {
                                                     : hasPendingRequest || hasForwardedRequest
                                                         ? "bg-gray-300 text-gray-500 cursor-not-allowed"
                                                         : theme === "dark"
-                                                            ? "bg-blue-900/50 hover:bg-blue-900/70 text-blue-300"
-                                                            : "bg-blue-100 hover:bg-blue-200 text-blue-700"
+                                                            ? "bg-brand-900/50 hover:bg-brand-900/70 text-brand-300"
+                                                            : "bg-brand-100 hover:bg-brand-200 text-brand-700"
                                                 }`}
                                         >
                                             {loadingExtension
@@ -483,7 +483,7 @@ const AllGroups = () => {
                         <input
                             type="text"
                             placeholder="Search groups or students..."
-                            className={`w-full pl-10 pr-4 py-3 rounded-lg ${theme === "dark" ? "bg-gray-800/50 text-white placeholder-gray-400 focus:ring-2 focus:ring-blue-500/50" : "bg-white text-gray-800 placeholder-gray-500 focus:ring-2 focus:ring-blue-500/50"} border-none focus:outline-none transition-all`}
+                            className={`w-full pl-10 pr-4 py-3 rounded-lg ${theme === "dark" ? "bg-gray-800/50 text-white placeholder-gray-400 focus:ring-2 focus:ring-brand-500/50" : "bg-white text-gray-800 placeholder-gray-500 focus:ring-2 focus:ring-brand-500/50"} border-none focus:outline-none transition-all`}
                             value={searchTerm}
                             onChange={(e) => setSearchTerm(e.target.value)}
                         />
@@ -579,7 +579,7 @@ const AllGroups = () => {
                             return (
                                 <div
                                     key={key}
-                                    className={`flex items-center gap-2 px-3 py-1 rounded-full text-sm ${theme === "dark" ? "bg-blue-900/30 text-blue-300" : "bg-blue-100 text-blue-600"}`}
+                                    className={`flex items-center gap-2 px-3 py-1 rounded-full text-sm ${theme === "dark" ? "bg-brand-900/30 text-brand-300" : "bg-brand-100 text-brand-600"}`}
                                 >
                                     <span>{key}: {value}</span>
                                     <button
@@ -600,7 +600,7 @@ const AllGroups = () => {
                 {/* Main Content */}
                 <div className="mb-6">
                     <div className="relative flex items-center gap-4 mb-6">
-                        <div className={`p-3 rounded-xl ${theme === "dark" ? "bg-blue-900/30 text-blue-400" : "bg-blue-100 text-blue-600"}`}>
+                        <div className={`p-3 rounded-xl ${theme === "dark" ? "bg-brand-900/30 text-brand-400" : "bg-brand-100 text-brand-600"}`}>
                             <ClipboardList className="w-6 h-6" />
                         </div>
                         <h2 className="text-xl md:text-2xl font-semibold">Evaluation Groups</h2>
@@ -718,10 +718,10 @@ const AllGroups = () => {
                                                                 <span
                                                                     className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${theme === 'dark'
                                                                         ? selection.status.IndustryCompleted
-                                                                            ? 'bg-blue-800 text-blue-200'
+                                                                            ? 'bg-brand-800 text-brand-200'
                                                                             : 'bg-gray-700 text-gray-300'
                                                                         : selection.status.IndustryCompleted
-                                                                            ? 'bg-blue-100 text-blue-800'
+                                                                            ? 'bg-brand-100 text-brand-800'
                                                                             : 'bg-gray-100 text-gray-600'
                                                                         }`}
                                                                 >
@@ -730,10 +730,10 @@ const AllGroups = () => {
                                                                 <span
                                                                     className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${theme === 'dark'
                                                                         ? selection.status.TeacherCompleted
-                                                                            ? 'bg-purple-800 text-purple-200'
+                                                                            ? 'bg-brand-800 text-brand-200'
                                                                             : 'bg-gray-700 text-gray-300'
                                                                         : selection.status.TeacherCompleted
-                                                                            ? 'bg-purple-100 text-purple-800'
+                                                                            ? 'bg-brand-100 text-brand-800'
                                                                             : 'bg-gray-100 text-gray-600'
                                                                         }`}
                                                                 >
@@ -746,8 +746,8 @@ const AllGroups = () => {
                                                         <button
                                                             onClick={() => navigate(`/evaluation/${projectId}/${selection.selectionId}`)}
                                                             className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all font-medium ${theme === "dark" ?
-                                                                "bg-blue-900/30 hover:bg-blue-900/50 text-blue-300 hover:text-white" :
-                                                                "bg-blue-100 hover:bg-blue-200 text-blue-600 hover:text-blue-700"} shadow-sm`}
+                                                                "bg-brand-900/30 hover:bg-brand-900/50 text-brand-300 hover:text-white" :
+                                                                "bg-brand-100 hover:bg-brand-200 text-brand-600 hover:text-brand-700"} shadow-sm`}
                                                         >
                                                             {selection.isCompleted ? "View Results" : "Evaluate"}
                                                             <ArrowRight className="w-4 h-4" />

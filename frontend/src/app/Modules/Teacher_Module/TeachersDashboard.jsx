@@ -212,7 +212,7 @@ const TeachersDashboard = () => {
                     <div className="flex items-center justify-between">
                         <div className="flex items-center space-x-3">
                             <button
-                                className="cursor-pointer p-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full w-8 h-8 sm:w-10 sm:h-10 flex justify-center items-center shadow-lg hover:shadow-xl transition-shadow"
+                                className="cursor-pointer p-2 bg-gradient-to-r from-brand-500 to-brand-600 text-white rounded-full w-8 h-8 sm:w-10 sm:h-10 flex justify-center items-center shadow-lg hover:shadow-xl transition-shadow"
                                 onClick={() => setIsSidebarOpen(!isSidebarOpen)}
                             >
                                 {isSidebarOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -227,13 +227,13 @@ const TeachersDashboard = () => {
                             </Link>
 
                             <Link to="/">
-                                <h className={`text-xl sm:text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent ${theme === "dark" ? "dark:text-white" : "text-gray-800"}`}>
+                                <span className={`text-xl sm:text-3xl font-bold bg-gradient-to-r from-brand-500 to-accent-500 bg-clip-text text-transparent ${theme === "dark" ? "dark:text-white" : "text-gray-800"}`}>
                                     Collaborate
-                                </h>
+                                </span>
                                 <br />
-                                <h className={`text-sm sm:text-lg ${theme === "dark" ? "text-gray-300" : "text-gray-600"}`}>
+                                <span className={`text-sm sm:text-lg ${theme === "dark" ? "text-gray-300" : "text-gray-600"}`}>
                                     Edge
-                                </h>
+                                </span>
                             </Link>
                         </div>
 
@@ -278,7 +278,7 @@ const TeachersDashboard = () => {
                             </div>
 
                             <button
-                                className={`relative cursor-pointer h-9 w-9 sm:h-10 sm:w-10 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 ${isChatOpen ? 'bg-purple-600' : 'bg-gradient-to-r from-blue-500 to-purple-600'}`}
+                                className={`relative cursor-pointer h-9 w-9 sm:h-10 sm:w-10 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 ${isChatOpen ? 'bg-brand-600' : 'bg-gradient-to-r from-brand-500 to-brand-600'}`}
                                 onClick={() => setIsChatOpen(!isChatOpen)}
                                 style={{
                                     boxShadow: '0 4px 14px 0 rgba(99, 102, 241, 0.3)',
@@ -293,7 +293,7 @@ const TeachersDashboard = () => {
                             <div className="relative" ref={themeDropdownRef}>
                                 <button
                                     onClick={() => setShowOptions(!showOptions)}
-                                    className="cursor-pointer p-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 text-white hover:from-blue-600 hover:to-purple-700 transition-all shadow-md theme-button"
+                                    className="cursor-pointer p-2 rounded-full bg-gradient-to-r from-brand-500 to-brand-600 text-white hover:from-brand-600 hover:to-brand-700 transition-all shadow-md theme-button"
                                 >
                                     {theme === "light" ? <Sun size={20} /> : <Moon size={20} />}
                                 </button>
@@ -343,10 +343,10 @@ const TeachersDashboard = () => {
                                     <img
                                         src={user?.profilePic}
                                         alt="Profile"
-                                        className={`w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 shadow-md group-hover:border-purple-500 transition-all ${theme === "dark" ? "border-gray-800" : "border-white"} `}
+                                        className={`w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 shadow-md group-hover:border-brand-500 transition-all ${theme === "dark" ? "border-gray-800" : "border-white"} `}
                                     />
                                 ) : (
-                                    <UserCircle2 className="h-8 w-8 sm:h-10 sm:w-10 text-gray-400 rounded-full border-2 border-white group-hover:border-purple-500 transition-all" />
+                                    <UserCircle2 className="h-8 w-8 sm:h-10 sm:w-10 text-gray-400 rounded-full border-2 border-white group-hover:border-brand-500 transition-all" />
                                 )}
                             </div>
                             <button
@@ -380,7 +380,7 @@ const TeachersDashboard = () => {
                             />
 
                             <motion.aside
-                                className={`sidebar w-64 sm:w-64 space-y-6 py-7 px-4 fixed h-[calc(100vh-70px)] transition-all duration-300 z-30 ${theme === "dark" ? "bg-gradient-to-r from-gray-800 to-gray-900 text-white border-2" : "bg-gradient-to-r from-blue-500 to-purple-600 text-white"}`}
+                                className={`sidebar w-64 sm:w-64 space-y-6 py-7 px-4 fixed h-[calc(100vh-70px)] transition-all duration-300 z-30 ${theme === "dark" ? "bg-gradient-to-r from-gray-800 to-gray-900 text-white border-2" : "bg-gradient-to-r from-brand-500 to-brand-600 text-white"}`}
                                 initial={{ x: -300 }}
                                 animate={{ x: 0 }}
                                 exit={{ x: -300 }}
@@ -394,11 +394,11 @@ const TeachersDashboard = () => {
                                                 onClick={() => handleOptionClick(key)}
                                                 className={`cursor-pointer flex items-center gap-2 w-full text-left py-3 px-4 rounded-lg transition duration-200 ${selectedOption === key
                                                     ? theme === "dark"
-                                                        ? "bg-gray-700 text-blue-400 shadow-md"
-                                                        : "bg-white text-blue-600 shadow-md"
+                                                        ? "bg-gray-700 text-brand-400 shadow-md"
+                                                        : "bg-white text-brand-600 shadow-md"
                                                     : theme === "dark"
                                                         ? "bg-gray-800 hover:bg-gray-700"
-                                                        : "bg-blue-600 hover:bg-opacity-75"
+                                                        : "bg-brand-600 hover:bg-opacity-75"
                                                     }`}
                                             >
                                                 {icon} <span>{label}</span>
@@ -413,11 +413,11 @@ const TeachersDashboard = () => {
                                                 onClick={() => handleOptionClick(key)}
                                                 className={`cursor-pointer flex items-center gap-2 w-full text-left py-3 px-4 rounded-lg transition duration-200 ${selectedOption === key
                                                     ? theme === "dark"
-                                                        ? "bg-gray-700 text-blue-400 shadow-md"
-                                                        : "bg-white text-blue-600 shadow-md"
+                                                        ? "bg-gray-700 text-brand-400 shadow-md"
+                                                        : "bg-white text-brand-600 shadow-md"
                                                     : theme === "dark"
                                                         ? "bg-gray-800 hover:bg-gray-700"
-                                                        : "bg-blue-600 hover:bg-opacity-75"
+                                                        : "bg-brand-600 hover:bg-opacity-75"
                                                     }`}
                                             >
                                                 {icon} <span>{label}</span>

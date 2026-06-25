@@ -279,9 +279,9 @@ const ProjectSelection = () => {
             onClick={() => navigate("/login")}
             className={`px-6 py-3 ${
               theme === "dark"
-                ? "bg-gradient-to-r from-blue-600 to-blue-700"
-                : "bg-gradient-to-r from-blue-500 to-blue-600"
-            } text-white rounded-lg hover:from-blue-600 hover:to-blue-700 transition-all duration-300 shadow-lg font-semibold flex items-center justify-center mx-auto`}
+                ? "bg-gradient-to-r from-brand-600 to-brand-700"
+                : "bg-gradient-to-r from-brand-500 to-brand-600"
+            } text-white rounded-lg hover:from-brand-600 hover:to-brand-700 transition-all duration-300 shadow-lg font-semibold flex items-center justify-center mx-auto`}
           >
             <LogIn className="w-5 h-5 mr-2" />
             Log In
@@ -339,7 +339,7 @@ ${
       >
         {/* Scroll Indicator - Positioned at the bottom of the header */}
         <motion.div
-          className="absolute bottom-0 left-0 w-full h-1.5 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full"
+          className="absolute bottom-0 left-0 w-full h-1.5 bg-gradient-to-r from-brand-500 via-brand-500 to-pink-500 rounded-full"
           style={{ scaleX: scrollYProgress }}
         />
 
@@ -645,7 +645,7 @@ ${
                   </div>
                   <button
                     onClick={() => navigate(-1)}
-                    className="mt-2 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+                    className="mt-2 px-4 py-2 bg-brand-500 text-white rounded hover:bg-brand-600"
                   >
                     View My Projects
                   </button>
@@ -659,7 +659,7 @@ ${
                       className={`w-full px-6 py-3 ${
                         isUserInProject || isCreatingNewGroup
                           ? "bg-gray-400 cursor-not-allowed"
-                          : "bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700"
+                          : "bg-gradient-to-r from-brand-500 to-brand-600 hover:from-brand-600 hover:to-brand-700"
                       } text-white font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl active:scale-95 flex items-center justify-center space-x-2`}
                       disabled={isUserInProject || isCreatingNewGroup}
                     >

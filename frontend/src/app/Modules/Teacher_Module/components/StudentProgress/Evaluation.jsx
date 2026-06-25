@@ -294,16 +294,16 @@ const Evaluation = () => {
                     <div className="mb-8">
                         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-8">
                             <div className="space-y-3">
-                                <h1 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
+                                <h1 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-brand-500 to-brand-600 bg-clip-text text-transparent">
                                     Project Submissions
                                 </h1>
                                 <div className="flex flex-wrap gap-2">
                                     <span className={`inline-flex items-center px-3 py-1.5 rounded-full text-sm font-medium ${theme === 'dark' ? 'bg-gray-800 text-gray-200' : 'bg-gray-100 text-gray-700'}`}>
-                                        <FolderGit className="h-4 w-4 mr-2 text-blue-500" />
+                                        <FolderGit className="h-4 w-4 mr-2 text-brand-500" />
                                         Project: <span className="ml-1 font-mono">{projectId}</span>
                                     </span>
                                     <span className={`inline-flex items-center px-3 py-1.5 rounded-full text-sm font-medium ${theme === 'dark' ? 'bg-gray-800 text-gray-200' : 'bg-gray-100 text-gray-700'}`}>
-                                        <Users2 className="h-4 w-4 mr-2 text-purple-500" />
+                                        <Users2 className="h-4 w-4 mr-2 text-brand-500" />
                                         Group: <span className="ml-1 font-mono">{selectionId}</span>
                                     </span>
                                 </div>
@@ -354,7 +354,7 @@ const Evaluation = () => {
                     <div className="flex items-center justify-between mb-6">
                         <button
                             onClick={handleBackClick}
-                            className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all ${theme === "dark" ? "hover:bg-gray-800/50 text-blue-400" : "hover:bg-gray-100 text-blue-600"}`}
+                            className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all ${theme === "dark" ? "hover:bg-gray-800/50 text-brand-400" : "hover:bg-gray-100 text-brand-600"}`}
                         >
                             <ChevronLeft className="w-5 h-5" />
                             <span className="font-medium">Back</span>
@@ -368,16 +368,16 @@ const Evaluation = () => {
                         {/* Header section */}
                         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                             <div className="space-y-2">
-                                <h1 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
+                                <h1 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-brand-500 to-brand-600 bg-clip-text text-transparent">
                                     Project Submissions
                                 </h1>
                                 <div className="flex flex-wrap items-center gap-2">
                                     <span className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium ${theme === 'dark' ? 'bg-gray-800 text-gray-200' : 'bg-gray-100 text-gray-700'}`}>
-                                        <FolderGit className="h-4 w-4 mr-2 text-blue-500" />
+                                        <FolderGit className="h-4 w-4 mr-2 text-brand-500" />
                                         Project: <span className="ml-1 font-mono">{projectId}</span>
                                     </span>
                                     <span className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium ${theme === 'dark' ? 'bg-gray-800 text-gray-200' : 'bg-gray-100 text-gray-700'}`}>
-                                        <Users2 className="h-4 w-4 mr-2 text-purple-500" />
+                                        <Users2 className="h-4 w-4 mr-2 text-brand-500" />
                                         Group: <span className="ml-1 font-mono">{selectionId}</span>
                                     </span>
                                     <span className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium ${theme === 'dark' ? 'bg-gray-800 text-gray-200' : 'bg-gray-100 text-gray-700'}`}>
@@ -392,10 +392,10 @@ const Evaluation = () => {
                                 <span
                                     className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${theme === 'dark'
                                         ? completionStatus.status.IndustryCompleted
-                                            ? 'bg-blue-800 text-blue-200'
+                                            ? 'bg-brand-800 text-brand-200'
                                             : 'bg-gray-700 text-gray-300'
                                         : completionStatus.status.IndustryCompleted
-                                            ? 'bg-blue-100 text-blue-800'
+                                            ? 'bg-brand-100 text-brand-800'
                                             : 'bg-gray-100 text-gray-600'
                                         }`}
                                 >
@@ -404,10 +404,10 @@ const Evaluation = () => {
                                 <span
                                     className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${theme === 'dark'
                                         ? completionStatus.status.TeacherCompleted
-                                            ? 'bg-purple-800 text-purple-200'
+                                            ? 'bg-brand-800 text-brand-200'
                                             : 'bg-gray-700 text-gray-300'
                                         : completionStatus.status.TeacherCompleted
-                                            ? 'bg-purple-100 text-purple-800'
+                                            ? 'bg-brand-100 text-brand-800'
                                             : 'bg-gray-100 text-gray-600'
                                         }`}
                                 >
@@ -424,8 +424,8 @@ const Evaluation = () => {
                                         onClick={handleEvaluateAll}
                                         className={`flex-1 flex items-center justify-center px-4 py-3 rounded-xl font-medium transition-all hover:shadow-lg gap-2
                   ${theme === 'dark'
-                                                ? 'bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white shadow-lg'
-                                                : 'bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-400 hover:to-indigo-400 text-white shadow-md'
+                                                ? 'bg-gradient-to-r from-brand-500 to-accent-500 hover:from-brand-500 hover:to-brand-500 text-white shadow-lg'
+                                                : 'bg-gradient-to-r from-brand-500 to-accent-500 hover:from-brand-400 hover:to-brand-400 text-white shadow-md'
                                             }`}
                                     >
                                         {userTeacherReview ? (
@@ -526,7 +526,7 @@ const Evaluation = () => {
                                 {hasTeacherReview && (
                                     <div className="p-5">
                                         <div className="flex items-center mb-4">
-                                            <GraduationCap className="h-6 w-6 mr-3 text-blue-500" />
+                                            <GraduationCap className="h-6 w-6 mr-3 text-brand-500" />
                                             <h4 className="text-lg font-semibold">Teacher Reviews</h4>
                                         </div>
                                         <div className="space-y-4 pl-9">
@@ -552,8 +552,8 @@ const Evaluation = () => {
                                                                 onClick={handleEvaluateAll}
                                                                 className={`mt-3 px-4 py-1.5 rounded-lg text-sm font-medium transition-colors flex items-center gap-2
                                                                         ${theme === 'dark'
-                                                                        ? 'bg-blue-900/50 hover:bg-blue-800 text-blue-300'
-                                                                        : 'bg-blue-100 hover:bg-blue-200 text-blue-600'
+                                                                        ? 'bg-brand-900/50 hover:bg-brand-800 text-brand-300'
+                                                                        : 'bg-brand-100 hover:bg-brand-200 text-brand-600'
                                                                     }`}
                                                             >
                                                                 <PenSquare className="h-4 w-4" />
@@ -619,7 +619,7 @@ const Evaluation = () => {
                     <div className="p-5 border-b border-gray-200 dark:border-gray-700">
                         <div className="flex items-center justify-between">
                             <h2 className="flex items-center text-xl font-semibold">
-                                <History className="h-5 w-5 mr-3 text-blue-500" />
+                                <History className="h-5 w-5 mr-3 text-brand-500" />
                                 Submission Timeline
                             </h2>
                             <span className={`text-sm px-3 py-1.5 rounded-full font-medium ${theme === 'dark' ? 'bg-gray-700 text-gray-300' : 'bg-gray-100 text-gray-600'}`}>
@@ -643,7 +643,7 @@ const Evaluation = () => {
                                 >
                                     <div className="flex items-center">
                                         <div className="relative mr-4">
-                                            <div className={`h-12 w-12 rounded-full flex items-center justify-center transition-all ${theme === 'dark' ? 'bg-gray-700' : 'bg-gray-100'} ${hoveredSubmission === submission.submissionId ? 'ring-2 ring-offset-2 ring-blue-500' : ''}`}>
+                                            <div className={`h-12 w-12 rounded-full flex items-center justify-center transition-all ${theme === 'dark' ? 'bg-gray-700' : 'bg-gray-100'} ${hoveredSubmission === submission.submissionId ? 'ring-2 ring-offset-2 ring-brand-500' : ''}`}>
                                                 <User className="h-6 w-6 text-gray-500" />
                                             </div>
                                             {index === 0 && (
@@ -680,8 +680,8 @@ const Evaluation = () => {
                                             }}
                                             className={`px-4 py-2.5 rounded-lg font-medium transition-all flex items-center gap-2
                                                     ${theme === 'dark'
-                                                    ? 'bg-blue-900/50 hover:bg-blue-800 text-blue-300 shadow'
-                                                    : 'bg-blue-100 hover:bg-blue-200 text-blue-600 shadow-sm'
+                                                    ? 'bg-brand-900/50 hover:bg-brand-800 text-brand-300 shadow'
+                                                    : 'bg-brand-100 hover:bg-brand-200 text-brand-600 shadow-sm'
                                                 }`}
                                         >
                                             {user.role === "teacher" ? (
@@ -740,8 +740,8 @@ const Evaluation = () => {
                                                                     target="_blank"
                                                                     rel="noopener noreferrer"
                                                                     className={`p-2 rounded-lg transition-all ${theme === 'dark'
-                                                                        ? 'text-blue-400 hover:bg-gray-700'
-                                                                        : 'text-blue-600 hover:bg-gray-200'
+                                                                        ? 'text-brand-400 hover:bg-gray-700'
+                                                                        : 'text-brand-600 hover:bg-gray-200'
                                                                         }`}
                                                                     title="Download"
                                                                     onClick={(e) => e.stopPropagation()}

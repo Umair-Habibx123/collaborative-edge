@@ -188,7 +188,7 @@ const StudentCompletionChart = ({ data, theme }) => {
                     <button
                         onClick={() => setChartType('pie')}
                         className={`text-xs px-3 py-1 rounded-md ${chartType === 'pie' ?
-                            (theme === "dark" ? "bg-gray-700 text-white" : "bg-blue-100 text-blue-600") :
+                            (theme === "dark" ? "bg-gray-700 text-white" : "bg-brand-100 text-brand-600") :
                             (theme === "dark" ? "bg-gray-800 text-gray-300" : "bg-gray-100 text-gray-600")}`}
                     >
                         Projects
@@ -196,7 +196,7 @@ const StudentCompletionChart = ({ data, theme }) => {
                     <button
                         onClick={() => setChartType('radar')}
                         className={`text-xs px-3 py-1 rounded-md ${chartType === 'radar' ?
-                            (theme === "dark" ? "bg-gray-700 text-white" : "bg-blue-100 text-blue-600") :
+                            (theme === "dark" ? "bg-gray-700 text-white" : "bg-brand-100 text-brand-600") :
                             (theme === "dark" ? "bg-gray-800 text-gray-300" : "bg-gray-100 text-gray-600")}`}
                     >
                         Industry

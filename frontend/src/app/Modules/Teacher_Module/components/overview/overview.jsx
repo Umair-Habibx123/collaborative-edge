@@ -93,11 +93,11 @@ const Overview = ({ theme }) => {
             {/* Dashboard Header */}
             <div className="mb-8">
                 <div className="flex items-center gap-4 mb-4">
-                    <div className={`p-3 rounded-xl ${theme === "dark" ? "bg-gray-800" : "bg-blue-100/80"} shadow`}>
-                        <LayoutDashboard className="w-6 h-6 text-blue-600" strokeWidth={2} />
+                    <div className={`p-3 rounded-xl ${theme === "dark" ? "bg-gray-800" : "bg-brand-100/80"} shadow`}>
+                        <LayoutDashboard className="w-6 h-6 text-brand-600" strokeWidth={2} />
                     </div>
                     <div>
-                        <h2 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                        <h2 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-brand-500 to-accent-500 bg-clip-text text-transparent">
                             Teacher Dashboard
                         </h2>
                         <p className={`text-sm flex items-center gap-2 mt-1.5 ${theme === "dark" ? "text-gray-400" : "text-gray-600"}`}>
@@ -115,7 +115,7 @@ const Overview = ({ theme }) => {
                     <div className="flex items-center justify-between">
                         <div>
                             <p className={`text-sm flex items-center gap-1.5 ${theme === "dark" ? "text-gray-400" : "text-gray-600"}`}>
-                                <Grid className="w-4 h-4 text-blue-500" />
+                                <Grid className="w-4 h-4 text-brand-500" />
                                 Total Supervisied Projects
                             </p>
                             <h3 className="text-2xl font-bold mt-2">
@@ -126,8 +126,8 @@ const Overview = ({ theme }) => {
                                 All supervised projects
                             </div>
                         </div>
-                        <div className={`p-3 rounded-lg ${theme === "dark" ? "bg-gray-700/50 group-hover:bg-gray-700" : "bg-white group-hover:bg-blue-50"} transition-colors`}>
-                            <Trophy className="w-6 h-6 text-blue-500" />
+                        <div className={`p-3 rounded-lg ${theme === "dark" ? "bg-gray-700/50 group-hover:bg-gray-700" : "bg-white group-hover:bg-brand-50"} transition-colors`}>
+                            <Trophy className="w-6 h-6 text-brand-500" />
                         </div>
                     </div>
                 </div>
@@ -183,8 +183,8 @@ const Overview = ({ theme }) => {
                 <div className={`p-5 rounded-xl ${theme === "dark" ? "bg-gray-800" : "bg-white"} border ${theme === "dark" ? "border-gray-700" : "border-gray-300"} shadow-sm hover:shadow-md transition-all duration-300 group`}>
                     <div className="flex items-center justify-between mb-6">
                         <div className="flex items-center gap-3">
-                            <div className={`p-2.5 rounded-xl ${theme === "dark" ? "bg-gray-700" : "bg-blue-100/80"} shadow`}>
-                                <Radar className="w-5 h-5 text-blue-600" strokeWidth={2} />
+                            <div className={`p-2.5 rounded-xl ${theme === "dark" ? "bg-gray-700" : "bg-brand-100/80"} shadow`}>
+                                <Radar className="w-5 h-5 text-brand-600" strokeWidth={2} />
                             </div>
                             <div>
                                 <h3 className="text-lg font-semibold">
@@ -195,7 +195,7 @@ const Overview = ({ theme }) => {
                                 </p>
                             </div>
                         </div>
-                        <div className={`px-3 py-1.5 rounded-lg text-xs font-medium ${theme === "dark" ? "bg-gray-700 text-blue-400" : "bg-blue-100 text-blue-700"} shadow-sm`}>
+                        <div className={`px-3 py-1.5 rounded-lg text-xs font-medium ${theme === "dark" ? "bg-gray-700 text-brand-400" : "bg-brand-100 text-brand-700"} shadow-sm`}>
                             Interactive
                         </div>
                     </div>
@@ -212,8 +212,8 @@ const Overview = ({ theme }) => {
                 <div className={`p-5 rounded-xl ${theme === "dark" ? "bg-gray-800" : "bg-white"} border ${theme === "dark" ? "border-gray-700" : "border-gray-300"} shadow-sm hover:shadow-md transition-all duration-300 group`}>
                     <div className="flex items-center justify-between mb-6">
                         <div className="flex items-center gap-3">
-                            <div className={`p-2.5 rounded-xl ${theme === "dark" ? "bg-gray-700" : "bg-purple-100/80"} shadow`}>
-                                <BarChart2 className="w-5 h-5 text-purple-600" strokeWidth={2} />
+                            <div className={`p-2.5 rounded-xl ${theme === "dark" ? "bg-gray-700" : "bg-brand-100/80"} shadow`}>
+                                <BarChart2 className="w-5 h-5 text-brand-600" strokeWidth={2} />
                             </div>
                             <div>
                                 <h3 className="text-lg font-semibold">University Performance</h3>
@@ -222,7 +222,7 @@ const Overview = ({ theme }) => {
                                 </p>
                             </div>
                         </div>
-                        <div className={`px-3 py-1.5 rounded-lg text-xs font-medium ${theme === "dark" ? "bg-gray-700 text-purple-400" : "bg-purple-100 text-purple-700"} shadow-sm`}>
+                        <div className={`px-3 py-1.5 rounded-lg text-xs font-medium ${theme === "dark" ? "bg-gray-700 text-brand-400" : "bg-brand-100 text-brand-700"} shadow-sm`}>
                             Multi-view
                         </div>
                     </div>

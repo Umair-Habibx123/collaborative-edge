@@ -21,7 +21,7 @@ const ConfirmationModal = ({ theme, isOpen, onClose, onConfirm, isLoading }) => 
                         <>
                             <button
                                 onClick={onConfirm}
-                                className="px-4 py-2 rounded-lg transition-all duration-300 bg-blue-500 text-white hover:bg-blue-600"
+                                className="px-4 py-2 rounded-lg transition-all duration-300 bg-brand-500 text-white hover:bg-brand-600"
                             >
                                 Yes, Save
                             </button>

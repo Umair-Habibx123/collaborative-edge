@@ -1,8 +1,7 @@
 import PropTypes from "prop-types";
 import StudentCompletionChart from "./Charts/StudentCompletionChart";
 import StudentRatingsChart from "./Charts/StudentRatingsChart";
-import { useAuth } from "../../../../../auth/AuthContext"
-import { useState, useEffect } from "react";
+import { useAuth } from "../../../../../auth/AuthContext";
 import {
     Star,
     Activity,
@@ -10,218 +9,146 @@ import {
     ArrowRight,
     Radar,
     GanttChartSquare,
-    PieChart,
     BarChart2,
     Grid,
     Trophy,
-    TrendingUp,
-    CheckCircle
+    PieChart,
+    CheckCircle,
 } from "lucide-react";
 import Loading from "../../../../Components/loadingIndicator/loading";
+import { Card, Badge, StatCard, GradientText } from "../../../../ui/index.js";
+import { useParallelData } from "../../../../../lib/useParallelData.js";
 
 const Overview = ({ theme }) => {
-    const [studentCompletionData, setStudentCompletionData] = useState(null);
-    const [studentRatingData, setStudentRatingData] = useState(null);
     const { user, isAuthLoading } = useAuth();
-    const [loading, isLoading] = useState(false);
 
+    // Both metrics endpoints fetched in parallel (Promise.all) and aborted on
+    // unmount via the shared hook — total latency ≈ the slowest single request.
+    const { data, loading } = useParallelData(
+        {
+            completion: `/student/SelectionCompletion/${user?.email}`,
+            ratings: `/student/StudentRatings/${user?.email}`,
+        },
+        [user?.email],
+        { enabled: Boolean(user?.email) }
+    );
 
-    useEffect(() => {
-        const fetchAllData = async () => {
-            try {
-                isLoading(true);
-                const [studentcomp, studentrat] = await Promise.all([
-                    fetch(`${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/student/SelectionCompletion/${user.email}`),
-                    fetch(`${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/student/StudentRatings/${user.email}`),
-                ]);
+    if (isAuthLoading || loading) return <Loading />;
 
-                const [student1, student2] = await Promise.all([
-                    studentcomp.json(),
-                    studentrat.json()
-                ]);
-
-                setStudentCompletionData(student1);
-                setStudentRatingData(student2);
-            } catch (error) {
-                isLoading(false);
-                console.error("Error fetching data:", error);
-            }
-            finally {
-                isLoading(false);
-
-            }
-        };
-
-        fetchAllData();
-    }, [user.email]);
-
-    if (isAuthLoading || loading) {
-        return <Loading />;
-    }
+    const studentCompletionData = data?.completion;
+    const studentRatingData = data?.ratings;
 
     return (
-        <div className={`p-4 md:p-6 rounded-2xl w-full ${theme === "dark" ? "bg-gray-900 text-gray-100" : "bg-white text-gray-900"} shadow-sm`}>
-            {/* Dashboard Header */}
-            <div className="mb-8">
-                <div className="flex items-center gap-4 mb-4">
-                    <div className={`p-3 rounded-xl ${theme === "dark" ? "bg-gray-800" : "bg-blue-100/80"} shadow`}>
-                        <LayoutDashboard className="w-6 h-6 text-blue-600" strokeWidth={2} />
-                    </div>
-                    <div>
-                        <h2 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                            Student Dashboard
-                        </h2>
-                        <p className={`text-sm flex items-center gap-2 mt-1.5 ${theme === "dark" ? "text-gray-400" : "text-gray-600"}`}>
-                            <Activity className="w-4 h-4" strokeWidth={2} />
-                            Comprehensive overview of project metrics and engagement
-                        </p>
-                    </div>
+        <div className="w-full rounded-2xl bg-white p-4 text-slate-900 shadow-sm md:p-6 dark:bg-slate-900 dark:text-slate-100">
+            {/* Header */}
+            <div className="mb-8 flex items-center gap-4">
+                <div className="rounded-xl bg-gradient-brand p-3 shadow-glow">
+                    <LayoutDashboard className="h-6 w-6 text-white" strokeWidth={2} />
+                </div>
+                <div>
+                    <GradientText as="h2" className="text-2xl md:text-3xl">
+                        Student Dashboard
+                    </GradientText>
+                    <p className="mt-1.5 flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
+                        <Activity className="h-4 w-4" strokeWidth={2} />
+                        Comprehensive overview of project metrics and engagement
+                    </p>
                 </div>
             </div>
 
-            {/* Stats Overview */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-8">
-                {/* Total Projects */}
-                <div className={`p-5 rounded-xl ${theme === "dark" ? "bg-gray-800" : "bg-gray-50"} border ${theme === "dark" ? "border-gray-700" : "border-gray-300"} shadow-sm hover:shadow-md transition-all duration-300 group`}>
-                    <div className="flex items-center justify-between">
-                        <div>
-                            <p className={`text-sm flex items-center gap-1.5 ${theme === "dark" ? "text-gray-400" : "text-gray-600"}`}>
-                                <Grid className="w-4 h-4 text-blue-500" />
-                                Total Projects
-                            </p>
-                            <h3 className="text-2xl font-bold mt-2">
-                                {studentCompletionData?.stats?.total || 0}
-                            </h3>
-                            <div className={`mt-2 text-xs ${theme === "dark" ? "text-gray-500" : "text-gray-400"} flex items-center gap-1`}>
-                                <TrendingUp className="w-3 h-3" />
-                                All assigned projects
-                            </div>
-                        </div>
-                        <div className={`p-3 rounded-lg ${theme === "dark" ? "bg-gray-700/50 group-hover:bg-gray-700" : "bg-white group-hover:bg-blue-50"} transition-colors`}>
-                            <Trophy className="w-6 h-6 text-blue-500" />
-                        </div>
-                    </div>
-                </div>
-
-                {/* Completion Rate */}
-                <div className={`p-5 rounded-xl ${theme === "dark" ? "bg-gray-800" : "bg-gray-50"} border ${theme === "dark" ? "border-gray-700" : "border-gray-300"} shadow-sm hover:shadow-md transition-all duration-300 group`}>
-                    <div className="flex items-center justify-between">
-                        <div>
-                            <p className={`text-sm flex items-center gap-1.5 ${theme === "dark" ? "text-gray-400" : "text-gray-600"}`}>
-                                <PieChart className="w-4 h-4 text-green-500" />
-                                Completion Rate
-                            </p>
-                            <h3 className="text-2xl font-bold mt-2">
-                                {studentCompletionData?.stats?.completionRate ? `${studentCompletionData.stats.completionRate}%` : '0%'}
-                            </h3>
-                            <div className={`mt-2 text-xs ${theme === "dark" ? "text-gray-500" : "text-gray-400"} flex items-center gap-1`}>
-                                <TrendingUp className="w-3 h-3" />
-                                {studentCompletionData?.stats?.completed || 0} completed
-                            </div>
-                        </div>
-                        <div className={`p-3 rounded-lg ${theme === "dark" ? "bg-gray-700/50 group-hover:bg-gray-700" : "bg-white group-hover:bg-green-50"} transition-colors`}>
-                            <CheckCircle className="w-6 h-6 text-green-500" />
-                        </div>
-                    </div>
-                </div>
-
-                {/* Average Rating */}
-                <div className={`p-5 rounded-xl ${theme === "dark" ? "bg-gray-800" : "bg-gray-50"} border ${theme === "dark" ? "border-gray-700" : "border-gray-300"} shadow-sm hover:shadow-md transition-all duration-300 group`}>
-                    <div className="flex items-center justify-between">
-                        <div>
-                            <p className={`text-sm flex items-center gap-1.5 ${theme === "dark" ? "text-gray-400" : "text-gray-600"}`}>
-                                <Star className="w-4 h-4 text-yellow-500" />
-                                Average Rating
-                            </p>
-                            <h3 className="text-2xl font-bold mt-2">
-                                {studentRatingData?.ratingStats?.overall?.average?.toFixed(1) || 'N/A'}
-                                <span className="text-sm font-normal ml-1">/ 5</span>
-                            </h3>
-                            <div className={`mt-2 text-xs ${theme === "dark" ? "text-gray-500" : "text-gray-400"} flex items-center gap-1`}>
-                                <TrendingUp className="w-3 h-3" />
-                                Based on all evaluations
-                            </div>
-                        </div>
-                        <div className={`p-3 rounded-lg ${theme === "dark" ? "bg-gray-700/50 group-hover:bg-gray-700" : "bg-white group-hover:bg-yellow-50"} transition-colors`}>
-                            <Star className="w-6 h-6 text-yellow-500" fill="currentColor" />
-                        </div>
-                    </div>
-                </div>
+            {/* Stats */}
+            <div className="mb-8 grid grid-cols-1 gap-5 md:grid-cols-3">
+                <StatCard
+                    label="Total Projects"
+                    labelIcon={Grid}
+                    value={studentCompletionData?.stats?.total || 0}
+                    hint="All assigned projects"
+                    icon={Trophy}
+                    accent="brand"
+                />
+                <StatCard
+                    label="Completion Rate"
+                    labelIcon={PieChart}
+                    value={
+                        studentCompletionData?.stats?.completionRate
+                            ? `${studentCompletionData.stats.completionRate}%`
+                            : "0%"
+                    }
+                    hint={`${studentCompletionData?.stats?.completed || 0} completed`}
+                    icon={CheckCircle}
+                    accent="green"
+                />
+                <StatCard
+                    label="Average Rating"
+                    labelIcon={Star}
+                    value={
+                        <>
+                            {studentRatingData?.ratingStats?.overall?.average?.toFixed(1) || "N/A"}
+                            <span className="ml-1 text-sm font-normal">/ 5</span>
+                        </>
+                    }
+                    hint="Based on all evaluations"
+                    icon={Star}
+                    accent="amber"
+                />
             </div>
 
-            {/* Charts Grid */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
-                {/* Student Project Analytics */}
-                <div className={`p-5 rounded-xl ${theme === "dark" ? "bg-gray-800" : "bg-white"} border ${theme === "dark" ? "border-gray-700" : "border-gray-300"} shadow-sm hover:shadow-md transition-all duration-300`}>
-                    <div className="flex items-center justify-between mb-6">
+            {/* Charts */}
+            <div className="mb-6 grid grid-cols-1 gap-6 lg:grid-cols-2">
+                <Card hover className="p-5">
+                    <div className="mb-6 flex items-center justify-between">
                         <div className="flex items-center gap-3">
-                            <div className={`p-2.5 rounded-xl ${theme === "dark" ? "bg-gray-700" : "bg-blue-100/80"} shadow`}>
-                                <Radar className="w-5 h-5 text-blue-600" strokeWidth={2} />
+                            <div className="rounded-xl bg-brand-100 p-2.5 dark:bg-brand-900/40">
+                                <Radar className="h-5 w-5 text-brand-600 dark:text-brand-300" strokeWidth={2} />
                             </div>
                             <div>
-                                <h3 className="text-lg font-semibold">
-                                    Project Analytics
-                                </h3>
-                                <p className={`text-xs ${theme === "dark" ? "text-gray-400" : "text-gray-500"}`}>
+                                <h3 className="text-lg font-semibold">Project Analytics</h3>
+                                <p className="text-xs text-slate-500 dark:text-slate-400">
                                     Distribution and completion status
                                 </p>
                             </div>
                         </div>
-                        <div className={`px-3 py-1.5 rounded-lg text-xs font-medium ${theme === "dark" ? "bg-gray-700 text-blue-400" : "bg-blue-100 text-blue-700"} shadow-sm`}>
-                            Interactive
-                        </div>
+                        <Badge tone="brand">Interactive</Badge>
                     </div>
                     <div className="h-[350px]">
-                        <StudentCompletionChart
-                            data={studentCompletionData}
-                            theme={theme}
-                        />
+                        <StudentCompletionChart data={studentCompletionData} theme={theme} />
                     </div>
-                </div>
+                </Card>
 
-                {/* Student Ratings */}
-                <div className={`p-5 rounded-xl ${theme === "dark" ? "bg-gray-800" : "bg-white"} border ${theme === "dark" ? "border-gray-700" : "border-gray-300"} shadow-sm hover:shadow-md transition-all duration-300`}>
-                    <div className="flex items-center justify-between mb-6">
+                <Card hover className="p-5">
+                    <div className="mb-6 flex items-center justify-between">
                         <div className="flex items-center gap-3">
-                            <div className={`p-2.5 rounded-xl ${theme === "dark" ? "bg-gray-700" : "bg-purple-100/80"} shadow`}>
-                                <BarChart2 className="w-5 h-5 text-purple-600" strokeWidth={2} />
+                            <div className="rounded-xl bg-fuchsia-100 p-2.5 dark:bg-fuchsia-900/40">
+                                <BarChart2 className="h-5 w-5 text-fuchsia-600 dark:text-fuchsia-300" strokeWidth={2} />
                             </div>
                             <div>
                                 <h3 className="text-lg font-semibold">Performance Ratings</h3>
-                                <p className={`text-xs ${theme === "dark" ? "text-gray-400" : "text-gray-500"}`}>
+                                <p className="text-xs text-slate-500 dark:text-slate-400">
                                     Detailed rating breakdown and trends
                                 </p>
                             </div>
                         </div>
-                        <div className={`px-3 py-1.5 rounded-lg text-xs font-medium ${theme === "dark" ? "bg-gray-700 text-purple-400" : "bg-purple-100 text-purple-700"} shadow-sm`}>
-                            Multi-view
-                        </div>
+                        <Badge tone="brand">Multi-view</Badge>
                     </div>
                     <div className="h-[350px]">
-                        <StudentRatingsChart
-                            data={studentRatingData}
-                            theme={theme}
-                        />
+                        <StudentRatingsChart data={studentRatingData} theme={theme} />
                     </div>
-                </div>
+                </Card>
             </div>
 
             {/* Footer */}
-            <div className={`mt-6 pt-5 border-t ${theme === "dark" ? "border-gray-800" : "border-gray-300"}`}>
-                <div className="flex justify-center">
-                    <div className="flex flex-col sm:flex-row items-center justify-between gap-4 w-full max-w-3xl px-4">
-                        <div className={`flex items-center gap-2 text-xs ${theme === "dark" ? "text-gray-400" : "text-gray-500"}`}>
-                            <GanttChartSquare className="w-4 h-4 flex-shrink-0" strokeWidth={2} />
-                            <span className="whitespace-nowrap">
-                                Last updated: <span className="font-medium">{new Date().toLocaleString()}</span>
-                            </span>
-                        </div>
-
-                        <div className={`flex items-center gap-2 text-xs ${theme === "dark" ? "text-gray-400" : "text-gray-500"}`}>
-                            <ArrowRight className="w-4 h-4 flex-shrink-0" strokeWidth={2} />
-                            <span className="hidden sm:inline-flex">Real-time monitoring dashboard</span>
-                            <span className="inline-flex sm:hidden">Live dashboard</span>
-                        </div>
+            <div className="mt-6 border-t border-slate-200 pt-5 dark:border-slate-800">
+                <div className="mx-auto flex w-full max-w-3xl flex-col items-center justify-between gap-4 px-4 text-xs text-slate-500 dark:text-slate-400 sm:flex-row">
+                    <div className="flex items-center gap-2">
+                        <GanttChartSquare className="h-4 w-4 flex-shrink-0" strokeWidth={2} />
+                        <span className="whitespace-nowrap">
+                            Last updated: <span className="font-medium">{new Date().toLocaleString()}</span>
+                        </span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                        <ArrowRight className="h-4 w-4 flex-shrink-0" strokeWidth={2} />
+                        <span className="hidden sm:inline-flex">Real-time monitoring dashboard</span>
+                        <span className="inline-flex sm:hidden">Live dashboard</span>
                     </div>
                 </div>
             </div>

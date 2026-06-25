@@ -17,7 +17,7 @@ const SuccessModal = ({ isOpen, onClose, message }) => {
                 <p className="text-gray-600">{message}</p>
                 <button
                     onClick={onClose}
-                    className="mt-4 px-5 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+                    className="mt-4 px-5 py-2 bg-brand-600 text-white rounded-lg hover:bg-brand-700 transition"
                 >
                     OK
                 </button>

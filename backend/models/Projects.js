@@ -41,6 +41,11 @@ projectSchema.methods.checkAndLockIfExpired = async function () {
   }
 };
 
+// Indexes for the hottest query paths (owner lookups, type/status filtering).
+projectSchema.index({ representativeId: 1 });
+projectSchema.index({ projectType: 1 });
+projectSchema.index({ "duration.endDate": 1 });
+
 const Project = model("Project", projectSchema);
 
 export default Project;

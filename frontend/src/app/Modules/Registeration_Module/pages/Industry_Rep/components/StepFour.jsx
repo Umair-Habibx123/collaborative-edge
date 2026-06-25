@@ -106,7 +106,7 @@ const StepFour = ({ industries, updateIndustry, handleFileUpload, handleRemoveFi
                                     placeholder="Industry Name"
                                     value={industry.name}
                                     onChange={(e) => updateIndustry(index, "name", e.target.value)}
-                                    className="w-full p-3 pl-10 bg-white/20 border border-gray-300 text-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 outline-none"
+                                    className="w-full p-3 pl-10 bg-white/20 border border-gray-300 text-gray-600 rounded-lg focus:ring-2 focus:ring-brand-500 outline-none"
                                 />
                                 <Building className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={18} />
                             </div>
@@ -118,7 +118,7 @@ const StepFour = ({ industries, updateIndustry, handleFileUpload, handleRemoveFi
                                     placeholder="Website"
                                     value={industry.website}
                                     onChange={(e) => updateIndustry(index, "website", e.target.value)}
-                                    className="w-full p-3 pl-10 bg-white/20 border border-gray-300 text-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 outline-none"
+                                    className="w-full p-3 pl-10 bg-white/20 border border-gray-300 text-gray-600 rounded-lg focus:ring-2 focus:ring-brand-500 outline-none"
                                 />
                                 <Globe className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={18} />
                             </div>
@@ -130,7 +130,7 @@ const StepFour = ({ industries, updateIndustry, handleFileUpload, handleRemoveFi
                                     placeholder="Address"
                                     value={industry.address}
                                     onChange={(e) => updateIndustry(index, "address", e.target.value)}
-                                    className="w-full p-3 pl-10 bg-white/20 border border-gray-300 text-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 outline-none"
+                                    className="w-full p-3 pl-10 bg-white/20 border border-gray-300 text-gray-600 rounded-lg focus:ring-2 focus:ring-brand-500 outline-none"
                                 />
                                 <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={18} />
                             </div>
@@ -142,7 +142,7 @@ const StepFour = ({ industries, updateIndustry, handleFileUpload, handleRemoveFi
                                     placeholder="Designation"
                                     value={industry.designation}
                                     onChange={(e) => updateIndustry(index, "designation", e.target.value)}
-                                    className="w-full p-3 pl-10 bg-white/20 border border-gray-300 text-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 outline-none"
+                                    className="w-full p-3 pl-10 bg-white/20 border border-gray-300 text-gray-600 rounded-lg focus:ring-2 focus:ring-brand-500 outline-none"
                                 />
                                 <GraduationCap className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={18} />
                             </div>
@@ -154,7 +154,7 @@ const StepFour = ({ industries, updateIndustry, handleFileUpload, handleRemoveFi
                                     placeholder="Work Email"
                                     value={industry.workEmail}
                                     onChange={(e) => handleTeacherIdChange(index, e.target.value)}
-                                    className="w-full p-3 pl-10 bg-white/20 border border-gray-300 text-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 outline-none"
+                                    className="w-full p-3 pl-10 bg-white/20 border border-gray-300 text-gray-600 rounded-lg focus:ring-2 focus:ring-brand-500 outline-none"
                                 />
                                 <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={18} />
                                 {checkingIds[index] ? (
@@ -175,7 +175,7 @@ const StepFour = ({ industries, updateIndustry, handleFileUpload, handleRemoveFi
                                     placeholder="Company Contact Number"
                                     value={industry.companyContactNumber}
                                     onChange={(e) => updateIndustry(index, "companyContactNumber", e.target.value)}
-                                    className="w-full p-3 pl-10 bg-white/20 border border-gray-300 text-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 outline-none"
+                                    className="w-full p-3 pl-10 bg-white/20 border border-gray-300 text-gray-600 rounded-lg focus:ring-2 focus:ring-brand-500 outline-none"
                                 />
                                 <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={18} />
                             </div>
@@ -191,7 +191,7 @@ const StepFour = ({ industries, updateIndustry, handleFileUpload, handleRemoveFi
                                 accept=".jpg,.jpeg,.png,.pdf,.docx"
                                 multiple
                                 onChange={(e) => handleFileUpload(index, e)}
-                                className="w-full p-3 bg-white/20 border border-gray-300 text-gray-600 rounded-lg cursor-pointer file:mr-4 file:py-2 file:px-4 file:border-0 file:bg-purple-500 file:text-white hover:file:bg-purple-600"
+                                className="w-full p-3 bg-white/20 border border-gray-300 text-gray-600 rounded-lg cursor-pointer file:mr-4 file:py-2 file:px-4 file:border-0 file:bg-brand-500 file:text-white hover:file:bg-brand-600"
                             />
 
                             {/* Show uploaded files with remove option */}
@@ -228,7 +228,7 @@ const StepFour = ({ industries, updateIndustry, handleFileUpload, handleRemoveFi
                         animate={{ opacity: 1 }}
                         transition={{ duration: 0.3 }}
                     >
-                        <svg className="animate-spin h-6 w-6 text-purple-600" viewBox="0 0 24 24">
+                        <svg className="animate-spin h-6 w-6 text-brand-600" viewBox="0 0 24 24">
                             <circle
                                 className="opacity-25"
                                 cx="12"
@@ -244,13 +244,13 @@ const StepFour = ({ industries, updateIndustry, handleFileUpload, handleRemoveFi
                                 d="M4 12a8 8 0 018-8v4l3-3-3-3v4a8 8 0 00-8 8z"
                             />
                         </svg>
-                        <span className="ml-2 text-purple-600 text-sm font-semibold">Processing...</span>
+                        <span className="ml-2 text-brand-600 text-sm font-semibold">Processing...</span>
                     </motion.div>
                 ) : (
                     <motion.button
                         onClick={handleRegister}
                         disabled={!isFormValid() || loading || isAnyIdVerifying()}
-                        className={`cursor-pointer w-full bg-gradient-to-r from-purple-600 to-purple-500 text-white p-4 rounded-xl font-bold shadow-lg transition-all duration-300 mt-4 flex items-center justify-center gap-2 ${!isFormValid() || isAnyIdVerifying() ? "opacity-50 cursor-not-allowed" : "hover:from-purple-700 hover:to-purple-600"
+                        className={`cursor-pointer w-full bg-gradient-to-r from-brand-600 to-brand-500 text-white p-4 rounded-xl font-bold shadow-lg transition-all duration-300 mt-4 flex items-center justify-center gap-2 ${!isFormValid() || isAnyIdVerifying() ? "opacity-50 cursor-not-allowed" : "hover:from-brand-700 hover:to-brand-600"
                             }`}
                         whileHover={{ scale: isFormValid() && !isAnyIdVerifying() ? 1.05 : 1 }}
                         whileTap={{ scale: isFormValid() && !isAnyIdVerifying() ? 0.95 : 1 }}

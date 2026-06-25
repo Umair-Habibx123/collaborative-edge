@@ -2,6 +2,7 @@ import { Router } from "express";
 import cookieParser from "cookie-parser";
 import dotenv from "dotenv";
 import { upload, gfs, conn, gridFSBucket } from "../gridfsConfig.js";
+import { protect } from "../middleware/authMiddleware.js";
 
 dotenv.config();
 
@@ -13,7 +14,7 @@ router.use((req, res, next) => {
   next();
 });
 
-router.get("/fetchAllFiles", async (req, res) => {
+router.get("/fetchAllFiles", protect, async (req, res) => {
   try {
     const files = await conn.db.collection("uploads.files").find().toArray();
 
@@ -101,7 +102,7 @@ router.post("/uploadFile", upload.single("file"), async (req, res) => {
   }
 });
 
-router.delete("/deletefile", async (req, res) => {
+router.delete("/deletefile", protect, async (req, res) => {
   const { fileUrl } = req.body;
 
   if (!fileUrl) {

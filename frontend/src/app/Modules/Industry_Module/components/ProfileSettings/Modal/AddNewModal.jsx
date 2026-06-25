@@ -48,7 +48,7 @@ const AddIndustryModal = ({
                             placeholder="Industry Name"
                             value={industries[0]?.name || ""}
                             onChange={(e) => updateIndustry(0, "name", e.target.value)}
-                            className={`w-full p-3 border rounded-lg focus:ring-2 ${theme === 'dark' ? 'bg-gray-800 border-gray-700 text-white focus:ring-blue-500' : 'border-gray-300 focus:ring-blue-400'}`}
+                            className={`w-full p-3 border rounded-lg focus:ring-2 ${theme === 'dark' ? 'bg-gray-800 border-gray-700 text-white focus:ring-brand-500' : 'border-gray-300 focus:ring-brand-400'}`}
                         />
                         {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
                     </div>
@@ -61,7 +61,7 @@ const AddIndustryModal = ({
                             placeholder="Website"
                             value={industries[0]?.website || ""}
                             onChange={(e) => updateIndustry(0, "website", e.target.value)}
-                            className={`w-full p-3 border rounded-lg focus:ring-2 ${theme === 'dark' ? 'bg-gray-800 border-gray-700 text-white focus:ring-blue-500' : 'border-gray-300 focus:ring-blue-400'}`}
+                            className={`w-full p-3 border rounded-lg focus:ring-2 ${theme === 'dark' ? 'bg-gray-800 border-gray-700 text-white focus:ring-brand-500' : 'border-gray-300 focus:ring-brand-400'}`}
                         />
                         {errors.website && <p className="text-red-500 text-sm mt-1">{errors.website}</p>}
                     </div>
@@ -74,7 +74,7 @@ const AddIndustryModal = ({
                             placeholder="Address"
                             value={industries[0]?.address || ""}
                             onChange={(e) => updateIndustry(0, "address", e.target.value)}
-                            className={`w-full p-3 border rounded-lg focus:ring-2 ${theme === 'dark' ? 'bg-gray-800 border-gray-700 text-white focus:ring-blue-500' : 'border-gray-300 focus:ring-blue-400'}`}
+                            className={`w-full p-3 border rounded-lg focus:ring-2 ${theme === 'dark' ? 'bg-gray-800 border-gray-700 text-white focus:ring-brand-500' : 'border-gray-300 focus:ring-brand-400'}`}
                         />
                         {errors.address && <p className="text-red-500 text-sm mt-1">{errors.address}</p>}
                     </div>
@@ -87,7 +87,7 @@ const AddIndustryModal = ({
                             placeholder="Designation"
                             value={industries[0]?.designation || ""}
                             onChange={(e) => updateIndustry(0, "designation", e.target.value)}
-                            className={`w-full p-3 border rounded-lg focus:ring-2 ${theme === 'dark' ? 'bg-gray-800 border-gray-700 text-white focus:ring-blue-500' : 'border-gray-300 focus:ring-blue-400'}`}
+                            className={`w-full p-3 border rounded-lg focus:ring-2 ${theme === 'dark' ? 'bg-gray-800 border-gray-700 text-white focus:ring-brand-500' : 'border-gray-300 focus:ring-brand-400'}`}
                         />
                         {errors.designation && <p className="text-red-500 text-sm mt-1">{errors.designation}</p>}
                     </div>
@@ -100,7 +100,7 @@ const AddIndustryModal = ({
                             placeholder="Work Email"
                             value={industries[0]?.workEmail || ""}
                             onChange={(e) => updateIndustry(0, "workEmail", e.target.value)}
-                            className={`w-full p-3 border rounded-lg focus:ring-2 ${theme === 'dark' ? 'bg-gray-800 border-gray-700 text-white focus:ring-blue-500' : 'border-gray-300 focus:ring-blue-400'}`}
+                            className={`w-full p-3 border rounded-lg focus:ring-2 ${theme === 'dark' ? 'bg-gray-800 border-gray-700 text-white focus:ring-brand-500' : 'border-gray-300 focus:ring-brand-400'}`}
                         />
                         {errors.workEmail && <p className="text-red-500 text-sm mt-1">{errors.workEmail}</p>}
                     </div>
@@ -113,7 +113,7 @@ const AddIndustryModal = ({
                             placeholder="Company Contact Number"
                             value={industries[0]?.companyContactNumber || ""}
                             onChange={(e) => updateIndustry(0, "companyContactNumber", e.target.value)}
-                            className={`w-full p-3 border rounded-lg focus:ring-2 ${theme === 'dark' ? 'bg-gray-800 border-gray-700 text-white focus:ring-blue-500' : 'border-gray-300 focus:ring-blue-400'}`}
+                            className={`w-full p-3 border rounded-lg focus:ring-2 ${theme === 'dark' ? 'bg-gray-800 border-gray-700 text-white focus:ring-brand-500' : 'border-gray-300 focus:ring-brand-400'}`}
                         />
                         {errors.companyContactNumber && <p className="text-red-500 text-sm mt-1">{errors.companyContactNumber}</p>}
                     </div>
@@ -168,7 +168,7 @@ const AddIndustryModal = ({
                     )}
 
                     {files.length === 2 && (
-                        <p className={`text-sm mt-2 ${theme === "dark" ? "text-blue-400" : "text-blue-500"}`}>
+                        <p className={`text-sm mt-2 ${theme === "dark" ? "text-brand-400" : "text-brand-500"}`}>
                             Maximum 2 files allowed.
                         </p>
                     )}
@@ -185,7 +185,7 @@ const AddIndustryModal = ({
                     <button
                         onClick={() => setIsConfirmationModalOpen(true)}
                         disabled={loading}
-                        className={`px-5 py-2 ${theme === 'dark' ? 'bg-blue-700 text-white hover:bg-blue-600' : 'bg-blue-600 text-white hover:bg-blue-700'} transition rounded-lg`}
+                        className={`px-5 py-2 ${theme === 'dark' ? 'bg-brand-700 text-white hover:bg-brand-600' : 'bg-brand-600 text-white hover:bg-brand-700'} transition rounded-lg`}
                     >
                         {loading ? "Saving..." : "Save Industries"}
                     </button>

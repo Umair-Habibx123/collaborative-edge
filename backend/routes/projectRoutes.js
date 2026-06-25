@@ -12,10 +12,12 @@ import StudentSubmissions from "../models/StudentSubmission.js";
 import ProjectModifyRequest from "../models/ProjectModifyRequests.js";
 import { isValidObjectId } from "mongoose";
 import dotenv from "dotenv";
+import { protect } from "../middleware/authMiddleware.js";
 dotenv.config();
 
 const router = express.Router();
 router.use(cookieParser());
+router.use(protect);
 
 router.use((req, res, next) => {
   console.log(`[${new Date().toISOString()}] ${req.method} ${req.url}`);

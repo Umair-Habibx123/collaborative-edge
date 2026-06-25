@@ -5,9 +5,11 @@ dotenv.config();
 import ProjectModifyRequests from "../models/ProjectModifyRequests.js";
 import { v4 as uuidv4 } from "uuid";
 import Project from "../models/Projects.js"
+import { protect } from "../middleware/authMiddleware.js";
 
 const router = Router();
 router.use(cookieParser());
+router.use(protect);
 
 router.use((req, res, next) => {
   console.log(`[${new Date().toISOString()}] ${req.method} ${req.url}`);

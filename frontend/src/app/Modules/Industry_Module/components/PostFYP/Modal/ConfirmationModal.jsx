@@ -19,7 +19,7 @@ const ConfirmationModal = ({ theme, isOpen, onClose, onConfirm }) => {
                     </button>
                     <button
                         onClick={onConfirm}
-                        className="px-4 py-2 bg-blue-600 text-white rounded-lg"
+                        className="px-4 py-2 bg-brand-600 text-white rounded-lg"
                     >
                         Yes, Submit
                     </button>

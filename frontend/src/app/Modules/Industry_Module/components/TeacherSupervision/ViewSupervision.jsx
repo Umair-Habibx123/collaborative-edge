@@ -199,7 +199,7 @@ const ViewSupervision = () => {
                     <p className="text-lg mb-6">You must be logged in to view this content.</p>
                     <button
                         onClick={() => navigate('/login')}
-                        className={`px-6 py-3 ${theme === "dark" ? "bg-gradient-to-r from-blue-600 to-blue-700" : "bg-gradient-to-r from-blue-500 to-blue-600"} text-white rounded-lg hover:from-blue-600 hover:to-blue-700 transition-all duration-300 shadow-lg font-semibold flex items-center justify-center mx-auto`}
+                        className={`px-6 py-3 ${theme === "dark" ? "bg-gradient-to-r from-brand-600 to-brand-700" : "bg-gradient-to-r from-brand-500 to-brand-600"} text-white rounded-lg hover:from-brand-600 hover:to-brand-700 transition-all duration-300 shadow-lg font-semibold flex items-center justify-center mx-auto`}
                     >
                         <LogIn className="w-5 h-5 mr-2" />
                         Log In
@@ -247,7 +247,7 @@ const ViewSupervision = () => {
                         <span>Back to Dashboard</span>
                     </button>
 
-                    <h2 className="text-3xl md:text-4xl font-bold text-center bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+                    <h2 className="text-3xl md:text-4xl font-bold text-center bg-gradient-to-r from-brand-500 via-brand-500 to-pink-500 bg-clip-text text-transparent">
                         Teacher Supervision
                     </h2>
 
@@ -276,8 +276,8 @@ const ViewSupervision = () => {
                 {/* Search and Filter */}
                 <div className="mb-8 grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className={`flex items-center rounded-xl p-1 shadow-sm transition-all duration-300 ${theme === "dark"
-                        ? "bg-gray-800 border-gray-700 focus-within:border-blue-500 border"
-                        : "bg-white border-gray-200 focus-within:border-blue-400 border"}`}>
+                        ? "bg-gray-800 border-gray-700 focus-within:border-brand-500 border"
+                        : "bg-white border-gray-200 focus-within:border-brand-400 border"}`}>
                         <div className="p-2 text-gray-500">
                             <Search className="w-5 h-5" />
                         </div>
@@ -318,7 +318,7 @@ const ViewSupervision = () => {
                 {isLoading ? (
                     <div className="flex justify-center items-center h-64">
                         <div className="flex flex-col items-center gap-4">
-                            <Loader2 className="w-10 h-10 animate-spin text-blue-500" />
+                            <Loader2 className="w-10 h-10 animate-spin text-brand-500" />
                             <p className={`${theme === "dark" ? "text-gray-400" : "text-gray-600"}`}>
                                 Loading supervision data...
                             </p>
@@ -354,7 +354,7 @@ const ViewSupervision = () => {
                                                     <div className={`w-10 h-10 rounded-full flex items-center justify-center ${theme === "dark"
                                                         ? "bg-gray-700"
                                                         : "bg-gray-100"}`}>
-                                                        <User className="w-5 h-5 text-blue-500" />
+                                                        <User className="w-5 h-5 text-brand-500" />
                                                     </div>
                                                     <div>
                                                         <p className="font-medium">{supervision.fullName}</p>
@@ -371,14 +371,14 @@ const ViewSupervision = () => {
                                             </td>
                                             <td className="p-4">
                                                 <div className="flex items-center gap-2">
-                                                    <School className="w-4 h-4 text-blue-500" />
+                                                    <School className="w-4 h-4 text-brand-500" />
                                                     <span>{supervision.university}</span>
                                                 </div>
                                             </td>
                                             <td className="p-4">
                                                 <a
                                                     href={`mailto:${supervision.email}`}
-                                                    className="flex items-center gap-2 hover:text-blue-500 transition-colors"
+                                                    className="flex items-center gap-2 hover:text-brand-500 transition-colors"
                                                 >
                                                     <Mail className="w-4 h-4" />
                                                     <span className="truncate max-w-[180px]">{supervision.email}</span>
@@ -424,8 +424,8 @@ const ViewSupervision = () => {
                                                     <button
                                                         onClick={() => handleViewDetail(supervision.teacherId)}
                                                         className={`flex items-center gap-1 px-3 py-2 rounded-lg transition-all duration-200 ${theme === "dark"
-                                                            ? "bg-blue-600 hover:bg-blue-700"
-                                                            : "bg-blue-500 hover:bg-blue-600"} text-white shadow-sm hover:shadow-md`}
+                                                            ? "bg-brand-600 hover:bg-brand-700"
+                                                            : "bg-brand-500 hover:bg-brand-600"} text-white shadow-sm hover:shadow-md`}
                                                         disabled={loadingStates[supervision.teacherId]}
                                                     >
                                                         {loadingStates[supervision.teacherId] ? (
@@ -460,7 +460,7 @@ const ViewSupervision = () => {
                         : "bg-white border border-gray-100"} shadow-xl`}>
                         <div className="max-w-md mx-auto flex flex-col items-center">
                             <FolderSearch className="w-16 h-16 text-gray-400 mb-4" />
-                            <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent mb-2">
+                            <h3 className="text-2xl font-bold bg-gradient-to-r from-brand-500 to-accent-500 bg-clip-text text-transparent mb-2">
                                 No Supervisions Found
                             </h3>
                             <p className={`mb-6 ${theme === "dark" ? "text-gray-400" : "text-gray-500"}`}>

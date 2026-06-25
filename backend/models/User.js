@@ -4,13 +4,14 @@ import { Schema } from "mongoose";
 
 const userSchema = new Schema(
   {
-    _id: { type: String, required: true, unique: true }, 
-    username: { type: String, required: true },
-    email: { type: String, required: true, unique: true },
-    password: { type: String, required: true },
+    _id: { type: String, required: true }, // unique index is implicit on _id
+    username: { type: String, required: true, trim: true },
+    email: { type: String, required: true, unique: true, trim: true },
+    // Excluded from query results by default — opt in with .select("+password").
+    password: { type: String, required: true, select: false },
     profilePic: { type: String, default: "" },
-    role: { type: String, enum: ["student", "teacher", "industry", "admin"], default: "student" },
-    status: { type: String, enum: ["verified", "pending", "banned"], default: "pending" },
+    role: { type: String, enum: ["student", "teacher", "industry", "admin"], default: "student", index: true },
+    status: { type: String, enum: ["verified", "pending", "banned"], default: "pending", index: true },
   },
   { timestamps: true }
 );

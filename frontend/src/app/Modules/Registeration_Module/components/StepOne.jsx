@@ -36,7 +36,7 @@ const StepOne = ({ email, setEmail, handleSendCode, loading, isValidEmail }) => 
                 onChange={(e) => setEmail(e.target.value)}
                 className={`w-full p-3 md:p-4 mb-2 border-2 rounded-lg text-sm font-medium outline-none transition-all ${!isValidEmail(email) && email
                     ? "border-red-400 focus:border-red-500"
-                    : "border-gray-200 focus:border-purple-500 focus:ring-1 focus:ring-purple-500"
+                    : "border-gray-200 focus:border-brand-500 focus:ring-1 focus:ring-brand-500"
                     }`}
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -67,7 +67,7 @@ const StepOne = ({ email, setEmail, handleSendCode, loading, isValidEmail }) => 
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.3 }}
                 >
-                    <svg className="animate-spin h-6 w-6 text-purple-600" viewBox="0 0 24 24">
+                    <svg className="animate-spin h-6 w-6 text-brand-600" viewBox="0 0 24 24">
                         <circle
                             className="opacity-25"
                             cx="12"
@@ -83,14 +83,14 @@ const StepOne = ({ email, setEmail, handleSendCode, loading, isValidEmail }) => 
                             d="M4 12a8 8 0 018-8v4l3-3-3-3v4a8 8 0 00-8 8z"
                         />
                     </svg>
-                    <span className="ml-2 text-purple-600 text-sm font-semibold">Processing...</span>
+                    <span className="ml-2 text-brand-600 text-sm font-semibold">Processing...</span>
                 </motion.div>
 
             ) : (
                 <motion.button
                     onClick={handleSendCode}
                     className={`cursor-pointer w-full p-3 md:p-4 rounded-lg font-semibold text-sm transition-all ${isValidEmail(email)
-                        ? "bg-purple-600 text-white hover:bg-purple-700 shadow-lg hover:shadow-purple-500/30"
+                        ? "bg-brand-600 text-white hover:bg-brand-700 shadow-lg hover:shadow-brand-500/30"
                         : "bg-gray-200 text-gray-500 cursor-not-allowed"
                         }`}
                     disabled={!isValidEmail(email) || loading}

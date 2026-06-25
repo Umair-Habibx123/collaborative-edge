@@ -38,7 +38,7 @@ const StepThree = ({
                         placeholder="Username"
                         value={username}
                         onChange={(e) => setUsername(e.target.value)}
-                        className="w-full p-4 pl-12 bg-white/30 border border-white/30 text-gray-700 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none backdrop-blur-lg transition-all duration-200 placeholder:text-gray-500"
+                        className="w-full p-4 pl-12 bg-white/30 border border-white/30 text-gray-700 rounded-xl focus:ring-2 focus:ring-brand-500 focus:border-transparent outline-none backdrop-blur-lg transition-all duration-200 placeholder:text-gray-500"
                     />
                     <User className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500 w-5 h-5" /> {/* Lucide User Icon */}
                 </div>
@@ -73,7 +73,7 @@ const StepThree = ({
                             type="file"
                             accept="image/jpeg,image/jpg,image/png"
                             onChange={handleImageChange}
-                            className="w-full p-4 bg-white/30 border border-white/30 text-gray-700 rounded-xl cursor-pointer file:mr-4 file:py-2 file:px-4 file:border-0 file:bg-purple-500 file:text-white hover:file:bg-purple-600 backdrop-blur-lg transition-all duration-200"
+                            className="w-full p-4 bg-white/30 border border-white/30 text-gray-700 rounded-xl cursor-pointer file:mr-4 file:py-2 file:px-4 file:border-0 file:bg-brand-500 file:text-white hover:file:bg-brand-600 backdrop-blur-lg transition-all duration-200"
                         />
                     </div>
 
@@ -86,7 +86,7 @@ const StepThree = ({
                         placeholder="Password"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
-                        className="w-full p-4 pl-12 bg-white/30 border border-white/30 text-gray-700 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none backdrop-blur-lg transition-all duration-200 placeholder:text-gray-500"
+                        className="w-full p-4 pl-12 bg-white/30 border border-white/30 text-gray-700 rounded-xl focus:ring-2 focus:ring-brand-500 focus:border-transparent outline-none backdrop-blur-lg transition-all duration-200 placeholder:text-gray-500"
                     />
                     <Lock className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500 w-5 h-5" /> {/* Lucide Lock Icon */}
                 </div>
@@ -98,7 +98,7 @@ const StepThree = ({
                         placeholder="Confirm Password"
                         value={confirmPassword}
                         onChange={(e) => setConfirmPassword(e.target.value)}
-                        className="w-full p-4 pl-12 bg-white/30 border border-white/30 text-gray-700 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none backdrop-blur-lg transition-all duration-200 placeholder:text-gray-500"
+                        className="w-full p-4 pl-12 bg-white/30 border border-white/30 text-gray-700 rounded-xl focus:ring-2 focus:ring-brand-500 focus:border-transparent outline-none backdrop-blur-lg transition-all duration-200 placeholder:text-gray-500"
                     />
                     <Lock className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500 w-5 h-5" /> {/* Lucide Lock Icon */}
                 </div>
@@ -107,7 +107,7 @@ const StepThree = ({
                 <motion.button
                     onClick={lastStep}
                     disabled={!isFormValid}
-                    className={`cursor-pointer w-full bg-gradient-to-r from-purple-600 to-purple-500 text-white p-4 rounded-xl font-bold shadow-lg transition-all duration-300 relative overflow-hidden ${!isFormValid ? "opacity-50 cursor-not-allowed" : "hover:from-purple-700 hover:to-purple-600"
+                    className={`cursor-pointer w-full bg-gradient-to-r from-brand-600 to-brand-500 text-white p-4 rounded-xl font-bold shadow-lg transition-all duration-300 relative overflow-hidden ${!isFormValid ? "opacity-50 cursor-not-allowed" : "hover:from-brand-700 hover:to-brand-600"
                         }`}
                     whileHover={isFormValid ? { scale: 1.05 } : {}}
                     whileTap={isFormValid ? { scale: 0.95 } : {}}

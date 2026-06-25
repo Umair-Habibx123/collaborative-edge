@@ -154,7 +154,7 @@ const NotificationScreen = ({ theme, onClose }) => {
             success: <CheckCircle className="w-5 h-5 text-green-500" />,
             warning: <AlertCircle className="w-5 h-5 text-yellow-500" />,
             error: <AlertCircle className="w-5 h-5 text-red-500" />,
-            info: <Info className="w-5 h-5 text-blue-500" />
+            info: <Info className="w-5 h-5 text-brand-500" />
         };
         return icons[type] || icons.info;
     };
@@ -162,7 +162,7 @@ const NotificationScreen = ({ theme, onClose }) => {
     const getPriorityColor = (priority) => {
         const colors = {
             low: 'bg-gray-200 text-gray-800',
-            medium: 'bg-blue-200 text-blue-800',
+            medium: 'bg-brand-200 text-brand-800',
             high: 'bg-orange-200 text-orange-800',
             critical: 'bg-red-200 text-red-800'
         };
@@ -221,7 +221,7 @@ const NotificationScreen = ({ theme, onClose }) => {
                     <div className="flex items-center space-x-1">
                         <button
                             onClick={markAllAsRead}
-                            className={`px-2.5 py-1 rounded-lg text-xs font-medium transition-all active:scale-95 ${theme === 'dark' ? 'text-blue-400 hover:bg-gray-800' : 'text-blue-600 hover:bg-gray-50'}`}
+                            className={`px-2.5 py-1 rounded-lg text-xs font-medium transition-all active:scale-95 ${theme === 'dark' ? 'text-brand-400 hover:bg-gray-800' : 'text-brand-600 hover:bg-gray-50'}`}
                         >
                             Mark all
                         </button>
@@ -278,8 +278,8 @@ const NotificationScreen = ({ theme, onClose }) => {
                                     }}
                                     className={`flex-shrink-0 px-3 py-1.5 rounded-full text-xs font-medium transition-all active:scale-95 flex items-center ${filter === tab
                                         ? theme === 'dark'
-                                            ? 'bg-blue-600/90 text-white shadow-md'
-                                            : 'bg-blue-500 text-white shadow-md'
+                                            ? 'bg-brand-600/90 text-white shadow-md'
+                                            : 'bg-brand-500 text-white shadow-md'
                                         : theme === 'dark'
                                             ? 'bg-gray-800 text-gray-300 hover:bg-gray-700'
                                             : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
@@ -355,15 +355,15 @@ const NotificationScreen = ({ theme, onClose }) => {
                                     }}
                                     className={`relative p-3 rounded-xl transition-all active:scale-[0.98] cursor-pointer ${!isRead
                                         ? theme === 'dark'
-                                            ? 'bg-blue-900/20 hover:bg-blue-900/30 shadow-md'
-                                            : 'bg-blue-50 hover:bg-blue-100 shadow-sm'
+                                            ? 'bg-brand-900/20 hover:bg-brand-900/30 shadow-md'
+                                            : 'bg-brand-50 hover:bg-brand-100 shadow-sm'
                                         : theme === 'dark'
                                             ? 'hover:bg-gray-800/50'
                                             : 'hover:bg-gray-50'
                                         } ${notification.actionRequired && !actionStatus ? 'ring-1 ring-yellow-500/30' : ''}`}
                                 >
                                     {!isRead && (
-                                        <div className="absolute top-3 left-3 w-2 h-2 rounded-full bg-blue-500 animate-pulse"></div>
+                                        <div className="absolute top-3 left-3 w-2 h-2 rounded-full bg-brand-500 animate-pulse"></div>
                                     )}
 
                                     <div className="flex items-start gap-3 pl-3">
@@ -387,8 +387,8 @@ const NotificationScreen = ({ theme, onClose }) => {
                                                                 ? 'bg-yellow-900/50 text-yellow-400'
                                                                 : 'bg-yellow-100 text-yellow-700'
                                                             : theme === 'dark'
-                                                                ? 'bg-blue-900/50 text-blue-400'
-                                                                : 'bg-blue-100 text-blue-700'
+                                                                ? 'bg-brand-900/50 text-brand-400'
+                                                                : 'bg-brand-100 text-brand-700'
                                                         }`}>
                                                         {notification.priority}
                                                     </span>
@@ -497,8 +497,8 @@ const NotificationScreen = ({ theme, onClose }) => {
                                         onClick={() => setCurrentPage(pageNum)}
                                         className={`w-8 h-8 rounded-lg flex items-center justify-center text-xs font-medium transition-all active:scale-95 ${currentPage === pageNum
                                             ? theme === 'dark'
-                                                ? 'bg-blue-600 text-white'
-                                                : 'bg-blue-500 text-white'
+                                                ? 'bg-brand-600 text-white'
+                                                : 'bg-brand-500 text-white'
                                             : theme === 'dark'
                                                 ? 'hover:bg-gray-700 text-gray-300'
                                                 : 'hover:bg-gray-100 text-gray-700'
@@ -602,8 +602,8 @@ const NotificationScreen = ({ theme, onClose }) => {
                                                         ? 'bg-yellow-900/50 text-yellow-400'
                                                         : 'bg-yellow-100 text-yellow-700'
                                                     : theme === 'dark'
-                                                        ? 'bg-blue-900/50 text-blue-400'
-                                                        : 'bg-blue-100 text-blue-700'
+                                                        ? 'bg-brand-900/50 text-brand-400'
+                                                        : 'bg-brand-100 text-brand-700'
                                                 }`}>
                                                 {selectedNotification.priority}
                                             </span>
@@ -818,8 +818,8 @@ const NotificationScreen = ({ theme, onClose }) => {
                                                 target="_self"
                                                 rel="noopener noreferrer"
                                                 className={`inline-flex items-center gap-2 px-4 py-2.5 rounded-lg font-medium shadow-sm ${theme === 'dark'
-                                                    ? 'bg-blue-600 hover:bg-blue-700 text-white'
-                                                    : 'bg-blue-500 hover:bg-blue-600 text-white'
+                                                    ? 'bg-brand-600 hover:bg-brand-700 text-white'
+                                                    : 'bg-brand-500 hover:bg-brand-600 text-white'
                                                     } transition-colors`}
                                             >
                                                 <ExternalLink className="w-4 h-4" />

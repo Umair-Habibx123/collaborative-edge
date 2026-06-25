@@ -200,7 +200,7 @@ const StudentRatingsChart = ({ data, theme }) => {
                 <button
                     onClick={() => setViewMode('distribution')}
                     className={`text-xs px-3 py-1 rounded-md ${viewMode === 'distribution' ?
-                        (theme === "dark" ? "bg-gray-700 text-white" : "bg-purple-100 text-purple-600") :
+                        (theme === "dark" ? "bg-gray-700 text-white" : "bg-brand-100 text-brand-600") :
                         (theme === "dark" ? "bg-gray-800 text-gray-300" : "bg-gray-100 text-gray-600")}`}
                 >
                     Distribution
@@ -208,7 +208,7 @@ const StudentRatingsChart = ({ data, theme }) => {
                 <button
                     onClick={() => setViewMode('timeline')}
                     className={`text-xs px-3 py-1 rounded-md ${viewMode === 'timeline' ?
-                        (theme === "dark" ? "bg-gray-700 text-white" : "bg-purple-100 text-purple-600") :
+                        (theme === "dark" ? "bg-gray-700 text-white" : "bg-brand-100 text-brand-600") :
                         (theme === "dark" ? "bg-gray-800 text-gray-300" : "bg-gray-100 text-gray-600")}`}
                 >
                     Timeline
@@ -216,7 +216,7 @@ const StudentRatingsChart = ({ data, theme }) => {
                 <button
                     onClick={() => setViewMode('byRole')}
                     className={`text-xs px-3 py-1 rounded-md ${viewMode === 'byRole' ?
-                        (theme === "dark" ? "bg-gray-700 text-white" : "bg-purple-100 text-purple-600") :
+                        (theme === "dark" ? "bg-gray-700 text-white" : "bg-brand-100 text-brand-600") :
                         (theme === "dark" ? "bg-gray-800 text-gray-300" : "bg-gray-100 text-gray-600")}`}
                 >
                     By Role

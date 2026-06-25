@@ -307,7 +307,7 @@ const Action = () => {
                     <p className="text-lg mb-6">You must be logged in to view this content.</p>
                     <button
                         onClick={() => navigate('/login')}
-                        className={`px-6 py-3 ${theme === "dark" ? "bg-gradient-to-r from-blue-600 to-blue-700" : "bg-gradient-to-r from-blue-500 to-blue-600"} text-white rounded-lg hover:from-blue-600 hover:to-blue-700 transition-all duration-300 shadow-lg font-semibold flex items-center justify-center mx-auto`}
+                        className={`px-6 py-3 ${theme === "dark" ? "bg-gradient-to-r from-brand-600 to-brand-700" : "bg-gradient-to-r from-brand-500 to-brand-600"} text-white rounded-lg hover:from-brand-600 hover:to-brand-700 transition-all duration-300 shadow-lg font-semibold flex items-center justify-center mx-auto`}
                     >
                         <LogIn className="w-5 h-5 mr-2" />
                         Log In
@@ -361,7 +361,7 @@ const Action = () => {
 
                 {/* Scroll Indicator - Positioned at the bottom of the header */}
                 <motion.div
-                    className="absolute bottom-0 left-0 w-full h-1.5 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full"
+                    className="absolute bottom-0 left-0 w-full h-1.5 bg-gradient-to-r from-brand-500 via-brand-500 to-pink-500 rounded-full"
                     style={{ scaleX: scrollYProgress }}
                 />
 
@@ -522,7 +522,7 @@ const Action = () => {
                             <button
                                 onClick={handleSubmitAction}
                                 disabled={isLoading}
-                                className="mt-3 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors duration-300 flex items-center justify-center space-x-2 w-full sm:w-auto"
+                                className="mt-3 px-4 py-2 bg-brand-500 text-white rounded-lg hover:bg-brand-600 transition-colors duration-300 flex items-center justify-center space-x-2 w-full sm:w-auto"
                             >
                                 {isLoading ? (
                                     <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
@@ -548,7 +548,7 @@ const Action = () => {
                                     className={`${theme === 'dark'
                                         ? 'bg-gray-900 text-gray-300 border-gray-700'
                                         : 'bg-white text-gray-900 border-gray-200'
-                                        } p-6 sm:p-8 mt-8 rounded-3xl shadow-2xl border-2 flex flex-col sm:flex-row items-center sm:items-start gap-6 sm:gap-8 transition-all duration-500 hover:shadow-3xl hover:border-blue-500`}
+                                        } p-6 sm:p-8 mt-8 rounded-3xl shadow-2xl border-2 flex flex-col sm:flex-row items-center sm:items-start gap-6 sm:gap-8 transition-all duration-500 hover:shadow-3xl hover:border-brand-500`}
                                 >
                                     {/* Profile Picture or Placeholder */}
                                     <div className="flex-shrink-0 relative group">
@@ -556,10 +556,10 @@ const Action = () => {
                                             <img
                                                 src={approverProfilePic}
                                                 alt="Approver Profile"
-                                                className="w-20 h-20 sm:w-24 sm:h-24 rounded-full border-4 border-blue-500 shadow-lg object-cover transition-transform transform hover:scale-110"
+                                                className="w-20 h-20 sm:w-24 sm:h-24 rounded-full border-4 border-brand-500 shadow-lg object-cover transition-transform transform hover:scale-110"
                                             />
                                         ) : (
-                                            <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center text-white text-2xl sm:text-3xl font-bold shadow-lg group-hover:scale-110 transition-transform">
+                                            <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gradient-to-br from-brand-500 to-accent-500 flex items-center justify-center text-white text-2xl sm:text-3xl font-bold shadow-lg group-hover:scale-110 transition-transform">
                                                 {approverUsername?.charAt(0).toUpperCase()}
                                             </div>
                                         )}
@@ -568,7 +568,7 @@ const Action = () => {
                                     {/* User Information */}
                                     <div className="text-center sm:text-left flex-1 space-y-3">
                                         <h3 className="text-xl sm:text-2xl font-bold flex flex-col sm:flex-row sm:items-center gap-3">
-                                            <User className="w-6 h-6 sm:w-8 sm:h-8 text-blue-500" />
+                                            <User className="w-6 h-6 sm:w-8 sm:h-8 text-brand-500" />
                                             <span>Response by: {approverUsername}</span>
                                             {user.email === approverEmail && approvalStatus === 'approved' && (
                                                 <span className="bg-gradient-to-r from-green-500 to-teal-500 text-white text-xs sm:text-sm px-4 py-1.5 rounded-full shadow-md flex items-center space-x-1">
@@ -590,19 +590,19 @@ const Action = () => {
                                             )}
                                         </h3>
                                         <p className="text-sm text-gray-500 flex items-center space-x-2">
-                                            <Mail className="w-4 h-4 text-blue-500" />
+                                            <Mail className="w-4 h-4 text-brand-500" />
                                             <span>Email: {approverEmail}</span>
                                         </p>
                                         <p className="text-sm text-gray-500 flex items-center space-x-2">
-                                            <Briefcase className="w-4 h-4 text-blue-500" />
+                                            <Briefcase className="w-4 h-4 text-brand-500" />
                                             <span>Role: {approverRole}</span>
                                         </p>
-                                        <p className="text-sm text-blue-500 font-medium flex items-center space-x-2">
-                                            <Calendar className="w-4 h-4 text-blue-500" />
+                                        <p className="text-sm text-brand-500 font-medium flex items-center space-x-2">
+                                            <Calendar className="w-4 h-4 text-brand-500" />
                                             <span>Approved At: {new Date(actionAt).toLocaleString()}</span>
                                         </p>
                                         <p className="text-sm text-gray-500 flex items-center space-x-2">
-                                            <School className="w-4 h-4 text-blue-500" />
+                                            <School className="w-4 h-4 text-brand-500" />
                                             <span>University: {university}</span>
                                         </p>
                                     </div>
@@ -613,7 +613,7 @@ const Action = () => {
                                     <div className="flex justify-center sm:justify-end mt-4 sm:absolute sm:bottom-6 sm:right-6">
                                         <button
                                             onClick={openEditApprovalModal}
-                                            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded flex items-center justify-center disabled:opacity-50"
+                                            className="bg-brand-500 hover:bg-brand-700 text-white font-bold py-2 px-4 rounded flex items-center justify-center disabled:opacity-50"
                                             disabled={isLoading}
                                         >
                                             {isLoading ? (

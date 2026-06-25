@@ -95,7 +95,7 @@ const Login = () => {
 
     return (
         <motion.div
-            className="min-h-screen flex flex-col -mt-[70px] md:-mt-[90px] md:flex-row bg-gradient-to-l from-purple-900 to-gray-900"
+            className="min-h-screen flex flex-col -mt-[70px] md:-mt-[90px] md:flex-row bg-gradient-hero"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
@@ -125,13 +125,13 @@ const Login = () => {
 
             {/* Right Section */}
             <motion.div
-                className="w-full md:m-8 md:w-1/2 md:rounded-4xl flex flex-col justify-center p-8 md:p-12 lg:p-20 bg-gray-900 bg-opacity-90 backdrop-blur-sm"
+                className="w-full md:m-8 md:w-1/2 md:rounded-4xl flex flex-col justify-center p-8 md:p-12 lg:p-20 bg-white/5 border border-white/10 backdrop-blur-2xl shadow-glow"
                 initial={{ x: -300 }}
                 animate={{ x: 0 }}
                 transition={{ type: "spring", stiffness: 100, damping: 25 }}
             >
-                <h1 className="text-4xl font-bold text-white">Welcome Back</h1>
-                <p className="mt-2 text-gray-400">Login to access your account</p>
+                <h1 className="text-4xl font-extrabold text-white">Welcome <span className="text-gradient-brand">Back</span></h1>
+                <p className="mt-2 text-gray-300">Login to access your account</p>
 
                 <div className="mt-8 space-y-6">
                     {/* Email Input */}
@@ -148,7 +148,7 @@ const Login = () => {
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             placeholder="Enter your verified email"
-                            className="w-full mt-2 px-4 py-3 bg-gray-800 text-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all"
+                            className="w-full mt-2 px-4 py-3 bg-white/10 border border-white/10 text-gray-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-400 focus:border-transparent transition-all"
                         />
                     </div>
 
@@ -167,10 +167,10 @@ const Login = () => {
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
                                 placeholder="Enter your password"
-                                className="w-full mt-2 px-4 py-3 bg-gray-800 text-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all"
+                                className="w-full mt-2 px-4 py-3 bg-white/10 border border-white/10 text-gray-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-400 focus:border-transparent transition-all"
                             />
                             <span
-                                className="absolute right-4 top-4 text-gray-400 cursor-pointer hover:text-purple-500 transition-all"
+                                className="absolute right-4 top-4 text-gray-400 cursor-pointer hover:text-brand-500 transition-all"
                                 onClick={togglePasswordVisibility}
                             >
                                 {showPassword ? <EyeOff size={28} /> : <Eye size={28} />}
@@ -186,14 +186,14 @@ const Login = () => {
                                 id="remember-me"
                                 checked={rememberMe}
                                 onChange={(e) => setRememberMe(e.target.checked)}
-                                className="w-4 h-4 text-purple-600 bg-gray-800 border-gray-600 rounded focus:ring-purple-500"
+                                className="w-4 h-4 text-brand-600 bg-gray-800 border-gray-600 rounded focus:ring-brand-500"
                             />
                             <label htmlFor="remember-me" className="ml-2 text-sm text-gray-400">
                                 Remember Me
                             </label>
                         </div>
                         <p
-                            className="text-sm text-purple-500 hover:text-purple-400 cursor-pointer transition-all"
+                            className="text-sm text-brand-300 hover:text-brand-200 cursor-pointer transition-all"
                             onClick={() => setIsForgotPasswordOpen(true)}
                         >
                             Forgot Password?
@@ -217,7 +217,7 @@ const Login = () => {
                     <motion.button
                         onClick={handleLogin}
                         disabled={loading}
-                        className="cursor-pointer w-full py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 transition-all"
+                        className="cursor-pointer w-full py-3 bg-gradient-brand text-white font-semibold rounded-xl shadow-glow hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-brand-400 focus:ring-offset-2 focus:ring-offset-transparent transition-all disabled:opacity-60"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                     >
@@ -235,7 +235,7 @@ const Login = () => {
                     <p className="text-sm text-gray-400 text-center mt-4">
                         Don&apos;t have an account?{" "}
                         <span
-                            className="text-purple-500 hover:text-purple-400 cursor-pointer transition-all"
+                            className="text-brand-300 hover:text-brand-200 cursor-pointer transition-all"
                             onClick={() => navigate("/roleSelection")}
                         >
                             Register

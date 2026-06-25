@@ -36,7 +36,7 @@ const Loading = () => {
                     Loading<span className="animate-pulse">...</span>
                 </p>
                 <div className={`mt-4 h-1 w-24 mx-auto rounded-full overflow-hidden ${theme === "dark" ? "bg-gray-700" : "bg-gray-200"}`}>
-                    <div className={`h-full w-1/3 rounded-full animate-[loading_1.5s_infinite] ${theme === "dark" ? "bg-blue-400" : "bg-blue-600"}`}></div>
+                    <div className={`h-full w-1/3 rounded-full animate-[loading_1.5s_infinite] ${theme === "dark" ? "bg-brand-400" : "bg-brand-600"}`}></div>
                 </div>
             </div>
         </div>

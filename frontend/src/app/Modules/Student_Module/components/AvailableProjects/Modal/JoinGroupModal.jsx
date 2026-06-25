@@ -62,8 +62,8 @@ const JoinGroupModal = ({ isOpen, onClose, onJoin, theme }) => {
 
                 <div className="p-6">
                     <div className="flex items-center gap-3 mb-6">
-                        <div className={`p-3 rounded-full ${theme === "dark" ? "bg-blue-900/30" : "bg-blue-100"}`}>
-                            <Users size={24} className="text-blue-500" />
+                        <div className={`p-3 rounded-full ${theme === "dark" ? "bg-brand-900/30" : "bg-brand-100"}`}>
+                            <Users size={24} className="text-brand-500" />
                         </div>
                         <div>
                             <h2 className="text-xl font-bold">Join Existing Group</h2>
@@ -77,7 +77,7 @@ const JoinGroupModal = ({ isOpen, onClose, onJoin, theme }) => {
                         <label htmlFor="selectionId" className={`block text-sm font-medium mb-2 ${theme === "dark" ? "text-gray-300" : "text-gray-700"}`}>
                             Selection ID
                         </label>
-                        <div className={`relative flex items-center border rounded-lg transition-all ${error ? "border-red-500" : theme === "dark" ? "border-gray-700 focus-within:border-blue-500" : "border-gray-300 focus-within:border-blue-500"}`}>
+                        <div className={`relative flex items-center border rounded-lg transition-all ${error ? "border-red-500" : theme === "dark" ? "border-gray-700 focus-within:border-brand-500" : "border-gray-300 focus-within:border-brand-500"}`}>
                             <div className={`absolute left-3 ${theme === "dark" ? "text-gray-400" : "text-gray-500"}`}>
                                 <Hash size={18} />
                             </div>
@@ -109,7 +109,7 @@ const JoinGroupModal = ({ isOpen, onClose, onJoin, theme }) => {
                         <button
                             onClick={handleJoinClick}
                             disabled={isLoading}
-                            className={`px-4 py-2 rounded-lg font-medium text-white bg-blue-500 hover:bg-blue-600 transition-colors flex items-center gap-2 ${isLoading ? "opacity-80 cursor-not-allowed" : ""}`}
+                            className={`px-4 py-2 rounded-lg font-medium text-white bg-brand-500 hover:bg-brand-600 transition-colors flex items-center gap-2 ${isLoading ? "opacity-80 cursor-not-allowed" : ""}`}
                         >
                             {isLoading ? (
                                 <>

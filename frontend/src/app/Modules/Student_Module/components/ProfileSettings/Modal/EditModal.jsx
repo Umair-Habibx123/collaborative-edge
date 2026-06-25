@@ -96,7 +96,7 @@ const EditModal = ({
                                                 href={file.fileUrl || "#"}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className="text-blue-500 hover:underline"
+                                                className="text-brand-500 hover:underline"
                                             >
                                                 {file.fileName || "Unknown File"}
                                             </a>
@@ -167,7 +167,7 @@ const EditModal = ({
                             Cancel
                         </button>
                         <button
-                            className="bg-blue-600 text-white px-4 py-2 rounded"
+                            className="bg-brand-600 text-white px-4 py-2 rounded"
                             onClick={() => setIsConfirmationModalOpen(true)}
                         >
                             Save

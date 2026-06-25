@@ -422,7 +422,7 @@ const ProjectEdit = ({ project, onCancel }) => {
             name="title"
             value={editedProject?.title || ""}
             onChange={handleInputChange}
-            className={`w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 ${theme === "dark"
+            className={`w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-all duration-300 ${theme === "dark"
                 ? "bg-gray-800 text-white border-gray-700"
                 : "bg-white text-gray-900 border-gray-300"
               }`}
@@ -440,7 +440,7 @@ const ProjectEdit = ({ project, onCancel }) => {
             name="projectType"
             value={editedProject?.projectType}
             onChange={handleInputChange}
-            className={`w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 ${theme === "dark"
+            className={`w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-all duration-300 ${theme === "dark"
                 ? "bg-gray-800 text-white border-gray-700"
                 : "bg-white text-gray-900 border-gray-300"
               }`}
@@ -469,7 +469,7 @@ const ProjectEdit = ({ project, onCancel }) => {
           name="description"
           value={editedProject?.description || ""}
           onChange={handleInputChange}
-          className={`w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 resize-none ${theme === "dark"
+          className={`w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-all duration-300 resize-none ${theme === "dark"
               ? "bg-gray-800 text-white border-gray-700"
               : "bg-white text-gray-900 border-gray-300"
             }`}
@@ -490,7 +490,7 @@ const ProjectEdit = ({ project, onCancel }) => {
             name="difficultyLevel"
             value={editedProject?.difficultyLevel || ""}
             onChange={handleInputChange}
-            className={`w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 ${theme === "dark"
+            className={`w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-all duration-300 ${theme === "dark"
                 ? "bg-gray-800 text-white border-gray-700"
                 : "bg-white text-gray-900 border-gray-300"
               }`}
@@ -522,7 +522,7 @@ const ProjectEdit = ({ project, onCancel }) => {
                   e.preventDefault();
                 }
               }}
-              className={`w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 ${theme === "dark"
+              className={`w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-all duration-300 ${theme === "dark"
                   ? "bg-gray-800 text-white border-gray-700"
                   : "bg-white text-gray-900 border-gray-300"
                 }`}
@@ -552,9 +552,9 @@ const ProjectEdit = ({ project, onCancel }) => {
                       }));
                       setSkillInput("");
                     }}
-                    className={`block w-full text-left px-4 py-2 hover:bg-blue-500 hover:text-white transition-all duration-200 ${theme === "dark"
-                        ? "text-gray-300 hover:bg-blue-600"
-                        : "text-gray-700 hover:bg-blue-100"
+                    className={`block w-full text-left px-4 py-2 hover:bg-brand-500 hover:text-white transition-all duration-200 ${theme === "dark"
+                        ? "text-gray-300 hover:bg-brand-600"
+                        : "text-gray-700 hover:bg-brand-100"
                       }`}
                   >
                     {suggestion}
@@ -569,8 +569,8 @@ const ProjectEdit = ({ project, onCancel }) => {
               <span
                 key={index}
                 className={`px-3 py-1 rounded-full text-sm flex items-center ${theme === "dark"
-                    ? "bg-blue-600 text-white"
-                    : "bg-blue-100 text-blue-600"
+                    ? "bg-brand-600 text-white"
+                    : "bg-brand-100 text-brand-600"
                   }`}
               >
                 {skill}
@@ -601,7 +601,7 @@ const ProjectEdit = ({ project, onCancel }) => {
             min="1"
             value={editedProject?.maxGroups || ""}
             onChange={handleInputChange}
-            className={`w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 ${theme === "dark"
+            className={`w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-all duration-300 ${theme === "dark"
                 ? "bg-gray-800 text-white border-gray-700"
                 : "bg-white text-gray-900 border-gray-300"
               }`}
@@ -619,7 +619,7 @@ const ProjectEdit = ({ project, onCancel }) => {
             name="industryName"
             value={editedProject?.industryName || ""}
             onChange={handleInputChange}
-            className={`w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 ${theme === "dark"
+            className={`w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-all duration-300 ${theme === "dark"
                 ? "bg-gray-800 text-white border-gray-700"
                 : "bg-white text-gray-900 border-gray-300"
               }`}
@@ -648,7 +648,7 @@ const ProjectEdit = ({ project, onCancel }) => {
             name="maxStudentsPerGroup"
             value={editedProject?.maxStudentsPerGroup || ""}
             onChange={handleInputChange}
-            className={`w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 ${theme === "dark"
+            className={`w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-all duration-300 ${theme === "dark"
                 ? "bg-gray-800 text-white border-gray-700"
                 : "bg-white text-gray-900 border-gray-300"
               }`}
@@ -676,7 +676,7 @@ const ProjectEdit = ({ project, onCancel }) => {
             name="durationStartDate"
             value={editedProject?.duration?.startDate || ""}
             onChange={handleInputChange}
-            className={`w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 ${theme === "dark"
+            className={`w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-all duration-300 ${theme === "dark"
                 ? "bg-gray-800 text-white border-gray-700"
                 : "bg-white text-gray-900 border-gray-300"
               }`}
@@ -695,7 +695,7 @@ const ProjectEdit = ({ project, onCancel }) => {
             name="durationEndDate"
             value={editedProject?.duration?.endDate || ""}
             onChange={handleInputChange}
-            className={`w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 ${theme === "dark"
+            className={`w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-all duration-300 ${theme === "dark"
                 ? "bg-gray-800 text-white border-gray-700"
                 : "bg-white text-gray-900 border-gray-300"
               }`}
@@ -715,7 +715,7 @@ const ProjectEdit = ({ project, onCancel }) => {
           name="additionalInfo"
           value={editedProject?.additionalInfo || ""}
           onChange={handleInputChange}
-          className={`w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 resize-none ${theme === "dark"
+          className={`w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-all duration-300 resize-none ${theme === "dark"
               ? "bg-gray-800 text-white border-gray-700"
               : "bg-white text-gray-900 border-gray-300"
             }`}
@@ -759,7 +759,7 @@ const ProjectEdit = ({ project, onCancel }) => {
                       }`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`${theme === "dark" ? "text-blue-400" : "text-blue-600"
+                    className={`${theme === "dark" ? "text-brand-400" : "text-brand-600"
                       } hover:underline`}
                   >
                     {attachment?.fileName || "Unknown File"}
@@ -847,8 +847,8 @@ const ProjectEdit = ({ project, onCancel }) => {
         <button
           onClick={() => setIsModalOpen(true)}
           className={`px-6 py-3 rounded-lg font-medium flex items-center gap-2 transition-all duration-300 ${theme === "dark"
-              ? "bg-blue-600 text-white hover:bg-blue-700"
-              : "bg-blue-500 text-white hover:bg-blue-600"
+              ? "bg-brand-600 text-white hover:bg-brand-700"
+              : "bg-brand-500 text-white hover:bg-brand-600"
             }`}
         >
           <Save /> Save Changes

@@ -363,8 +363,8 @@ const Chatbot = ({ isOpen, onClose, className }) => {
 
                     {/* Chat header */}
                     <div className={`p-3 sm:p-4 rounded-t-xl flex justify-between items-center ${theme === "dark"
-                        ? "bg-gradient-to-r from-indigo-800 to-purple-800"
-                        : "bg-gradient-to-r from-indigo-600 to-purple-600"
+                        ? "bg-gradient-to-r from-brand-700 to-accent-600"
+                        : "bg-gradient-to-r from-brand-500 to-accent-500"
                         } text-white`}>
                         <div className="flex items-center space-x-2">
                             <Bot size={18} className="text-white cursor-pointer" />
@@ -386,7 +386,7 @@ const Chatbot = ({ isOpen, onClose, className }) => {
                         {messages.length === 0 ? (
                             <div className={`flex flex-col items-center justify-center h-full text-center p-4 ${theme === "dark" ? "text-gray-300" : "text-gray-500"
                                 }`}>
-                                <Bot size={40} className="text-indigo-400 mb-3" />
+                                <Bot size={40} className="text-brand-400 mb-3" />
                                 <p className="font-medium text-sm sm:text-base">How can I help you today?</p>
                                 <p className="text-xs sm:text-sm mt-1">Ask me anything or upload images</p>
                             </div>
@@ -431,19 +431,19 @@ const Chatbot = ({ isOpen, onClose, className }) => {
                                         <div className={`flex w-full ${message.sender === 'user' ? 'justify-end' : 'justify-start'}`}>
                                             <div className={`flex-shrink-0 h-7 w-7 sm:h-8 sm:w-8 rounded-full flex items-center justify-center ${message.sender === 'user'
                                                 ? theme === "dark"
-                                                    ? "bg-indigo-900 text-indigo-300 ml-2"
-                                                    : "bg-indigo-100 text-indigo-600 ml-2"
+                                                    ? "bg-brand-900 text-brand-300 ml-2"
+                                                    : "bg-brand-100 text-brand-600 ml-2"
                                                 : theme === "dark"
-                                                    ? "bg-purple-900 text-purple-300 mr-2"
-                                                    : "bg-purple-100 text-purple-600 mr-2"
+                                                    ? "bg-brand-900 text-brand-300 mr-2"
+                                                    : "bg-brand-100 text-brand-600 mr-2"
                                                 }`}>
                                                 {message.sender === 'user' ? <User size={14} /> : <Bot size={14} />}
                                             </div>
                                             <div
                                                 className={`px-3 py-2 rounded-xl relative group/message max-w-[85%] sm:max-w-[90%] ${message.sender === 'user'
                                                     ? theme === "dark"
-                                                        ? "bg-indigo-800 text-indigo-50 rounded-tr-none"
-                                                        : "bg-indigo-600 text-white rounded-tr-none"
+                                                        ? "bg-brand-800 text-brand-50 rounded-tr-none"
+                                                        : "bg-brand-600 text-white rounded-tr-none"
                                                     : theme === "dark"
                                                         ? "bg-gray-700 text-gray-200 border border-gray-600 rounded-tl-none shadow-sm"
                                                         : "bg-white text-gray-800 border border-gray-200 rounded-tl-none shadow-sm"
@@ -480,7 +480,7 @@ const Chatbot = ({ isOpen, onClose, className }) => {
                                                                 })}
                                                             </div>
                                                         ) : (
-                                                            <p className={`text-xs sm:text-sm mb-2 ${theme === "dark" ? "text-indigo-100" : "text-white"
+                                                            <p className={`text-xs sm:text-sm mb-2 ${theme === "dark" ? "text-brand-100" : "text-white"
                                                                 }`}>{message.text}</p>
                                                         )}
 
@@ -489,8 +489,8 @@ const Chatbot = ({ isOpen, onClose, className }) => {
                                                                 <button
                                                                     onClick={() => copyToClipboard(message.text)}
                                                                     className={`cursor-pointer ${theme === "dark"
-                                                                        ? "text-gray-400 hover:text-indigo-400"
-                                                                        : "text-gray-500 hover:text-indigo-600"
+                                                                        ? "text-gray-400 hover:text-brand-400"
+                                                                        : "text-gray-500 hover:text-brand-600"
                                                                         }`}
                                                                     title="Copy"
                                                                 >
@@ -499,8 +499,8 @@ const Chatbot = ({ isOpen, onClose, className }) => {
                                                                 <button
                                                                     onClick={() => shareMessage(message.text)}
                                                                     className={`cursor-pointer ${theme === "dark"
-                                                                        ? "text-gray-400 hover:text-indigo-400"
-                                                                        : "text-gray-500 hover:text-indigo-600"
+                                                                        ? "text-gray-400 hover:text-brand-400"
+                                                                        : "text-gray-500 hover:text-brand-600"
                                                                         }`}
                                                                     title="Share"
                                                                 >
@@ -578,12 +578,12 @@ const Chatbot = ({ isOpen, onClose, className }) => {
                     <div className={`p-2 sm:p-3 border-t ${theme === "dark" ? "border-gray-700 bg-gray-800" : "border-gray-200 bg-white"}`}>
 
                         <div className={`flex items-center rounded-lg border ${theme === "dark" ? "border-gray-600" : "border-gray-300"
-                            } focus-within:ring-2 focus-within:ring-indigo-500 focus-within:border-transparent transition-all`}>
+                            } focus-within:ring-2 focus-within:ring-brand-500 focus-within:border-transparent transition-all`}>
                             <button
                                 onClick={() => fileInputRef.current.click()}
                                 className={`p-1.5 sm:p-2 transition-colors cursor-pointer ${theme === "dark"
-                                    ? "text-gray-400 hover:text-indigo-400"
-                                    : "text-gray-500 hover:text-indigo-600"
+                                    ? "text-gray-400 hover:text-brand-400"
+                                    : "text-gray-500 hover:text-brand-600"
                                     }`}
                                 disabled={isLoading}
                             >
@@ -616,8 +616,8 @@ const Chatbot = ({ isOpen, onClose, className }) => {
                                         ? "text-gray-600"
                                         : "text-gray-400"
                                     : theme === "dark"
-                                        ? "text-indigo-400 hover:text-indigo-300"
-                                        : "text-indigo-600 hover:text-indigo-500"
+                                        ? "text-brand-400 hover:text-brand-300"
+                                        : "text-brand-600 hover:text-brand-500"
                                     }`}
                             >
                                 <Send size={16} />

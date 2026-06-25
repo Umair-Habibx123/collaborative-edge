@@ -38,6 +38,8 @@ import path from "path";
 import { fileURLToPath } from "url";
 import StudentSubmission from "./routes/studentSubmissionRoutes.js";
 import authMiddleware from './middleware/authMiddleware.js';
+import { applySecurity, apiLimiter, authLimiter } from './middleware/security.js';
+import { notFound, errorHandler } from './middleware/errorHandler.js';
 const { json: _json } = bodyParser;
 dotenv.config();
 
@@ -71,6 +73,12 @@ app.use(express.json({ limit: "50mb" }));
 app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
 app.use(cookieParser());
 
+// Baseline security: helmet headers, HPP protection, NoSQL-injection sanitization.
+applySecurity(app);
+
+// Throttle authentication endpoints harder than the rest of the API.
+app.use("/api/login", authLimiter);
+
 
 
 const __filename = fileURLToPath(import.meta.url);
@@ -86,7 +94,8 @@ app.get("/", (req, res) => {
 });
 
 
-// app.use(authMiddleware);
+// General rate limiting for all API traffic.
+app.use("/api", apiLimiter);
 
 app.use("/api", userRoutes);
 app.use("/api", industryRoutes);
@@ -134,6 +143,10 @@ app.get("/teacher/UniversityStats/:university", getUniversityTeacherStats);
 
 app.get("/success-stories", getSuccessStories);
 
+
+// 404 + centralized error handling — must be registered AFTER all routes.
+app.use(notFound);
+app.use(errorHandler);
 
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

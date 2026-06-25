@@ -17,7 +17,7 @@ const SuccessModal = ({ theme, isOpen, onClose }) => {
                         onClose(); // Call the onClose function
                         window.location.reload(); // Reload the page
                     }}
-                    className={`mt-4 px-4 py-2 rounded-lg transition-all duration-300 ${theme === "dark" ? "bg-blue-600 text-white hover:bg-blue-700" : "bg-blue-500 text-white hover:bg-blue-600"}`}
+                    className={`mt-4 px-4 py-2 rounded-lg transition-all duration-300 ${theme === "dark" ? "bg-brand-600 text-white hover:bg-brand-700" : "bg-brand-500 text-white hover:bg-brand-600"}`}
                 >
                     OK
                 </button>

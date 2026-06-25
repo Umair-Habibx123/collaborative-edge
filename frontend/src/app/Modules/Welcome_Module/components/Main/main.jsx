@@ -40,19 +40,19 @@ const Main = () => {
             title: "Industry-Collaborated FYPs",
             //  or -> "Industry-Proposed FYPs" , "Industry-Linked FYPs", "Industry-Partnered FYPs" , "Industry-Suggested FYPs", "Real-World FYPs (Powered by Industry)"
             description: "Industry representatives upload Final Year Project (FYP) ideas to the portal, providing students with real-world challenges while bridging the gap between academia and industry.",
-            icon: <Handshake size={24} className="text-blue-600" />
+            icon: <Handshake size={24} className="text-brand-600" />
         },
         {
             image: image2,
             title: "Teacher Approval System",
             description: "University teachers review and approve project proposals from industry professionals, ensuring relevance, feasibility, and alignment with academic standards before students can claim them.",
-            icon: <ClipboardList size={24} className="text-blue-600" />
+            icon: <ClipboardList size={24} className="text-brand-600" />
         },
         {
             image: image3,
             title: "Student Project Claim & Tracking",
             description: "Once approved, students can claim FYPs and track their progress through the portal, allowing teachers and industry representatives to monitor and guide project development effectively.",
-            icon: <GraduationCap size={24} className="text-blue-600" />
+            icon: <GraduationCap size={24} className="text-brand-600" />
         },
     ];
 
@@ -69,10 +69,10 @@ const Main = () => {
                 >
                     <motion.div className="md:w-1/2" variants={fadeInLeft}>
                         <div className="flex items-center gap-3 mb-4">
-                            <Rocket size={24} className="text-blue-600" />
-                            <span className="text-blue-600 font-medium">Our Purpose</span>
+                            <Rocket size={24} className="text-brand-600" />
+                            <span className="text-brand-600 font-medium">Our Purpose</span>
                         </div>
-                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gradient-brand leading-tight">
                             Our Mission & Vision
                         </h2>
                     </motion.div>
@@ -80,7 +80,7 @@ const Main = () => {
                         <p className="text-lg text-gray-700 leading-relaxed">
                             At Collaborative Edge, our mission is to revolutionize the Final Year Project (FYP) experience by bridging the gap between academia and industry. We provide a seamless platform where students, educators, and industry professionals can collaborate on innovative, real-world projects.
                         </p>
-                        <div className="mt-6 p-6 bg-blue-50 rounded-xl border border-blue-100">
+                        <div className="mt-6 p-6 bg-brand-50 rounded-xl border border-brand-100">
                             <p className="text-gray-700">
                                 Our vision is to create a dynamic ecosystem that fosters impactful solutions, prepares students for professional challenges, and drives growth for both educational institutions and industries.
                             </p>
@@ -100,10 +100,10 @@ const Main = () => {
                 >
                     <motion.div className="md:w-1/2" variants={fadeInLeft}>
                         <div className="flex items-center gap-3 mb-4">
-                            <Lightbulb size={24} className="text-blue-600" />
-                            <span className="text-blue-600 font-medium">Innovation</span>
+                            <Lightbulb size={24} className="text-brand-600" />
+                            <span className="text-brand-600 font-medium">Innovation</span>
                         </div>
-                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gradient-brand leading-tight">
                             Transform Collaboration & Explore Innovative Ideas
                         </h2>
                     </motion.div>
@@ -157,7 +157,7 @@ const Main = () => {
                                 <motion.button
                                     whileHover={{ scale: 1.05 }}
                                     whileTap={{ scale: 0.95 }}
-                                    className="cursor-pointer flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium transition-colors"
+                                    className="cursor-pointer flex items-center gap-2 text-brand-600 hover:text-brand-700 font-medium transition-colors"
                                 >
                                     <Link to="/how-it-works">
                                         Learn more
@@ -184,8 +184,8 @@ const Main = () => {
                     >
                         <motion.div className="lg:w-1/2" variants={fadeInLeft}>
                             <div className="flex items-center gap-3 mb-4">
-                                <BookOpen size={24} className="text-blue-400" />
-                                <span className="text-blue-400 font-medium">Academic Oversight</span>
+                                <BookOpen size={24} className="text-brand-400" />
+                                <span className="text-brand-400 font-medium">Academic Oversight</span>
                             </div>
                             <h2 className="text-3xl md:text-4xl font-bold mb-6">
                                 Guiding Project Approvals and Standards
@@ -196,7 +196,7 @@ const Main = () => {
                             <motion.button
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
-                                className="flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg font-medium transition-colors"
+                                className="flex items-center gap-2 px-6 py-3 bg-gradient-brand shadow-glow hover:brightness-110 rounded-lg font-medium transition-colors"
                             >
                                 <Link to="/how-it-works">
                                     Learn more
@@ -244,8 +244,8 @@ const Main = () => {
                         </motion.div>
                         <motion.div className="lg:w-1/2 order-1 lg:order-2" variants={fadeInRight}>
                             <div className="flex items-center gap-3 mb-4">
-                                <GraduationCap size={24} className="text-blue-600" />
-                                <span className="text-blue-600 font-medium">Student Success</span>
+                                <GraduationCap size={24} className="text-brand-600" />
+                                <span className="text-brand-600 font-medium">Student Success</span>
                             </div>
                             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
                                 Empowering Students in Project Selection
@@ -289,8 +289,8 @@ const Main = () => {
                     >
                         <motion.div className="lg:w-1/2" variants={fadeInLeft}>
                             <div className="flex items-center gap-3 mb-4">
-                                <Users size={24} className="text-blue-600" />
-                                <span className="text-blue-600 font-medium">Partnership</span>
+                                <Users size={24} className="text-brand-600" />
+                                <span className="text-brand-600 font-medium">Partnership</span>
                             </div>
                             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
                                 Strengthening Industry-Academia Collaboration

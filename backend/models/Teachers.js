@@ -29,6 +29,9 @@ TeacherSchema.pre('save', function (next) {
     next();
 });
 
+TeacherSchema.index({ university: 1 });
+TeacherSchema.index({ verified: 1 });
+
 const Teacher = model("Teacher", TeacherSchema);
 
 export default Teacher;

@@ -257,7 +257,7 @@ const ProjectDetail = () => {
                     <p className="text-lg mb-6">You must be logged in to view this content.</p>
                     <button
                         onClick={() => navigate('/login')}
-                        className={`px-6 py-3 ${theme === "dark" ? "bg-gradient-to-r from-blue-600 to-blue-700" : "bg-gradient-to-r from-blue-500 to-blue-600"} text-white rounded-lg hover:from-blue-600 hover:to-blue-700 transition-all duration-300 shadow-lg font-semibold flex items-center justify-center mx-auto`}
+                        className={`px-6 py-3 ${theme === "dark" ? "bg-gradient-to-r from-brand-600 to-brand-700" : "bg-gradient-to-r from-brand-500 to-brand-600"} text-white rounded-lg hover:from-brand-600 hover:to-brand-700 transition-all duration-300 shadow-lg font-semibold flex items-center justify-center mx-auto`}
                     >
                         <LogIn className="w-5 h-5 mr-2" />
                         Log In
@@ -299,7 +299,7 @@ const ProjectDetail = () => {
             >
                 {/* Scroll Indicator - Positioned at the bottom of the header */}
                 <motion.div
-                    className="absolute bottom-0 left-0 w-full h-1.5 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full"
+                    className="absolute bottom-0 left-0 w-full h-1.5 bg-gradient-to-r from-brand-500 via-brand-500 to-pink-500 rounded-full"
                     style={{ scaleX: scrollYProgress }}
                 />
 
@@ -355,10 +355,10 @@ const ProjectDetail = () => {
                                     className={`p-3 rounded-xl ${theme === "dark"
                                             ? hasPendingEditRequest || hasPendingDeleteRequest
                                                 ? "bg-gray-700 text-gray-400"
-                                                : "bg-blue-700 text-gray-300 hover:bg-blue-600"
+                                                : "bg-brand-700 text-gray-300 hover:bg-brand-600"
                                             : hasPendingEditRequest || hasPendingDeleteRequest
                                                 ? "bg-gray-200 text-gray-400"
-                                                : "bg-blue-200 text-blue-600 hover:bg-blue-300"
+                                                : "bg-brand-200 text-brand-600 hover:bg-brand-300"
                                         } flex items-center ${hasPendingEditRequest || hasPendingDeleteRequest ? "cursor-not-allowed" : ""}`}
                                 >
                                     <Send size={20} />
@@ -405,10 +405,10 @@ const ProjectDetail = () => {
                                         className={`p-3 rounded-xl flex items-center ${theme === "dark"
                                                 ? hasPendingEditRequest || hasPendingDeleteRequest
                                                     ? "bg-gray-700 text-gray-400 cursor-not-allowed"
-                                                    : "bg-blue-700 text-gray-300 hover:bg-blue-600"
+                                                    : "bg-brand-700 text-gray-300 hover:bg-brand-600"
                                                 : hasPendingEditRequest || hasPendingDeleteRequest
                                                     ? "bg-gray-200 text-gray-400 cursor-not-allowed"
-                                                    : "bg-blue-200 text-blue-600 hover:bg-blue-300"
+                                                    : "bg-brand-200 text-brand-600 hover:bg-brand-300"
                                             }`}
                                     >
                                         <Send size={20} className="mr-2" />
@@ -435,7 +435,7 @@ const ProjectDetail = () => {
 
                 {/* Show info about pending requests */}
                 {(hasPendingEditRequest || hasPendingDeleteRequest) && (
-                    <div className={`mt-4 p-3 rounded-lg ${theme === "dark" ? "bg-blue-900/30 text-blue-200" : "bg-blue-100 text-blue-800"
+                    <div className={`mt-4 p-3 rounded-lg ${theme === "dark" ? "bg-brand-900/30 text-brand-200" : "bg-brand-100 text-brand-800"
                         }`}>
                         {hasPendingEditRequest && (
                             <p>You have a pending edit request for this project.</p>
@@ -646,7 +646,7 @@ const ProjectDetail = () => {
                             <button
                                 onClick={handleRequestEdit}
                                 disabled={loading}
-                                className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50"
+                                className="px-4 py-2 bg-brand-600 text-white rounded-lg hover:bg-brand-700 disabled:opacity-50"
                             >
                                 {loading ? "Submitting..." : "Submit Request"}
                             </button>

@@ -606,7 +606,7 @@ const ProfileSetting = ({ theme }) => {
             <ToastContainer />
 
             {/* Heading */}
-            <h2 className="text-3xl sm:text-4xl font-bold mb-8 text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-8 text-center bg-clip-text text-transparent bg-gradient-to-r from-brand-500 to-accent-500">
                 Profile Settings
             </h2>
 
@@ -641,7 +641,7 @@ const ProfileSetting = ({ theme }) => {
                             : "bg-white hover:bg-gray-100"
                             }`}
                     >
-                        <Edit className="text-blue-500" />
+                        <Edit className="text-brand-500" />
                     </label>
 
                     {/* Upload Button */}
@@ -650,8 +650,8 @@ const ProfileSetting = ({ theme }) => {
                             onClick={handleUploadImage}
                             disabled={isUploading}
                             className={`mt-4 px-6 py-2 rounded-lg flex items-center justify-center transition ${theme === "dark"
-                                ? "bg-blue-600 hover:bg-blue-700"
-                                : "bg-blue-500 hover:bg-blue-600"
+                                ? "bg-brand-600 hover:bg-brand-700"
+                                : "bg-brand-500 hover:bg-brand-600"
                                 } text-white`}
                         >
                             {isUploading ? (
@@ -709,7 +709,7 @@ const ProfileSetting = ({ theme }) => {
                                 : "bg-white hover:bg-gray-100"
                                 }`}
                         >
-                            <Edit className="text-blue-500" />
+                            <Edit className="text-brand-500" />
                         </button>
                     </div>
 
@@ -738,7 +738,7 @@ const ProfileSetting = ({ theme }) => {
                                 : "bg-white hover:bg-gray-100"
                                 }`}
                         >
-                            <Edit className="text-blue-500" />
+                            <Edit className="text-brand-500" />
                         </button>
                     </div>
 
@@ -749,8 +749,8 @@ const ProfileSetting = ({ theme }) => {
                                 onClick={handleBasicInfoSave}
                                 disabled={isSaving}
                                 className={`px-6 py-2 rounded-lg flex items-center justify-center transition ${theme === "dark"
-                                    ? "bg-blue-600 hover:bg-blue-700"
-                                    : "bg-blue-500 hover:bg-blue-600"
+                                    ? "bg-brand-600 hover:bg-brand-700"
+                                    : "bg-brand-500 hover:bg-brand-600"
                                     } text-white`}
                             >
                                 {isSaving ? (
@@ -803,7 +803,7 @@ const ProfileSetting = ({ theme }) => {
                         {/* Add New Industry Button */}
                         <button
                             onClick={addNewIndustry}
-                            className={`p-2 rounded-full ${theme === "dark" ? "bg-blue-800 hover:bg-blue-900 text-blue-400" : "bg-blue-100 hover:bg-blue-200 text-blue-600"} transition-colors`}
+                            className={`p-2 rounded-full ${theme === "dark" ? "bg-brand-800 hover:bg-brand-900 text-brand-400" : "bg-brand-100 hover:bg-brand-200 text-brand-600"} transition-colors`}
                             title="Add New Industry"
                         >
                             <PlusCircle className="text-2xl" />
@@ -856,13 +856,13 @@ const ProfileSetting = ({ theme }) => {
 
                                     {/* Industry Details */}
                                     <p className={`text-xl font-semibold flex items-center gap-2 ${theme === "dark" ? "text-white" : "text-black"}`}>
-                                        <Building className="text-blue-500" /> {industry.name}
+                                        <Building className="text-brand-500" /> {industry.name}
                                     </p>
                                     <p className={`flex items-center gap-2 mt-2 ${theme === "dark" ? "text-gray-400" : "text-gray-700"}`}>
                                         <Globe className="text-gray-500" />
                                         <a
                                             href={industry.website}
-                                            className={`${theme === "dark" ? "text-blue-400 hover:underline" : "text-blue-600 hover:underline"}`}
+                                            className={`${theme === "dark" ? "text-brand-400 hover:underline" : "text-brand-600 hover:underline"}`}
                                             target="_blank"
                                             rel="noopener noreferrer"
                                         >
@@ -888,7 +888,7 @@ const ProfileSetting = ({ theme }) => {
                                                 className="group relative flex items-center gap-1 cursor-pointer"
                                                 title="View verification details"
                                             >
-                                                <Eye className={`text-lg ${theme === "dark" ? "text-blue-400" : "text-blue-600"}`} />
+                                                <Eye className={`text-lg ${theme === "dark" ? "text-brand-400" : "text-brand-600"}`} />
                                                 <span className={`text-xs ${theme === "dark" ? "text-gray-400" : "text-gray-600"}`}>Verified</span>
 
                                                 {/* Verification Details Tooltip */}

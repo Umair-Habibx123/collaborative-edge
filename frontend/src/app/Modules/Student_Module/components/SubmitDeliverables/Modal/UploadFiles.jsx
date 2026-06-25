@@ -89,12 +89,12 @@ const UploadFiles = ({ isOpen, onClose, title, name, email, theme, onSubmit, isS
                 <div className="mt-6">
                     <label className={`block text-sm font-medium ${textColor}`}>Upload Files</label>
                     <div
-                        className={`mt-2 border-dashed border-2 ${borderColor} rounded-lg p-6 text-center cursor-pointer hover:border-blue-500 transition-all duration-300`}
+                        className={`mt-2 border-dashed border-2 ${borderColor} rounded-lg p-6 text-center cursor-pointer hover:border-brand-500 transition-all duration-300`}
                         onClick={() => document.getElementById("file-upload").click()}
                     >
                         <UploadCloud className="w-8 h-8 mx-auto text-gray-400" />
                         <p className={`mt-2 text-sm ${textColor}`}>
-                            Drag & drop files or <span className="text-blue-500">browse</span>
+                            Drag & drop files or <span className="text-brand-500">browse</span>
                         </p>
                         <p className={`text-xs ${textColor}`}>Allowed Formats: ZIP, RAR, PDF, DOCX</p>
                         <input
@@ -142,7 +142,7 @@ const UploadFiles = ({ isOpen, onClose, title, name, email, theme, onSubmit, isS
                         value={comment}
                         onChange={(e) => setComment(e.target.value)}
                         placeholder="Add comments..."
-                        className={`resize-none mt-1 block w-full px-3 py-2 ${inputBgColor} ${inputTextColor} border ${borderColor} rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500`}
+                        className={`resize-none mt-1 block w-full px-3 py-2 ${inputBgColor} ${inputTextColor} border ${borderColor} rounded-md focus:ring-2 focus:ring-brand-500 focus:border-brand-500`}
                     />
                 </div>
 
@@ -157,7 +157,7 @@ const UploadFiles = ({ isOpen, onClose, title, name, email, theme, onSubmit, isS
                     <button
                         onClick={handleSave}
                         disabled={files.length === 0}
-                        className={`px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 ${files.length === 0 ? 'opacity-50 cursor-not-allowed' : ''}`}
+                        className={`px-4 py-2 bg-brand-500 text-white rounded-md hover:bg-brand-600 ${files.length === 0 ? 'opacity-50 cursor-not-allowed' : ''}`}
                     >
                         {isSubmitting ? (
                             <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">

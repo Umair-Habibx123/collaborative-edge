@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import Button from "../../../../ui/Button.jsx";
 import image1 from "../../../../../assets/images/banner1.webp";
 import image2 from "../../../../../assets/images/banner2.webp";
 import image3 from "../../../../../assets/images/banner3.webp";
@@ -100,23 +101,16 @@ const Hero = () => {
                                 transition={{ delay: 0.6 }}
                             >
                                 <Link to={slides[currentIndex].buttonLink}>
-                                    <motion.button
-                                        whileHover={{
-                                            scale: 1.05,
-                                            backgroundColor: "#ffffff",
-                                            color: "#000000",
-                                        }}
+                                    <Button
+                                        as={motion.button}
+                                        size="lg"
+                                        whileHover={{ scale: 1.05 }}
                                         whileTap={{ scale: 0.95 }}
-                                        className="cursor-pointer bg-transparent border-2 border-white text-white rounded-lg px-8 py-3 text-lg font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-white/20"
+                                        className="text-lg"
                                     >
-                                        <div className="flex items-center">
-                                            {slides[currentIndex].buttonText}
-                                            <span className="ml-2">
-                                                <ArrowRight size={16} />
-                                            </span>
-                                        </div>
-                                    </motion.button>
-
+                                        {slides[currentIndex].buttonText}
+                                        <ArrowRight size={18} />
+                                    </Button>
                                 </Link>
                             </motion.div>
                         </motion.div>

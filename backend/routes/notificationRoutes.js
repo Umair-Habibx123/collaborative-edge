@@ -5,6 +5,8 @@ import Project from "../models/Projects.js";
 import User from "../models/User.js";
 import TeacherSupervision from "../models/TeacherSupervision.js";
 import StudentSelection from "../models/StudentSelection.js";
+import { protect } from "../middleware/authMiddleware.js";
+router.use(protect);
 
 router.get("/notifications/user/:email", async (req, res) => {
   try {

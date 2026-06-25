@@ -51,7 +51,7 @@ const Footer = () => {
                                     className="text-2xl sm:text-3xl font-bold text-white tracking-tight"
                                     whileHover={{ scale: 1.02 }}
                                 >
-                                    <span className="bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent">
+                                    <span className="bg-gradient-to-r from-brand-500 to-cyan-400 bg-clip-text text-transparent">
                                         COLLABORATE
                                     </span>
                                     <span className="text-white">EDGE</span>
@@ -90,7 +90,7 @@ const Footer = () => {
                         >
                             <h3 className="text-lg font-semibold text-white mb-4 relative inline-block">
                                 Quick Links
-                                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full"></span>
+                                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-brand-500 to-cyan-400 rounded-full"></span>
                             </h3>
                             <ul className="space-y-3 flex flex-col items-center md:items-start w-full">
                                 {quickLinks.map((name, index) => (
@@ -103,7 +103,7 @@ const Footer = () => {
                                             to={`/${name.toLowerCase().replace(/ /g, '-')}`}
                                             className="text-gray-400 hover:text-white transition-colors flex items-center group text-sm sm:text-base"
                                         >
-                                            <span className="w-1.5 h-1.5 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full mr-3 transition-all group-hover:w-2 group-hover:h-2"></span>
+                                            <span className="w-1.5 h-1.5 bg-gradient-to-r from-brand-500 to-cyan-400 rounded-full mr-3 transition-all group-hover:w-2 group-hover:h-2"></span>
                                             {name}
                                         </Link>
                                     </motion.li>
@@ -120,7 +120,7 @@ const Footer = () => {
                         >
                             <h3 className="text-lg font-semibold text-white mb-4 relative inline-block">
                                 Contact Us
-                                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full"></span>
+                                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-brand-500 to-cyan-400 rounded-full"></span>
                             </h3>
                             <ul className="space-y-4">
                                 {contactInfo.map((contact, index) => (
@@ -134,7 +134,7 @@ const Footer = () => {
                                             }
                                         }}
                                     >
-                                        <div className="mt-0.5 text-blue-400 group-hover:text-cyan-300 transition-colors">
+                                        <div className="mt-0.5 text-brand-400 group-hover:text-cyan-300 transition-colors">
                                             {contact.icon}
                                         </div>
                                         <span className="text-gray-400 hover:text-white transition-colors cursor-pointer text-sm sm:text-base">
@@ -154,7 +154,7 @@ const Footer = () => {
                         >
                             <h3 className="text-lg font-semibold text-white mb-4 relative inline-block">
                                 Resouces
-                                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full"></span>
+                                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-brand-500 to-cyan-400 rounded-full"></span>
                             </h3>
                             <ul className="space-y-3 flex flex-col items-center md:items-start w-full">
                                 {resources.map((name, index) => (
@@ -167,7 +167,7 @@ const Footer = () => {
                                             to={`/${name.toLowerCase().replace(/ /g, '-')}`}
                                             className="text-gray-400 hover:text-white transition-colors flex items-center group text-sm sm:text-base"
                                         >
-                                            <span className="w-1.5 h-1.5 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full mr-3 transition-all group-hover:w-2 group-hover:h-2"></span>
+                                            <span className="w-1.5 h-1.5 bg-gradient-to-r from-brand-500 to-cyan-400 rounded-full mr-3 transition-all group-hover:w-2 group-hover:h-2"></span>
                                             {name}
                                         </Link>
                                     </motion.li>
@@ -216,18 +216,18 @@ const Footer = () => {
                         viewport={{ once: true }}
                         transition={{ duration: 0.8, delay: 0.2 }}
                     >
-                        <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-4 hover:from-gray-700 hover:to-gray-800 transition-all border border-gray-700 hover:border-blue-400/30 shadow-lg max-w-xs mx-auto md:ml-auto">
+                        <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-4 hover:from-gray-700 hover:to-gray-800 transition-all border border-gray-700 hover:border-brand-400/30 shadow-lg max-w-xs mx-auto md:ml-auto">
                             <div className="flex items-center gap-3 mb-3">
                                 <motion.div whileHover={{ rotate: 5, scale: 1.05 }}>
                                     <img
                                         src={developer.imageUrl}
                                         alt={developer.name}
-                                        className="w-10 h-10 rounded-full object-cover border-2 border-blue-400/80 shadow-md"
+                                        className="w-10 h-10 rounded-full object-cover border-2 border-brand-400/80 shadow-md"
                                     />
                                 </motion.div>
                                 <div>
                                     <h4 className="font-medium text-white text-sm">{developer.name}</h4>
-                                    <p className="text-xs bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                                    <p className="text-xs bg-gradient-to-r from-brand-400 to-cyan-400 bg-clip-text text-transparent">
                                         {developer.role}
                                     </p>
                                 </div>
@@ -237,7 +237,7 @@ const Footer = () => {
                                     href={developer.github}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="text-gray-300 hover:text-white bg-gray-700/50 p-1.5 rounded-lg transition-all hover:bg-gray-600 text-sm flex items-center border border-gray-600 hover:border-blue-400/30"
+                                    className="text-gray-300 hover:text-white bg-gray-700/50 p-1.5 rounded-lg transition-all hover:bg-gray-600 text-sm flex items-center border border-gray-600 hover:border-brand-400/30"
                                     whileHover={{ y: -2 }}
                                 >
                                     <Github size={16} className="mr-1" />
@@ -247,7 +247,7 @@ const Footer = () => {
                                     href={developer.linkedin}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="text-gray-300 hover:text-blue-400 bg-gray-700/50 p-1.5 rounded-lg transition-all hover:bg-gray-600 text-sm flex items-center border border-gray-600 hover:border-blue-400/30"
+                                    className="text-gray-300 hover:text-brand-400 bg-gray-700/50 p-1.5 rounded-lg transition-all hover:bg-gray-600 text-sm flex items-center border border-gray-600 hover:border-brand-400/30"
                                     whileHover={{ y: -2 }}
                                 >
                                     <Linkedin size={16} className="mr-1" />

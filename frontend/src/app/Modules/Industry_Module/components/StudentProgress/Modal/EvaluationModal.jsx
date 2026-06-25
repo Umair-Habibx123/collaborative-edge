@@ -79,7 +79,7 @@ const EvaluationModal = ({
                             <div className={`inline-flex items-center justify-center w-14 h-14 rounded-full mb-4 ${
                                 theme === 'dark' ? 'bg-gray-700' : 'bg-gray-100'
                             }`}>
-                                <ClipboardList className={`h-6 w-6 ${theme === 'dark' ? 'text-blue-400' : 'text-blue-500'}`} />
+                                <ClipboardList className={`h-6 w-6 ${theme === 'dark' ? 'text-brand-400' : 'text-brand-500'}`} />
                             </div>
                             <h2 className="text-2xl font-bold tracking-tight">Evaluate Submission</h2>
                             <p className={`mt-1 text-sm ${
@@ -152,8 +152,8 @@ const EvaluationModal = ({
                                         rows={4}
                                         className={`resize-none block w-full pl-10 pr-3 py-3 border-0 ${
                                             theme === 'dark' 
-                                                ? 'bg-gray-700 text-white placeholder-gray-400 focus:ring-2 focus:ring-blue-500/50' 
-                                                : 'bg-gray-50 text-gray-900 placeholder-gray-500 focus:ring-2 focus:ring-blue-400/50'
+                                                ? 'bg-gray-700 text-white placeholder-gray-400 focus:ring-2 focus:ring-brand-500/50' 
+                                                : 'bg-gray-50 text-gray-900 placeholder-gray-500 focus:ring-2 focus:ring-brand-400/50'
                                         } rounded-xl focus:outline-none transition-all duration-200`}
                                         placeholder="Provide detailed feedback..."
                                         value={comments}
@@ -189,8 +189,8 @@ const EvaluationModal = ({
                                     type="submit"
                                     className={`px-5 py-2.5 text-sm font-medium rounded-lg text-white transition-colors duration-200 ${
                                         theme === 'dark' 
-                                            ? 'bg-blue-600 hover:bg-blue-700' 
-                                            : 'bg-blue-500 hover:bg-blue-600'
+                                            ? 'bg-brand-600 hover:bg-brand-700' 
+                                            : 'bg-brand-500 hover:bg-brand-600'
                                     } flex items-center justify-center min-w-[120px] ${
                                         rating === 0 ? 'opacity-50 cursor-not-allowed' : ''
                                     }`}

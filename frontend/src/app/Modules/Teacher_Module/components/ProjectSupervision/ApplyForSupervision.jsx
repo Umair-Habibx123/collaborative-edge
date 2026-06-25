@@ -202,7 +202,7 @@ const ProjectSupervision = () => {
                     <p className="text-lg mb-6">You must be logged in to view this content.</p>
                     <button
                         onClick={() => navigate('/login')}
-                        className={`px-6 py-3 ${theme === "dark" ? "bg-gradient-to-r from-blue-600 to-blue-700" : "bg-gradient-to-r from-blue-500 to-blue-600"} text-white rounded-lg hover:from-blue-600 hover:to-blue-700 transition-all duration-300 shadow-lg font-semibold flex items-center justify-center mx-auto`}
+                        className={`px-6 py-3 ${theme === "dark" ? "bg-gradient-to-r from-brand-600 to-brand-700" : "bg-gradient-to-r from-brand-500 to-brand-600"} text-white rounded-lg hover:from-brand-600 hover:to-brand-700 transition-all duration-300 shadow-lg font-semibold flex items-center justify-center mx-auto`}
                     >
                         <LogIn className="w-5 h-5 mr-2" />
                         Log In
@@ -246,7 +246,7 @@ const ProjectSupervision = () => {
 
                 {/* Scroll Indicator - Positioned at the bottom of the header */}
                 <motion.div
-                    className="absolute bottom-0 left-0 w-full h-1.5 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full"
+                    className="absolute bottom-0 left-0 w-full h-1.5 bg-gradient-to-r from-brand-500 via-brand-500 to-pink-500 rounded-full"
                     style={{ scaleX: scrollYProgress }}
                 />
 
@@ -380,7 +380,7 @@ const ProjectSupervision = () => {
                         {approvedTeacher && (
                             <div className={`${theme === "dark" ? "bg-gray-800 text-gray-300" : "bg-white text-gray-900"} p-6 rounded-2xl shadow-lg transition-all duration-300 hover:shadow-xl`}>
                                 <p className="font-semibold text-lg mb-4 flex items-center space-x-2">
-                                    <UserCheck className="w-6 h-6 text-blue-500" />
+                                    <UserCheck className="w-6 h-6 text-brand-500" />
                                     <span>Approved Supervisor:</span>
                                 </p>
                                 <div className="flex items-center space-x-4">
@@ -388,10 +388,10 @@ const ProjectSupervision = () => {
                                         <img
                                             src={approvedTeacher.profilePic}
                                             alt={approvedTeacher.username}
-                                            className="w-14 h-14 rounded-full border-2 border-blue-500 shadow-md"
+                                            className="w-14 h-14 rounded-full border-2 border-brand-500 shadow-md"
                                         />
                                     ) : (
-                                        <div className="w-14 h-14 flex items-center justify-center rounded-full border-2 border-blue-500 shadow-md bg-gray-100 text-blue-500">
+                                        <div className="w-14 h-14 flex items-center justify-center rounded-full border-2 border-brand-500 shadow-md bg-gray-100 text-brand-500">
                                             <User className="w-7 h-7" />
                                         </div>
                                     )}
@@ -399,7 +399,7 @@ const ProjectSupervision = () => {
                                     <div>
                                         <p className="font-semibold text-xl">{approvedTeacher.username}</p>
                                         <p className="text-sm text-gray-500 flex items-center space-x-2">
-                                            <Mail className="w-4 h-4 text-blue-500" />
+                                            <Mail className="w-4 h-4 text-brand-500" />
                                             <span>{approvedTeacher.email}</span>
                                         </p>
                                     </div>
@@ -412,7 +412,7 @@ const ProjectSupervision = () => {
                             <div className={`${theme === "dark" ? "bg-gray-800 text-gray-300" : "bg-white text-gray-900"} p-6 rounded-2xl shadow-lg transition-all duration-300 hover:shadow-xl`}>
                                 <button
                                     onClick={handleApplyForSupervision}
-                                    className="px-6 py-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white font-semibold rounded-xl hover:from-blue-600 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl active:scale-95 flex items-center justify-center w-full space-x-2"
+                                    className="px-6 py-3 bg-gradient-to-r from-brand-500 to-brand-600 text-white font-semibold rounded-xl hover:from-brand-600 hover:to-brand-700 transition-all duration-300 shadow-lg hover:shadow-xl active:scale-95 flex items-center justify-center w-full space-x-2"
                                     disabled={loading}
                                 >
                                     {loading ? (
@@ -449,7 +449,7 @@ const ProjectSupervision = () => {
                                 </button>
                                 {comments && (
                                     <p className="mt-4 text-sm text-gray-500 flex items-center space-x-2">
-                                        <MessageCircle className="w-4 h-4 text-blue-500" />
+                                        <MessageCircle className="w-4 h-4 text-brand-500" />
                                         <span>Comments: {comments}</span>
                                     </p>
                                 )}
@@ -465,7 +465,7 @@ const ProjectSupervision = () => {
                                 </button>
                                 {comments && (
                                     <p className="mt-4 text-sm text-gray-500 flex items-center space-x-2">
-                                        <MessageCircle className="w-4 h-4 text-blue-500" />
+                                        <MessageCircle className="w-4 h-4 text-brand-500" />
                                         <span>Comments: {comments}</span>
                                     </p>
                                 )}

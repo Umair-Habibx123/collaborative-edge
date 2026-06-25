@@ -10,10 +10,13 @@ import Teacher from "../models/Teachers.js";
 import Student from "../models/Students.js"
 import { sendGroupSelectionNotification, sendGroupJoinNotification , sendRoleCompletionNotification  } from '../routes/notificationRoutes.js';
 
+import { protect } from "../middleware/authMiddleware.js";
+
 dotenv.config();
 
 const router = Router();
 router.use(cookieParser());
+router.use(protect);
 
 router.use((req, res, next) => {
     console.log(`[${new Date().toISOString()}] ${req.method} ${req.url}`);

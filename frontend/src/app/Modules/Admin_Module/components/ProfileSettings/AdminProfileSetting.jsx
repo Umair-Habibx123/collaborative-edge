@@ -248,7 +248,7 @@ const ProfileSetting = ({ theme }) => {
             <ToastContainer />
 
             {/* Heading */}
-            <h2 className="text-3xl sm:text-4xl font-bold mb-8 text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-8 text-center bg-clip-text text-transparent bg-gradient-to-r from-brand-500 to-accent-500">
                 Profile Settings
             </h2>
 
@@ -283,7 +283,7 @@ const ProfileSetting = ({ theme }) => {
                             : "bg-white hover:bg-gray-100"
                             }`}
                     >
-                        <Edit className="text-blue-500" />
+                        <Edit className="text-brand-500" />
                     </label>
 
                     {/* Upload Button */}
@@ -292,8 +292,8 @@ const ProfileSetting = ({ theme }) => {
                             onClick={handleUploadImage}
                             disabled={isUploading}
                             className={`mt-4 px-6 py-2 rounded-lg flex items-center justify-center transition ${theme === "dark"
-                                ? "bg-blue-600 hover:bg-blue-700"
-                                : "bg-blue-500 hover:bg-blue-600"
+                                ? "bg-brand-600 hover:bg-brand-700"
+                                : "bg-brand-500 hover:bg-brand-600"
                                 } text-white`}
                         >
                             {isUploading ? (
@@ -351,7 +351,7 @@ const ProfileSetting = ({ theme }) => {
                                 : "bg-white hover:bg-gray-100"
                                 }`}
                         >
-                            <Edit className="text-blue-500" />
+                            <Edit className="text-brand-500" />
                         </button>
                     </div>
 
@@ -380,7 +380,7 @@ const ProfileSetting = ({ theme }) => {
                                 : "bg-white hover:bg-gray-100"
                                 }`}
                         >
-                            <Edit className="text-blue-500" />
+                            <Edit className="text-brand-500" />
                         </button>
                     </div>
 
@@ -391,8 +391,8 @@ const ProfileSetting = ({ theme }) => {
                                 onClick={handleSave}
                                 disabled={isSaving}
                                 className={`px-6 py-2 rounded-lg flex items-center justify-center transition ${theme === "dark"
-                                    ? "bg-blue-600 hover:bg-blue-700"
-                                    : "bg-blue-500 hover:bg-blue-600"
+                                    ? "bg-brand-600 hover:bg-brand-700"
+                                    : "bg-brand-500 hover:bg-brand-600"
                                     } text-white`}
                             >
                                 {isSaving ? (
@@ -449,7 +449,7 @@ const ProfileSetting = ({ theme }) => {
                         <p className="text-gray-600">Industries saved successfully.</p>
                         <button
                             onClick={() => setShowSuccessModal(false)}
-                            className="mt-4 px-5 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+                            className="mt-4 px-5 py-2 bg-brand-600 text-white rounded-lg hover:bg-brand-700 transition"
                         >
                             OK
                         </button>

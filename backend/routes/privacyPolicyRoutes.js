@@ -1,5 +1,6 @@
 import { Router } from "express";
 import PrivacyPolicy from "../models/PrivacyPolicy.js";
+import { protect, authorize } from "../middleware/authMiddleware.js";
 
 const router = Router();
 
@@ -16,7 +17,7 @@ router.get("/get-privacy-policy", async (req, res) => {
     }
 });
 
-router.post("/post-privacy-policy", async (req, res) => {
+router.post("/post-privacy-policy", protect, authorize("admin"), async (req, res) => {
     try {
         const { lastUpdated, sections, role } = req.body;
 
@@ -33,7 +34,7 @@ router.post("/post-privacy-policy", async (req, res) => {
     }
 });
 
-router.put("/update-privacy-policy", async (req, res) => {
+router.put("/update-privacy-policy", protect, authorize("admin"), async (req, res) => {
     try {
         const { role, sections } = req.body;
         const updatedPolicy = await PrivacyPolicy.findOneAndUpdate(

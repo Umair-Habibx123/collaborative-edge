@@ -26,7 +26,7 @@ const ViewChanger = () => {
     return (
         <div
             id="SwitchView"
-            className="fixed bottom-4 left-1/2 transform -translate-x-1/2 flex items-center justify-between w-32 h-12 rounded-xl border-2 border-blue-500 bg-black p-2 cursor-pointer"
+            className="fixed bottom-4 left-1/2 transform -translate-x-1/2 flex items-center justify-between w-32 h-12 rounded-xl border-2 border-brand-500 bg-black p-2 cursor-pointer"
         >
             <div
                 className={`flex items-center justify-center w-1/2 h-full ${isDesktopView ? "opacity-100" : "opacity-50"

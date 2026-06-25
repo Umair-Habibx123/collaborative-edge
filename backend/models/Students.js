@@ -33,6 +33,9 @@ StudentSchema.pre('save', function (next) {
     next();
 });
 
+StudentSchema.index({ university: 1 });
+StudentSchema.index({ verified: 1 });
+
 const Student = model("Student", StudentSchema);
 
 export default Student;

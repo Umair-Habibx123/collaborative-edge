@@ -62,7 +62,7 @@ const EditApprovalModal = ({ isOpen, onClose, approval, onSubmit, theme }) => {
                     </button>
                     <button
                         onClick={handleSubmit}
-                        className={`px-4 py-2 bg-blue-500 text-white rounded-lg flex items-center justify-center transition-colors duration-300`}
+                        className={`px-4 py-2 bg-brand-500 text-white rounded-lg flex items-center justify-center transition-colors duration-300`}
                         disabled={loading} // Disable save button while loading
                     >
                         {loading ? (

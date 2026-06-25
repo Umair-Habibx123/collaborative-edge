@@ -5,10 +5,12 @@ import TeacherApproval from "../models/TeacherApproval.js";
 import Project from "../models/Projects.js";
 import Notifications from "../models/Notifications.js";
 
+import { protect } from "../middleware/authMiddleware.js";
 dotenv.config();
 
 const router = Router();
 router.use(cookieParser());
+router.use(protect);
 
 router.use((req, res, next) => {
   console.log(`[${new Date().toISOString()}] ${req.method} ${req.url}`);

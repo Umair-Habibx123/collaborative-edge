@@ -66,7 +66,7 @@ const Chatbot = () => {
             {isOpen && (
                 <div className="fixed bottom-20 right-5 w-80 h-[28rem] shadow-xl rounded-xl bg-white flex flex-col border border-gray-100 overflow-hidden transform transition-all duration-300 ease-in-out">
                     {/* Chat header */}
-                    <div className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white p-4 rounded-t-xl flex justify-between items-center">
+                    <div className="bg-gradient-to-r from-brand-500 to-accent-500 text-white p-4 rounded-t-xl flex justify-between items-center">
                         <div className="flex items-center space-x-2">
                             <Bot size={20} className="text-white" />
                             <h3 className="font-semibold text-sm">CollaborativeEdge AI</h3>
@@ -83,7 +83,7 @@ const Chatbot = () => {
                     <div className="flex-1 p-4 overflow-y-auto bg-gray-50">
                         {messages.length === 0 ? (
                             <div className="flex flex-col items-center justify-center h-full text-center">
-                                <Bot size={48} className="text-indigo-400 mb-3" />
+                                <Bot size={48} className="text-brand-400 mb-3" />
                                 <p className="text-gray-500 font-medium">How can I help you today?</p>
                                 <p className="text-gray-400 text-sm mt-1">Ask me anything about CollaborativeEdge</p>
                             </div>
@@ -95,12 +95,12 @@ const Chatbot = () => {
                                         className={`flex ${message.sender === 'user' ? 'justify-end' : 'justify-start'}`}
                                     >
                                         <div className={`flex max-w-xs lg:max-w-md ${message.sender === 'user' ? 'flex-row-reverse' : ''}`}>
-                                            <div className={`flex-shrink-0 h-8 w-8 rounded-full flex items-center justify-center ${message.sender === 'user' ? 'bg-indigo-100 text-indigo-600 ml-2' : 'bg-purple-100 text-purple-600 mr-2'}`}>
+                                            <div className={`flex-shrink-0 h-8 w-8 rounded-full flex items-center justify-center ${message.sender === 'user' ? 'bg-brand-100 text-brand-600 ml-2' : 'bg-brand-100 text-brand-600 mr-2'}`}>
                                                 {message.sender === 'user' ? <User size={16} /> : <Bot size={16} />}
                                             </div>
                                             <div 
                                                 className={`px-4 py-2 rounded-xl ${message.sender === 'user' 
-                                                    ? 'bg-indigo-600 text-white rounded-tr-none' 
+                                                    ? 'bg-brand-600 text-white rounded-tr-none' 
                                                     : 'bg-white text-gray-800 border border-gray-200 rounded-tl-none shadow-sm'}`}
                                             >
                                                 <p className="text-sm">{message.text}</p>
@@ -113,7 +113,7 @@ const Chatbot = () => {
                         {isLoading && (
                             <div className="flex justify-start">
                                 <div className="flex max-w-xs lg:max-w-md">
-                                    <div className="flex-shrink-0 h-8 w-8 rounded-full bg-purple-100 text-purple-600 mr-2 flex items-center justify-center">
+                                    <div className="flex-shrink-0 h-8 w-8 rounded-full bg-brand-100 text-brand-600 mr-2 flex items-center justify-center">
                                         <Bot size={16} />
                                     </div>
                                     <div className="bg-white text-gray-800 px-4 py-2 rounded-xl rounded-tl-none border border-gray-200 shadow-sm">
@@ -131,7 +131,7 @@ const Chatbot = () => {
                     
                     {/* Input area */}
                     <div className="p-3 border-t border-gray-200 bg-white">
-                        <div className="flex items-center rounded-lg border border-gray-300 focus-within:ring-2 focus-within:ring-indigo-500 focus-within:border-transparent transition-all">
+                        <div className="flex items-center rounded-lg border border-gray-300 focus-within:ring-2 focus-within:ring-brand-500 focus-within:border-transparent transition-all">
                             <input
                                 type="text"
                                 value={inputMessage}
@@ -146,7 +146,7 @@ const Chatbot = () => {
                                 disabled={isLoading || !inputMessage.trim()}
                                 className={`p-2 rounded-r-md transition-colors ${isLoading || !inputMessage.trim() 
                                     ? 'text-gray-400' 
-                                    : 'text-indigo-600 hover:text-indigo-700'}`}
+                                    : 'text-brand-600 hover:text-brand-700'}`}
                             >
                                 <Send size={18} />
                             </button>

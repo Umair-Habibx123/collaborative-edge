@@ -8,10 +8,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const mongoURI = process.env.MONGO_URI;
-const conn = mongoose.createConnection(mongoURI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+const conn = mongoose.createConnection(mongoURI);
 
 let gfs, gridFSBucket;
 conn.once("open", () => {

@@ -137,7 +137,7 @@ const ProjectManagement = ({ theme }) => {
       accessorKey: 'industryName',
       header: 'Industry',
       cell: ({ getValue }) => (
-        <span className={`px-2 py-1 text-xs rounded-full ${theme === 'dark' ? 'bg-purple-900 text-purple-200' : 'bg-purple-100 text-purple-800'}`}>
+        <span className={`px-2 py-1 text-xs rounded-full ${theme === 'dark' ? 'bg-brand-900 text-brand-200' : 'bg-brand-100 text-brand-800'}`}>
           {getValue()}
         </span>
       ),
@@ -147,7 +147,7 @@ const ProjectManagement = ({ theme }) => {
       accessorKey: 'projectType',
       header: 'Type',
       cell: ({ getValue }) => (
-        <span className={`px-2 py-1 text-xs rounded-full ${theme === 'dark' ? 'bg-blue-900 text-blue-200' : 'bg-blue-100 text-blue-800'}`}>
+        <span className={`px-2 py-1 text-xs rounded-full ${theme === 'dark' ? 'bg-brand-900 text-brand-200' : 'bg-brand-100 text-brand-800'}`}>
           {getValue()}
         </span>
       ),
@@ -280,11 +280,11 @@ const ProjectManagement = ({ theme }) => {
       <div className={`p-6 rounded-b-xl ${theme === "dark" ? "bg-gradient-to-r from-gray-800 to-gray-900" : "bg-gradient-to-r from-white to-gray-50"}`}>
         <div className="">
           <div className="flex items-center gap-4">
-            <div className={`p-3 rounded-xl ${theme === "dark" ? "bg-gray-700" : "bg-blue-50"}`}>
-              <GanttChartSquareIcon className="w-6 h-6 text-blue-500" />
+            <div className={`p-3 rounded-xl ${theme === "dark" ? "bg-gray-700" : "bg-brand-50"}`}>
+              <GanttChartSquareIcon className="w-6 h-6 text-brand-500" />
             </div>
             <div>
-              <h1 className="text-2xl sm:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">
+              <h1 className="text-2xl sm:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-brand-500 to-accent-500">
                 Project Management
               </h1>
               <p className={`text-sm flex items-center gap-1 ${theme === "dark" ? "text-gray-400" : "text-gray-600"}`}>
@@ -310,8 +310,8 @@ const ProjectManagement = ({ theme }) => {
                 type="text"
                 placeholder="Search projects..."
                 className={`pl-10 pr-10 py-2.5 w-full rounded-lg border ${theme === 'dark'
-                  ? 'bg-gray-700 border-gray-600 text-white focus:border-blue-500 focus:ring-blue-500'
-                  : 'bg-white border-gray-200 focus:border-blue-400 focus:ring-blue-400'}
+                  ? 'bg-gray-700 border-gray-600 text-white focus:border-brand-500 focus:ring-brand-500'
+                  : 'bg-white border-gray-200 focus:border-brand-400 focus:ring-brand-400'}
     focus:ring-1 focus:outline-none`}
                 value={globalFilter ?? ''}
                 onChange={e => setGlobalFilter(String(e.target.value))}
@@ -329,7 +329,7 @@ const ProjectManagement = ({ theme }) => {
             {/* Filter Toggle */}
             <button
               onClick={() => setShowFilters(!showFilters)}
-              className={`flex items-center gap-2 text-sm ${theme === 'dark' ? 'text-blue-400' : 'text-blue-600'}`}
+              className={`flex items-center gap-2 text-sm ${theme === 'dark' ? 'text-brand-400' : 'text-brand-600'}`}
             >
               <Filter className="w-4 h-4" />
               {showFilters ? 'Hide filters' : 'Show filters'}
@@ -615,7 +615,7 @@ const ProjectManagement = ({ theme }) => {
                                       <p className={`text-xs ${theme === 'dark' ? 'text-gray-400' : 'text-gray-500'}`}>Submissions</p>
                                       <p className="text-lg font-bold">{row.original.submissions ? row.original.submissions.length : 0}</p>
                                     </div>
-                                    <FileText className={`w-5 h-5 ${theme === 'dark' ? 'text-blue-400' : 'text-blue-500'}`} />
+                                    <FileText className={`w-5 h-5 ${theme === 'dark' ? 'text-brand-400' : 'text-brand-500'}`} />
                                   </div>
                                   <div className={`p-3 rounded-lg flex items-center justify-between ${theme === 'dark' ? 'bg-gray-600' : 'bg-gray-50'}`}>
                                     <div>
@@ -685,7 +685,7 @@ const ProjectManagement = ({ theme }) => {
                   <button
                     key={displayIndex}
                     className={`w-8 h-8 rounded-md text-sm ${table.getState().pagination.pageIndex === displayIndex
-                      ? `${theme === 'dark' ? 'bg-blue-600 text-white' : 'bg-blue-500 text-white'}`
+                      ? `${theme === 'dark' ? 'bg-brand-600 text-white' : 'bg-brand-500 text-white'}`
                       : `${theme === 'dark' ? 'hover:bg-gray-700' : 'hover:bg-gray-100'}`
                       }`}
                     onClick={() => table.setPageIndex(displayIndex)}

@@ -117,8 +117,8 @@ const StepTwo = ({ code, setCode, handleVerifyCode, loading, handleSendCode }) =
                         onPaste={handlePaste}
                         ref={(el) => (inputRefs.current[index] = el)}
                         className={`w-10 h-10 md:w-16 md:h-16 text-center text-lg md:text-2xl font-bold border-2 rounded-lg outline-none transition-all ${digit
-                            ? "border-purple-500 focus:border-purple-700 focus:ring-2 focus:ring-purple-300"
-                            : "border-gray-200 focus:border-purple-500 focus:ring-2 focus:ring-purple-300"
+                            ? "border-brand-500 focus:border-brand-700 focus:ring-2 focus:ring-brand-300"
+                            : "border-gray-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-300"
                             }`}
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -147,7 +147,7 @@ const StepTwo = ({ code, setCode, handleVerifyCode, loading, handleSendCode }) =
                         <button
                             onClick={handleResendClick}
                             disabled={resendLoading}
-                            className="text-purple-600 hover:text-purple-800 text-sm font-medium disabled:opacity-50"
+                            className="text-brand-600 hover:text-brand-800 text-sm font-medium disabled:opacity-50"
                         >
                             {resendLoading ? (
                                 <span className="flex items-center justify-center">
@@ -172,7 +172,7 @@ const StepTwo = ({ code, setCode, handleVerifyCode, loading, handleSendCode }) =
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.3 }}
                 >
-                    <svg className="animate-spin h-6 w-6 text-purple-600" viewBox="0 0 24 24">
+                    <svg className="animate-spin h-6 w-6 text-brand-600" viewBox="0 0 24 24">
                         <circle
                             className="opacity-25"
                             cx="12"
@@ -188,13 +188,13 @@ const StepTwo = ({ code, setCode, handleVerifyCode, loading, handleSendCode }) =
                             d="M4 12a8 8 0 018-8v4l3-3-3-3v4a8 8 0 00-8 8z"
                         />
                     </svg>
-                    <span className="ml-2 text-purple-600 text-sm font-semibold">Processing...</span>
+                    <span className="ml-2 text-brand-600 text-sm font-semibold">Processing...</span>
                 </motion.div>
             ) : (
                 <motion.button
                     onClick={handleVerifyCode}
                     className={`cursor-pointer w-full p-2 md:p-4 rounded-lg font-semibold text-sm transition-all ${code.length === 6
-                        ? "bg-purple-600 text-white hover:bg-purple-700 shadow-lg hover:shadow-purple-500/30"
+                        ? "bg-brand-600 text-white hover:bg-brand-700 shadow-lg hover:shadow-brand-500/30"
                         : "bg-gray-200 text-gray-500 cursor-not-allowed"
                         }`}
                     disabled={code.length !== 6 || loading}

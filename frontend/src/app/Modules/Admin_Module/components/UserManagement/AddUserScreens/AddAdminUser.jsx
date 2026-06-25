@@ -203,7 +203,7 @@ const AddAdminUser = () => {
                         <ArrowLeft />
                         <span>Back</span>
                     </button>
-                    <h1 className="w-full sm:w-10/12 text-center mb-4 sm:mb-0 p-4 text-3xl font-bold text-gradient bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
+                    <h1 className="w-full sm:w-10/12 text-center mb-4 sm:mb-0 p-4 text-3xl font-bold text-gradient bg-gradient-to-r from-brand-500 to-brand-600 bg-clip-text text-transparent">
                         Add New User
                     </h1>
                 </div>
@@ -240,8 +240,8 @@ const AddAdminUser = () => {
                                 type="submit"
                                 className={`w-full py-3 rounded-lg font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-xl 
                         ${theme === 'dark'
-                                        ? 'bg-gradient-to-r from-blue-600 to-purple-700 hover:from-blue-700 hover:to-purple-800 text-white'
-                                        : 'bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white'}`}
+                                        ? 'bg-gradient-to-r from-brand-600 to-brand-700 hover:from-brand-700 hover:to-brand-800 text-white'
+                                        : 'bg-gradient-to-r from-brand-500 to-brand-600 hover:from-brand-600 hover:to-brand-700 text-white'}`}
                             >
                                 Create User
                             </button>

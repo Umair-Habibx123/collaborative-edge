@@ -33,7 +33,7 @@ const RoleSelection = () => {
     ];
 
     return (
-        <div className="-mt-[70px] md:-mt-[90px] bg-gradient-to-b from-purple-900 to-purple-700 min-h-screen flex flex-col items-center justify-center px-6 py-12">
+        <div className="-mt-[70px] md:-mt-[90px] bg-gradient-to-b from-brand-900 to-brand-700 min-h-screen flex flex-col items-center justify-center px-6 py-12">
             <motion.h1 
                 className="text-white text-3xl sm:text-4xl font-bold mb-8 text-center"
                 initial={{ opacity: 0, y: -20 }}
@@ -65,7 +65,7 @@ const RoleSelection = () => {
                         className="bg-white p-8 rounded-2xl shadow-xl text-center transition-transform transform hover:shadow-2xl cursor-pointer"
                         onClick={() => navigate(role.link, { replace: true })}
                     >
-                        <div className="text-purple-700 mb-4">
+                        <div className="text-brand-700 mb-4">
                             {role.icon}
                         </div>
                         <h2 className="text-2xl font-semibold text-gray-900 mb-3">{role.title}</h2>

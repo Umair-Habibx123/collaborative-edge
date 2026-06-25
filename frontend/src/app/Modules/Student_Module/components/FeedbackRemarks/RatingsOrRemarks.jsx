@@ -143,7 +143,7 @@ const RatingsOrRemarks = () => {
             );
         } else if (status?.IndustryCompleted || status?.TeacherCompleted) {
             return (
-                <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200">
+                <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-brand-100 text-brand-800 dark:bg-brand-900 dark:text-brand-200">
                     <AlertCircle className="w-3 h-3 mr-1" />
                     Partially Completed
                 </span>
@@ -191,7 +191,7 @@ const RatingsOrRemarks = () => {
                 {/* Back button */}
                 <button
                     onClick={() => navigate(-1)}
-                    className={`flex items-center gap-2 px-4 py-2.5 rounded-lg transition-colors mb-6 ${theme === "dark" ? "text-blue-400 hover:bg-gray-800" : "text-blue-600 hover:bg-gray-100"} font-medium`}
+                    className={`flex items-center gap-2 px-4 py-2.5 rounded-lg transition-colors mb-6 ${theme === "dark" ? "text-brand-400 hover:bg-gray-800" : "text-brand-600 hover:bg-gray-100"} font-medium`}
                 >
                     <ChevronLeft className="w-5 h-5" />
                     Back to Dashboard
@@ -203,10 +203,10 @@ const RatingsOrRemarks = () => {
                         <div className="space-y-3">
                             <div className="flex items-center gap-3">
                                 <div className={`p-2 rounded-lg ${theme === "dark" ? "bg-gray-800" : "bg-white shadow-sm"}`}>
-                                    <ClipboardList className="w-6 h-6 text-blue-500" />
+                                    <ClipboardList className="w-6 h-6 text-brand-500" />
                                 </div>
                                 <div>
-                                    <h1 className="text-2xl md:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-blue-600">
+                                    <h1 className="text-2xl md:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-brand-500 to-brand-600">
                                         {projectDetails?.title}
                                     </h1>
                                     {selectionDetails?.studentSelection?.[0]?.status && (
@@ -249,8 +249,8 @@ const RatingsOrRemarks = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
                     <div className={`p-4 rounded-xl ${theme === "dark" ? "bg-gray-800" : "bg-white"} border ${theme === "dark" ? "border-gray-700" : "border-gray-200"}`}>
                         <div className="flex items-center gap-3">
-                            <div className={`p-2 rounded-lg ${theme === "dark" ? "bg-gray-700" : "bg-blue-50"}`}>
-                                <Calendar className="w-5 h-5 text-blue-500" />
+                            <div className={`p-2 rounded-lg ${theme === "dark" ? "bg-gray-700" : "bg-brand-50"}`}>
+                                <Calendar className="w-5 h-5 text-brand-500" />
                             </div>
                             <div>
                                 <p className={`text-sm ${theme === "dark" ? "text-gray-400" : "text-gray-500"}`}>Created</p>
@@ -263,8 +263,8 @@ const RatingsOrRemarks = () => {
 
                     <div className={`p-4 rounded-xl ${theme === "dark" ? "bg-gray-800" : "bg-white"} border ${theme === "dark" ? "border-gray-700" : "border-gray-200"}`}>
                         <div className="flex items-center gap-3">
-                            <div className={`p-2 rounded-lg ${theme === "dark" ? "bg-gray-700" : "bg-purple-50"}`}>
-                                <FileText className="w-5 h-5 text-purple-500" />
+                            <div className={`p-2 rounded-lg ${theme === "dark" ? "bg-gray-700" : "bg-brand-50"}`}>
+                                <FileText className="w-5 h-5 text-brand-500" />
                             </div>
                             <div>
                                 <p className={`text-sm ${theme === "dark" ? "text-gray-400" : "text-gray-500"}`}>Status</p>
@@ -313,7 +313,7 @@ const RatingsOrRemarks = () => {
                 {selectionDetails?.studentSelection?.[0]?.groupMembers && (
                     <div className={`rounded-xl p-6 mb-8 ${theme === "dark" ? "bg-gray-800" : "bg-white shadow-sm"} border ${theme === "dark" ? "border-gray-700" : "border-gray-200"}`}>
                         <div className="flex items-center gap-3 mb-6">
-                            <GraduationCap className="w-6 h-6 text-blue-500" />
+                            <GraduationCap className="w-6 h-6 text-brand-500" />
                             <h3 className="text-lg font-semibold">Team Members</h3>
                         </div>
 
@@ -340,7 +340,7 @@ const RatingsOrRemarks = () => {
                                             {member.email}
                                         </p>
                                         {selectionDetails.studentSelection[0].groupLeader === member.email && (
-                                            <span className="inline-flex items-center mt-1 px-2 py-0.5 rounded text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200">
+                                            <span className="inline-flex items-center mt-1 px-2 py-0.5 rounded text-xs font-medium bg-brand-100 text-brand-800 dark:bg-brand-900 dark:text-brand-200">
                                                 Team Leader
                                             </span>
                                         )}
@@ -354,7 +354,7 @@ const RatingsOrRemarks = () => {
                 {/* Project Timeline */}
                 <div className={`rounded-xl p-6 mb-8 ${theme === "dark" ? "bg-gray-800" : "bg-white shadow-sm"} border ${theme === "dark" ? "border-gray-700" : "border-gray-200"}`}>
                     <div className="flex items-center gap-3 mb-6">
-                        <Clock className="w-6 h-6 text-blue-500" />
+                        <Clock className="w-6 h-6 text-brand-500" />
                         <h3 className="text-lg font-semibold">Project Timeline</h3>
                     </div>
 
@@ -366,8 +366,8 @@ const RatingsOrRemarks = () => {
                         <div className="space-y-8">
                             {/* Start Date */}
                             <div className="relative pl-12">
-                                <div className={`absolute left-0 top-0 w-8 h-8 rounded-full flex items-center justify-center ${theme === "dark" ? "bg-blue-900" : "bg-blue-100"}`}>
-                                    <Bookmark className="w-4 h-4 text-blue-500" />
+                                <div className={`absolute left-0 top-0 w-8 h-8 rounded-full flex items-center justify-center ${theme === "dark" ? "bg-brand-900" : "bg-brand-100"}`}>
+                                    <Bookmark className="w-4 h-4 text-brand-500" />
                                 </div>
                                 <div>
                                     <h4 className="font-medium">Project Started</h4>
@@ -379,8 +379,8 @@ const RatingsOrRemarks = () => {
 
                             {/* Current Status */}
                             <div className="relative pl-12">
-                                <div className={`absolute left-0 top-0 w-8 h-8 rounded-full flex items-center justify-center ${theme === "dark" ? "bg-purple-900" : "bg-purple-100"}`}>
-                                    <GitBranch className="w-4 h-4 text-purple-500" />
+                                <div className={`absolute left-0 top-0 w-8 h-8 rounded-full flex items-center justify-center ${theme === "dark" ? "bg-brand-900" : "bg-brand-100"}`}>
+                                    <GitBranch className="w-4 h-4 text-brand-500" />
                                 </div>
                                 <div>
                                     <h4 className="font-medium">Current Status</h4>
@@ -417,8 +417,8 @@ const RatingsOrRemarks = () => {
                             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
                                 <div className="space-y-3">
                                     <div className="flex items-center gap-3">
-                                        <div className={`p-2 rounded-lg ${theme === "dark" ? "bg-gray-700" : "bg-blue-50"}`}>
-                                            <Award className="w-5 h-5 text-blue-500" />
+                                        <div className={`p-2 rounded-lg ${theme === "dark" ? "bg-gray-700" : "bg-brand-50"}`}>
+                                            <Award className="w-5 h-5 text-brand-500" />
                                         </div>
                                         <h2 className="text-xl font-semibold">Project Evaluation</h2>
                                     </div>
@@ -430,8 +430,8 @@ const RatingsOrRemarks = () => {
                                     </div>
                                 </div>
 
-                                <div className={`flex items-center gap-3 p-3 rounded-lg ${theme === "dark" ? "bg-gray-700" : "bg-blue-50"}`}>
-                                    <MessageSquare className="w-5 h-5 text-blue-500" />
+                                <div className={`flex items-center gap-3 p-3 rounded-lg ${theme === "dark" ? "bg-gray-700" : "bg-brand-50"}`}>
+                                    <MessageSquare className="w-5 h-5 text-brand-500" />
                                     <div>
                                         <span className="font-medium">Total Feedback:</span>
                                         <span className="ml-1">{reviewData.reviews.length}</span>
@@ -443,7 +443,7 @@ const RatingsOrRemarks = () => {
                         {/* Reviews section */}
                         <div className="space-y-4">
                             <div className="flex items-center gap-3 mb-4">
-                                <Layers className="w-5 h-5 text-blue-500" />
+                                <Layers className="w-5 h-5 text-brand-500" />
                                 <h3 className="text-lg font-semibold">Detailed Feedback</h3>
                             </div>
 
@@ -475,7 +475,7 @@ const RatingsOrRemarks = () => {
                                             </div>
                                         </div>
 
-                                        <div className={`mt-4 p-4 rounded-lg ${theme === "dark" ? "bg-gray-700/50" : "bg-blue-50"} border ${theme === "dark" ? "border-gray-700" : "border-blue-100"}`}>
+                                        <div className={`mt-4 p-4 rounded-lg ${theme === "dark" ? "bg-gray-700/50" : "bg-brand-50"} border ${theme === "dark" ? "border-gray-700" : "border-brand-100"}`}>
                                             <p className="whitespace-pre-line">{review.comments}</p>
                                         </div>
                                     </div>
@@ -485,7 +485,7 @@ const RatingsOrRemarks = () => {
                     </div>
                 ) : (
                     <div className={`p-8 rounded-xl text-center ${theme === "dark" ? "bg-gray-800 text-gray-400" : "bg-white shadow-sm text-gray-500"} border ${theme === "dark" ? "border-gray-700" : "border-gray-200"}`}>
-                        <div className="inline-flex items-center justify-center p-3 rounded-full bg-blue-50 text-blue-500 mb-4">
+                        <div className="inline-flex items-center justify-center p-3 rounded-full bg-brand-50 text-brand-500 mb-4">
                             <MessageSquare className="w-8 h-8" />
                         </div>
                         <h3 className="text-lg font-medium">Awaiting Evaluations</h3>

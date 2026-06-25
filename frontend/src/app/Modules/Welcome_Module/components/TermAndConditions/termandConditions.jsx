@@ -6,7 +6,7 @@ const TermsAndConditions = () => {
         {
             title: "Introduction",
             content: "Welcome to Collaborative Edge. These Terms and Conditions govern your use of our website and services. By accessing or using our platform, you agree to comply with these terms. If you do not agree, please do not use our services.",
-            icon: <FileText className="w-5 h-5 text-indigo-500" />
+            icon: <FileText className="w-5 h-5 text-brand-500" />
         },
         {
             title: "Definitions",
@@ -16,7 +16,7 @@ const TermsAndConditions = () => {
                 <span key="services-def"><strong>Services:</strong> Refers to the functionalities provided by Collaborative Edge, including project submissions, reviews, and communications.</span>,
                 <span key="content-def"><strong>Content:</strong> Refers to any information, text, graphics, or other materials uploaded or submitted by Users.</span>
             ],
-            icon: <BookOpen className="w-5 h-5 text-indigo-500" />
+            icon: <BookOpen className="w-5 h-5 text-brand-500" />
         },
         {
             title: "User Responsibilities",
@@ -26,32 +26,32 @@ const TermsAndConditions = () => {
                 "Maintain the confidentiality of their account credentials.",
                 "Use the Services only for lawful purposes and in accordance with these Terms."
             ],
-            icon: <Shield className="w-5 h-5 text-indigo-500" />
+            icon: <Shield className="w-5 h-5 text-brand-500" />
         },
         {
             title: "Intellectual Property",
             content: "All content and materials on the Collaborative Edge platform are the property of Collaborative Edge or its licensors. Users may not reproduce, distribute, or create derivative works without prior written consent.",
-            icon: <Edit className="w-5 h-5 text-indigo-500" />
+            icon: <Edit className="w-5 h-5 text-brand-500" />
         },
         {
             title: "Limitation of Liability",
             content: "Collaborative Edge shall not be liable for any indirect, incidental, or consequential damages arising from the use of our Services. Users agree to use the platform at their own risk.",
-            icon: <AlertCircle className="w-5 h-5 text-indigo-500" />
+            icon: <AlertCircle className="w-5 h-5 text-brand-500" />
         },
         {
             title: "Modifications",
             content: "Collaborative Edge reserves the right to modify these Terms at any time. Users will be notified of any changes, and continued use of the Services constitutes acceptance of the modified Terms.",
-            icon: <Edit className="w-5 h-5 text-indigo-500" />
+            icon: <Edit className="w-5 h-5 text-brand-500" />
         },
         {
             title: "Governing Law",
             content: "These Terms shall be governed by and construed in accordance with the laws of the jurisdiction in which Collaborative Edge operates.",
-            icon: <Scale className="w-5 h-5 text-indigo-500" />
+            icon: <Scale className="w-5 h-5 text-brand-500" />
         },
         {
             title: "Contact Information",
             content: "If you have any questions about these Terms, please contact us at support@Collaborative Edge.com.",
-            icon: <Mail className="w-5 h-5 text-indigo-500" />
+            icon: <Mail className="w-5 h-5 text-brand-500" />
         }
     ];
 
@@ -68,7 +68,7 @@ const TermsAndConditions = () => {
                     <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 mb-3">
                         Terms and Conditions
                     </h1>
-                    <div className="w-24 h-1.5 bg-indigo-500 mx-auto rounded-full" />
+                    <div className="w-24 h-1.5 bg-brand-500 mx-auto rounded-full" />
                 </motion.div>
 
                 {/* Content */}
@@ -85,13 +85,13 @@ const TermsAndConditions = () => {
                             >
                                 <div className="flex items-start gap-4">
                                     <div className="flex-shrink-0 mt-1">
-                                        <div className="w-10 h-10 rounded-full bg-indigo-50 flex items-center justify-center">
+                                        <div className="w-10 h-10 rounded-full bg-brand-50 flex items-center justify-center">
                                             {section.icon}
                                         </div>
                                     </div>
                                     <div className="flex-1">
                                         <h2 className="text-xl sm:text-2xl font-bold text-gray-800 mb-3 flex items-center gap-2">
-                                            <span className="text-indigo-600">{index + 1}.</span>
+                                            <span className="text-brand-600">{index + 1}.</span>
                                             {section.title}
                                         </h2>
                                         <div className="prose prose-indigo text-gray-600 max-w-none text-sm sm:text-base">
@@ -101,7 +101,7 @@ const TermsAndConditions = () => {
                                                     {section.listItems.map((item, itemIndex) => (
                                                         <li
                                                             key={itemIndex}
-                                                            className="relative before:absolute before:left-0 before:top-[0.6rem] before:h-1.5 before:w-1.5 before:rounded-full before:bg-indigo-300 pl-4"
+                                                            className="relative before:absolute before:left-0 before:top-[0.6rem] before:h-1.5 before:w-1.5 before:rounded-full before:bg-brand-300 pl-4"
                                                         >
                                                             {item}
                                                         </li>

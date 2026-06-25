@@ -3,7 +3,7 @@ import { CheckCircle, Bell, Mail, Lock, Home } from "lucide-react";
 
 const WaitingMessage = () => {
     return (
-        <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-50 to-purple-50 p-6 -mt-[70px] md:-mt-[90px]">
+        <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-brand-50 to-brand-50 p-6 -mt-[70px] md:-mt-[90px]">
             <motion.div
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -38,7 +38,7 @@ const WaitingMessage = () => {
                     className="mt-3 text-gray-600 text-lg"
                 >
                     Your account has been successfully created but is currently{" "}
-                    <strong className="text-indigo-600">pending approval</strong>.
+                    <strong className="text-brand-600">pending approval</strong>.
                 </motion.p>
 
                 {/* Notification Section */}
@@ -63,10 +63,10 @@ const WaitingMessage = () => {
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 1.2, duration: 0.5 }}
-                    className="mt-6 p-5 bg-blue-50 rounded-xl text-blue-800 border border-blue-200"
+                    className="mt-6 p-5 bg-brand-50 rounded-xl text-brand-800 border border-brand-200"
                 >
                     <p className="flex items-center justify-center space-x-2">
-                        <Lock className="w-5 h-5 text-blue-600" />
+                        <Lock className="w-5 h-5 text-brand-600" />
                         <span>No worries about your password! We will send you a reminder email if needed.</span>
                     </p>
                 </motion.div>
@@ -87,7 +87,7 @@ const WaitingMessage = () => {
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 2, duration: 0.5 }}
-                    className="inline-flex items-center justify-center bg-indigo-600 text-white py-3 px-6 my-6 rounded-lg font-semibold text-lg hover:bg-indigo-700 transition duration-300 ease-in-out shadow-lg hover:shadow-xl"
+                    className="inline-flex items-center justify-center bg-brand-600 text-white py-3 px-6 my-6 rounded-lg font-semibold text-lg hover:bg-brand-700 transition duration-300 ease-in-out shadow-lg hover:shadow-xl"
                 >
                     <Home className="w-5 h-5 mr-2" /> Take me Home
                 </motion.a>

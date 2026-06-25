@@ -3,10 +3,12 @@ import cookieParser from "cookie-parser";
 import StudentSubmission from "../models/StudentSubmission.js";
 import {  sendSubmissionNotification  } from "../routes/notificationRoutes.js"
 import dotenv from 'dotenv';
+import { protect } from "../middleware/authMiddleware.js";
 dotenv.config();
 
 const router = Router();
 router.use(cookieParser());
+router.use(protect);
 
 
 router.use((req, res, next) => {

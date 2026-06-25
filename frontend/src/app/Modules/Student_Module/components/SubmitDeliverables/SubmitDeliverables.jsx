@@ -270,7 +270,7 @@ const SubmitDeliverables = () => {
                     <p className="text-lg mb-6">You must be logged in to view this content.</p>
                     <button
                         onClick={() => navigate('/login')}
-                        className={`px-6 py-3 ${theme === "dark" ? "bg-gradient-to-r from-blue-600 to-blue-700" : "bg-gradient-to-r from-blue-500 to-blue-600"} text-white rounded-lg hover:from-blue-600 hover:to-blue-700 transition-all duration-300 shadow-lg font-semibold flex items-center justify-center mx-auto`}
+                        className={`px-6 py-3 ${theme === "dark" ? "bg-gradient-to-r from-brand-600 to-brand-700" : "bg-gradient-to-r from-brand-500 to-brand-600"} text-white rounded-lg hover:from-brand-600 hover:to-brand-700 transition-all duration-300 shadow-lg font-semibold flex items-center justify-center mx-auto`}
                     >
                         <LogIn className="w-5 h-5 mr-2" />
                         Log In
@@ -311,7 +311,7 @@ ${theme === "dark" ? "bg-gray-900 text-gray-100 border-gray-700" : "bg-white tex
             >
                 {/* Scroll Indicator */}
                 <motion.div
-                    className="absolute bottom-0 left-0 w-full h-1.5 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full"
+                    className="absolute bottom-0 left-0 w-full h-1.5 bg-gradient-to-r from-brand-500 via-brand-500 to-pink-500 rounded-full"
                     style={{ scaleX: scrollYProgress }}
                 />
 
@@ -340,7 +340,7 @@ ${theme === "dark" ? "bg-gray-900 text-gray-100 border-gray-700" : "bg-white tex
                     <button
                         className={`w-full sm:w-auto px-6 py-3 font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl active:scale-95 flex items-center justify-center space-x-2 ${isProjectExpired(project.duration.endDate)
                             ? "bg-gray-400 text-gray-700 cursor-not-allowed"
-                            : "bg-gradient-to-r from-blue-500 to-blue-600 text-white hover:from-blue-600 hover:to-blue-700 cursor-pointer"
+                            : "bg-gradient-to-r from-brand-500 to-brand-600 text-white hover:from-brand-600 hover:to-brand-700 cursor-pointer"
                             }`}
                         onClick={!isProjectExpired(project.duration.endDate) ? handleSubmitClick : undefined}
                         disabled={isProjectExpired(project.duration.endDate)}
@@ -366,7 +366,7 @@ ${theme === "dark" ? "bg-gray-900 text-gray-100 border-gray-700" : "bg-white tex
                     <p>The end date was {new Date(project.duration.endDate).toLocaleDateString()}.</p>
                     {(!selectionDetails?.status?.isCompleted) && selectionDetails?.groupLeader?.email === user.email && (
                         <button
-                            className={`m-2 px-4 py-2 rounded-md ${theme === "dark" ? "bg-blue-600 hover:bg-blue-700" : "bg-blue-500 hover:bg-blue-600"} text-white`}
+                            className={`m-2 px-4 py-2 rounded-md ${theme === "dark" ? "bg-brand-600 hover:bg-brand-700" : "bg-brand-500 hover:bg-brand-600"} text-white`}
                         >
                             Apply for Extend Date
                         </button>
@@ -384,7 +384,7 @@ ${theme === "dark" ? "bg-gray-900 text-gray-100 border-gray-700" : "bg-white tex
                             {!hasPendingExtensionRequest && (
                                 <button
                                     onClick={handleOpenExtensionModal}
-                                    className={`m-2 px-4 py-2 rounded-md ${theme === "dark" ? "bg-blue-600 hover:bg-blue-700" : "bg-blue-500 hover:bg-blue-600"} text-white`}
+                                    className={`m-2 px-4 py-2 rounded-md ${theme === "dark" ? "bg-brand-600 hover:bg-brand-700" : "bg-brand-500 hover:bg-brand-600"} text-white`}
                                 >
                                     Apply for Date Extension
                                 </button>
@@ -432,10 +432,10 @@ ${theme === "dark" ? "bg-gray-900 text-gray-100 border-gray-700" : "bg-white tex
                                         <span
                                             className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${theme === 'dark'
                                                 ? selectionDetails.status.IndustryCompleted
-                                                    ? 'bg-blue-800 text-blue-200'
+                                                    ? 'bg-brand-800 text-brand-200'
                                                     : 'bg-gray-700 text-gray-300'
                                                 : selectionDetails.status.IndustryCompleted
-                                                    ? 'bg-blue-100 text-blue-800'
+                                                    ? 'bg-brand-100 text-brand-800'
                                                     : 'bg-gray-100 text-gray-600'
                                                 }`}
                                         >
@@ -444,10 +444,10 @@ ${theme === "dark" ? "bg-gray-900 text-gray-100 border-gray-700" : "bg-white tex
                                         <span
                                             className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${theme === 'dark'
                                                 ? selectionDetails.status.TeacherCompleted
-                                                    ? 'bg-purple-800 text-purple-200'
+                                                    ? 'bg-brand-800 text-brand-200'
                                                     : 'bg-gray-700 text-gray-300'
                                                 : selectionDetails.status.TeacherCompleted
-                                                    ? 'bg-purple-100 text-purple-800'
+                                                    ? 'bg-brand-100 text-brand-800'
                                                     : 'bg-gray-100 text-gray-600'
                                                 }`}
                                         >
@@ -467,10 +467,10 @@ ${theme === "dark" ? "bg-gray-900 text-gray-100 border-gray-700" : "bg-white tex
                                             <span
                                                 className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${theme === 'dark'
                                                     ? selectionDetails.status.IndustryCompleted
-                                                        ? 'bg-blue-800 text-blue-200'
+                                                        ? 'bg-brand-800 text-brand-200'
                                                         : 'bg-gray-700 text-gray-300'
                                                     : selectionDetails.status.IndustryCompleted
-                                                        ? 'bg-blue-100 text-blue-800'
+                                                        ? 'bg-brand-100 text-brand-800'
                                                         : 'bg-gray-100 text-gray-600'
                                                     }`}
                                             >
@@ -479,10 +479,10 @@ ${theme === "dark" ? "bg-gray-900 text-gray-100 border-gray-700" : "bg-white tex
                                             <span
                                                 className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${theme === 'dark'
                                                     ? selectionDetails.status.TeacherCompleted
-                                                        ? 'bg-purple-800 text-purple-200'
+                                                        ? 'bg-brand-800 text-brand-200'
                                                         : 'bg-gray-700 text-gray-300'
                                                     : selectionDetails.status.TeacherCompleted
-                                                        ? 'bg-purple-100 text-purple-800'
+                                                        ? 'bg-brand-100 text-brand-800'
                                                         : 'bg-gray-100 text-gray-600'
                                                     }`}
                                             >
@@ -750,7 +750,7 @@ ${theme === "dark" ? "bg-gray-900 text-gray-100 border-gray-700" : "bg-white tex
 
                                     <button
                                         onClick={() => setIsCompletedModalOpen(false)}
-                                        className={`px-6 py-3 rounded-lg ${theme === "dark" ? "bg-blue-600 hover:bg-blue-700" : "bg-blue-500 hover:bg-blue-600"} text-white transition-colors duration-300`}
+                                        className={`px-6 py-3 rounded-lg ${theme === "dark" ? "bg-brand-600 hover:bg-brand-700" : "bg-brand-500 hover:bg-brand-600"} text-white transition-colors duration-300`}
                                     >
                                         Understood
                                     </button>
@@ -789,7 +789,7 @@ ${theme === "dark" ? "bg-gray-900 text-gray-100 border-gray-700" : "bg-white tex
                                         new Date().getTime(),
                                         new Date(project.duration.endDate).getTime()
                                     )).toISOString().split('T')[0]}
-                                    className={`w-full p-2.5 rounded-lg border focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition ${theme === "dark"
+                                    className={`w-full p-2.5 rounded-lg border focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition ${theme === "dark"
                                             ? "bg-gray-700 border-gray-600 text-white"
                                             : "bg-white border-gray-300 text-gray-900"
                                         }`}
@@ -804,7 +804,7 @@ ${theme === "dark" ? "bg-gray-900 text-gray-100 border-gray-700" : "bg-white tex
                                 <textarea
                                     value={extensionData.reason}
                                     onChange={(e) => setExtensionData({ ...extensionData, reason: e.target.value })}
-                                    className={`resize-none w-full p-2.5 rounded-lg border focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition ${theme === "dark"
+                                    className={`resize-none w-full p-2.5 rounded-lg border focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition ${theme === "dark"
                                             ? "bg-gray-700 border-gray-600 text-white"
                                             : "bg-white border-gray-300 text-gray-900"
                                         }`}
@@ -827,8 +827,8 @@ ${theme === "dark" ? "bg-gray-900 text-gray-100 border-gray-700" : "bg-white tex
                                     onClick={handleSubmitExtensionRequest}
                                     disabled={isSubmittingExtension || !extensionData.newEndDate || !extensionData.reason}
                                     className={`px-4 py-2 rounded-lg font-medium text-white transition ${isSubmittingExtension || !extensionData.newEndDate || !extensionData.reason
-                                            ? 'bg-blue-400 cursor-not-allowed'
-                                            : 'bg-blue-600 hover:bg-blue-700'
+                                            ? 'bg-brand-400 cursor-not-allowed'
+                                            : 'bg-brand-600 hover:bg-brand-700'
                                         }`}
                                 >
                                     {isSubmittingExtension ? (

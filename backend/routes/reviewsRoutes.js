@@ -7,10 +7,12 @@ import Student from "../models/Students.js";
 import mongoose from "mongoose";
 import dotenv from 'dotenv';
 import {  sendReviewNotification  } from "../routes/notificationRoutes.js"
+import { protect } from "../middleware/authMiddleware.js";
 dotenv.config();
 
 const router = Router();
 router.use(cookieParser());
+router.use(protect);
 
 
 router.use((req, res, next) => {

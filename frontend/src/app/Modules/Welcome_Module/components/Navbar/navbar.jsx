@@ -104,7 +104,7 @@ const Navbar = () => {
             initial={{ y: -50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5 }}
-            className={`fixed top-0 left-0 w-[100%] h-[70px] md:h-[90px] max-w-screen z-50 transition-all duration-300 ${isScrolled ? "bg-black text-white shadow-lg" : "bg-transparent text-white"} px-6 py-4 ${visible ? "translate-y-0" : "-translate-y-full"}`}
+            className={`fixed top-0 left-0 w-[100%] h-[70px] md:h-[90px] max-w-screen z-50 transition-all duration-300 ${isScrolled ? "bg-slate-900/80 backdrop-blur-xl text-white shadow-glow border-b border-white/10" : "bg-transparent text-white"} px-6 py-4 ${visible ? "translate-y-0" : "-translate-y-full"}`}
         >
             <div id="center" className="hidden xl:grid grid-cols-12 items-center justify-center w-full">
                 <motion.div className="col-span-3 flex items-center justify-end w-full max-w-screen-xl" initial={{ x: -50, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ delay: 0.2 }}>
@@ -121,9 +121,9 @@ const Navbar = () => {
                         return (
                             <motion.li
                                 key={index}
-                                className={`hover:text-blue-500 font-bold text-[16px] cursor-pointer transition px-2 relative ${isActive
-                                    ? "text-white bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg shadow-lg"
-                                    : "text-white"
+                                className={`font-bold text-[16px] cursor-pointer transition px-2 relative rounded-lg ${isActive
+                                    ? "text-white bg-gradient-brand shadow-glow"
+                                    : "text-white/90 hover:text-white hover:bg-white/10"
                                     }`}
                                 whileHover={{ scale: 1.1 }}
                             >
@@ -166,7 +166,7 @@ const Navbar = () => {
                         </div>
                     ) : (
                         <Link to="/welcome-aboard">
-                            <motion.button whileHover={{ scale: 1.1 }} className="neon-button rounded text-xl px-4 py-2  border-2 border-[#0ff] bg-transparent text-white font-bold uppercase cursor-pointer relative overflow-hidden transition-all duration-300 ease-in-out shadow-[0_0_10px_#0ff,0_0_40px_#0ff] hover:bg-[#0ff] hover:shadow-[10px_10px_20px_#0ff,0_0_50px_#0ff,0_0_100px_#0ff]">
+                            <motion.button whileHover={{ scale: 1.08 }} whileTap={{ scale: 0.95 }} className="bg-gradient-brand rounded-xl text-lg px-6 py-2.5 text-white font-bold uppercase tracking-wide cursor-pointer shadow-glow transition-all duration-300 hover:brightness-110">
                                 Get Started
                             </motion.button>
 
@@ -188,10 +188,10 @@ const Navbar = () => {
 
             <AnimatePresence>
                 {menuOpen && (
-                    <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} transition={{ duration: 0.3 }} className="absolute top-16 left-0 w-full bg-black text-white shadow-md xl:hidden">
+                    <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} transition={{ duration: 0.3 }} className="absolute top-16 left-0 w-full bg-slate-900/95 backdrop-blur-xl text-white shadow-glow border-b border-white/10 xl:hidden">
                         <ul className="flex flex-col space-y-4 text-center py-6">
                             {["About Us", "How It Works", "Project Ideas", "Success Stories", "Contact Us"].map((item, index) => (
-                                <motion.li key={index} className="hover:text-blue-500 cursor-pointer transition px-4" whileHover={{ scale: 1.1 }}>
+                                <motion.li key={index} className="hover:text-brand-500 cursor-pointer transition px-4" whileHover={{ scale: 1.1 }}>
                                     <Link to={`/${item.toLowerCase().replace(/ /g, "-")}`} onClick={() => setMenuOpen(false)}>{item}</Link>
                                 </motion.li>
                             ))}

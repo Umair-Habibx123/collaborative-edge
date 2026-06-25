@@ -1,3 +1,55 @@
 @import "tailwindcss";
 
-@theme {}
+/* Enable class-based dark mode: any element inside `.dark` gets dark: variants. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ------------------------------------------------------------------ */
+/* Collaborative Edge design tokens — vibrant / bold theme.            */
+/* Brand ramp = indigo → violet, with fuchsia + cyan accents.         */
+/* ------------------------------------------------------------------ */
+@theme {
+  --color-brand-50: #eef2ff;
+  --color-brand-100: #e0e7ff;
+  --color-brand-200: #c7d2fe;
+  --color-brand-300: #a5b4fc;
+  --color-brand-400: #818cf8;
+  --color-brand-500: #6366f1;
+  --color-brand-600: #4f46e5;
+  --color-brand-700: #4338ca;
+  --color-brand-800: #3730a3;
+  --color-brand-900: #312e81;
+
+  --color-accent-500: #d946ef; /* fuchsia */
+  --color-accent-600: #c026d3;
+  --color-cyan-glow: #22d3ee;
+
+  /* Signature gradients used across buttons, headings, hero. */
+  --gradient-brand: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #d946ef 100%);
+  --gradient-brand-soft: linear-gradient(135deg, #818cf8 0%, #c084fc 100%);
+  --gradient-hero: linear-gradient(120deg, #4f46e5 0%, #9333ea 45%, #db2777 100%);
+
+  --radius-card: 1rem;
+  --shadow-glow: 0 10px 40px -10px rgba(99, 102, 241, 0.5);
+}
+
+/* Reusable gradient helpers (work in both themes). */
+@layer utilities {
+  .bg-gradient-brand {
+    background-image: var(--gradient-brand);
+  }
+  .bg-gradient-brand-soft {
+    background-image: var(--gradient-brand-soft);
+  }
+  .bg-gradient-hero {
+    background-image: var(--gradient-hero);
+  }
+  .text-gradient-brand {
+    background-image: var(--gradient-brand);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+}

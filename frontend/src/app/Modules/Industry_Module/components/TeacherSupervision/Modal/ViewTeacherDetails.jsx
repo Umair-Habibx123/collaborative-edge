@@ -60,7 +60,7 @@ const ViewTeacherModal = ({ isOpen, onClose, userDetails, theme }) => {
                 )}
 
                 <div className="mt-6 flex justify-center">
-                    <button onClick={onClose} className="px-5 py-2.5 text-white rounded-lg bg-blue-600 hover:bg-blue-700 transition-all">
+                    <button onClick={onClose} className="px-5 py-2.5 text-white rounded-lg bg-brand-600 hover:bg-brand-700 transition-all">
                         Close
                     </button>
                 </div>

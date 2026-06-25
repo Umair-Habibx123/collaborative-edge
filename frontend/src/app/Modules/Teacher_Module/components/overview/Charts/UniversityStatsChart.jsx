@@ -257,7 +257,7 @@ const UniversityStatsChart = ({ data, theme }) => {
                 <button
                     onClick={() => setViewMode('supervision')}
                     className={`text-xs px-3 py-1 rounded-md flex items-center gap-1 ${viewMode === 'supervision' ? 
-                        (theme === "dark" ? "bg-gray-700 text-white" : "bg-blue-100 text-blue-600") : 
+                        (theme === "dark" ? "bg-gray-700 text-white" : "bg-brand-100 text-brand-600") : 
                         (theme === "dark" ? "bg-gray-800 text-gray-300" : "bg-gray-100 text-gray-600")}`}
                 >
                     <Award className="w-3 h-3" />
@@ -266,7 +266,7 @@ const UniversityStatsChart = ({ data, theme }) => {
                 <button
                     onClick={() => setViewMode('groups')}
                     className={`text-xs px-3 py-1 rounded-md flex items-center gap-1 ${viewMode === 'groups' ? 
-                        (theme === "dark" ? "bg-gray-700 text-white" : "bg-purple-100 text-purple-600") : 
+                        (theme === "dark" ? "bg-gray-700 text-white" : "bg-brand-100 text-brand-600") : 
                         (theme === "dark" ? "bg-gray-800 text-gray-300" : "bg-gray-100 text-gray-600")}`}
                 >
                     <Users className="w-3 h-3" />
@@ -342,7 +342,7 @@ const UniversityStatsChart = ({ data, theme }) => {
                 </div>
                 <div className={`flex items-center justify-between px-4 py-2 rounded-lg ${theme === "dark" ? "bg-gray-700" : "bg-gray-50"}`}>
                     <div className="flex items-center gap-2">
-                        <Award className="w-4 h-4 text-blue-500" />
+                        <Award className="w-4 h-4 text-brand-500" />
                         <span className={`text-sm ${theme === "dark" ? "text-gray-300" : "text-gray-600"}`}>
                             Success Rate
                         </span>
@@ -353,7 +353,7 @@ const UniversityStatsChart = ({ data, theme }) => {
                 </div>
                 <div className={`flex items-center justify-between px-4 py-2 rounded-lg ${theme === "dark" ? "bg-gray-700" : "bg-gray-50"}`}>
                     <div className="flex items-center gap-2">
-                        <Users className="w-4 h-4 text-purple-500" />
+                        <Users className="w-4 h-4 text-brand-500" />
                         <span className={`text-sm ${theme === "dark" ? "text-gray-300" : "text-gray-600"}`}>
                             Completion Rate
                         </span>

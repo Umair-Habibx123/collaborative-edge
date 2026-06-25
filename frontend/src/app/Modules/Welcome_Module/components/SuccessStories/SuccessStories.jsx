@@ -82,7 +82,7 @@ const SuccessStories = () => {
             <div className="flex justify-start items-center w-full mb-4">
               <button
                 onClick={handleBackClick}
-                className="cursor-pointer flex items-center gap-2 px-4 py-2 bg-gray-100 text-gray-700 hover:bg-indigo-100 hover:text-indigo-700 rounded-full shadow-sm transition duration-200"
+                className="cursor-pointer flex items-center gap-2 px-4 py-2 bg-gray-100 text-gray-700 hover:bg-brand-100 hover:text-brand-700 rounded-full shadow-sm transition duration-200"
               >
                 <ArrowLeft className="w-5 h-5 transition-transform group-hover:-translate-x-1" />
                 <span className="font-medium">Back to Success Stories</span>
@@ -106,7 +106,7 @@ const SuccessStories = () => {
                           </span>
                         )}
                       </div>
-                      <span className="inline-flex items-center bg-indigo-50 text-indigo-700 text-sm px-3 py-1 rounded-full">
+                      <span className="inline-flex items-center bg-brand-50 text-brand-700 text-sm px-3 py-1 rounded-full">
                         {selectedProject.project.projectType}
                       </span>
                     </div>
@@ -120,7 +120,7 @@ const SuccessStories = () => {
 
                   <div className="prose max-w-none text-gray-700">
                     <h2 className="text-xl font-semibold text-gray-800 mb-3 flex items-center gap-2">
-                      <Lightbulb className="w-5 h-5 text-indigo-500" />
+                      <Lightbulb className="w-5 h-5 text-brand-500" />
                       Project Description
                     </h2>
                     <p className="leading-relaxed">
@@ -131,7 +131,7 @@ const SuccessStories = () => {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-100 flex items-start gap-3">
-                    <div className="bg-indigo-50 p-2 rounded-lg text-gray-600">
+                    <div className="bg-brand-50 p-2 rounded-lg text-gray-600">
                       <Calendar className="w-5 h-5" />
                     </div>
                     <div>
@@ -168,7 +168,7 @@ const SuccessStories = () => {
                   </div>
 
                   <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-100 flex items-start gap-3">
-                    <div className="bg-purple-50 p-2 rounded-lg text-purple-600">
+                    <div className="bg-brand-50 p-2 rounded-lg text-brand-600">
                       <Users className="w-5 h-5" />
                     </div>
                     <div>
@@ -182,14 +182,14 @@ const SuccessStories = () => {
 
                 <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
                   <h2 className="text-xl font-semibold text-gray-800 mb-4 flex items-center gap-2">
-                    <Users className="w-5 h-5 text-indigo-500" />
+                    <Users className="w-5 h-5 text-brand-500" />
                     Team Members
                   </h2>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {selectedProject.studentGroup.members.map((member, index) => (
                       <div
                         key={index}
-                        className="flex items-center bg-gray-50 p-4 rounded-lg border border-gray-200 hover:border-indigo-200 transition-colors"
+                        className="flex items-center bg-gray-50 p-4 rounded-lg border border-gray-200 hover:border-brand-200 transition-colors"
                       >
                         <div className="relative">
                           <div className="w-12 h-12 rounded-full bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center mr-4 overflow-hidden">
@@ -219,14 +219,14 @@ const SuccessStories = () => {
 
                 <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
                   <h2 className="text-xl font-semibold text-gray-800 mb-4 flex items-center gap-2">
-                    <ShieldCheck className="w-5 h-5 text-indigo-500" />
+                    <ShieldCheck className="w-5 h-5 text-brand-500" />
                     Required Skills
                   </h2>
                   <div className="flex flex-wrap gap-2">
                     {selectedProject.project.requiredSkills.map((skill, index) => (
                       <span
                         key={index}
-                        className="inline-flex items-center bg-gray-50 px-3 py-1 rounded-full text-sm text-gray-700 border border-gray-200 hover:bg-indigo-50 hover:border-indigo-100 hover:text-indigo-700 transition-colors"
+                        className="inline-flex items-center bg-gray-50 px-3 py-1 rounded-full text-sm text-gray-700 border border-gray-200 hover:bg-brand-50 hover:border-brand-100 hover:text-brand-700 transition-colors"
                       >
                         {skill}
                       </span>
@@ -238,7 +238,7 @@ const SuccessStories = () => {
               <div className="space-y-6">
                 <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
                   <h3 className="text-lg font-semibold text-gray-800 mb-4 flex items-center gap-2">
-                    <UserRound className="w-5 h-5 text-indigo-500" />
+                    <UserRound className="w-5 h-5 text-brand-500" />
                     Supervisor
                   </h3>
                   <div className="flex items-start gap-4">
@@ -273,7 +273,7 @@ const SuccessStories = () => {
 
                 <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
                   <h3 className="text-lg font-semibold text-gray-800 mb-4 flex items-center gap-2">
-                    <Building2 className="w-5 h-5 text-indigo-500" />
+                    <Building2 className="w-5 h-5 text-brand-500" />
                     Industry Partner
                   </h3>
                   <div className="flex items-start gap-4 mb-4">
@@ -320,7 +320,7 @@ const SuccessStories = () => {
                           href={`https://${selectedProject.industry.website}`}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-indigo-600 hover:underline"
+                          className="text-brand-600 hover:underline"
                         >
                           {selectedProject.industry.website}
                         </a>
@@ -339,37 +339,37 @@ const SuccessStories = () => {
 
                 <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
                   <h3 className="text-lg font-semibold text-gray-800 mb-4 flex items-center gap-2">
-                    <Code className="w-5 h-5 text-indigo-500" />
+                    <Code className="w-5 h-5 text-brand-500" />
                     Project Resources
                   </h3>
                   <div className="space-y-3">
                     <a
                       href="#"
-                      className="flex items-center justify-between bg-gray-50 px-4 py-3 rounded-lg border border-gray-200 hover:border-indigo-300 hover:bg-indigo-50 transition-colors group"
+                      className="flex items-center justify-between bg-gray-50 px-4 py-3 rounded-lg border border-gray-200 hover:border-brand-300 hover:bg-brand-50 transition-colors group"
                     >
                       <div className="flex items-center">
                         <Github className="w-5 h-5 text-gray-700 mr-3 group-hover:text-gray-600" />
-                        <span className="font-medium text-gray-800 group-hover:text-indigo-700">Source Code</span>
+                        <span className="font-medium text-gray-800 group-hover:text-brand-700">Source Code</span>
                       </div>
                       <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-gray-600 group-hover:translate-x-1 transition-transform" />
                     </a>
                     <a
                       href="#"
-                      className="flex items-center justify-between bg-gray-50 px-4 py-3 rounded-lg border border-gray-200 hover:border-indigo-300 hover:bg-indigo-50 transition-colors group"
+                      className="flex items-center justify-between bg-gray-50 px-4 py-3 rounded-lg border border-gray-200 hover:border-brand-300 hover:bg-brand-50 transition-colors group"
                     >
                       <div className="flex items-center">
                         <ExternalLink className="w-5 h-5 text-gray-700 mr-3 group-hover:text-gray-600" />
-                        <span className="font-medium text-gray-800 group-hover:text-indigo-700">Live Demo</span>
+                        <span className="font-medium text-gray-800 group-hover:text-brand-700">Live Demo</span>
                       </div>
                       <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-gray-600 group-hover:translate-x-1 transition-transform" />
                     </a>
                     <a
                       href="#"
-                      className="flex items-center justify-between bg-gray-50 px-4 py-3 rounded-lg border border-gray-200 hover:border-indigo-300 hover:bg-indigo-50 transition-colors group"
+                      className="flex items-center justify-between bg-gray-50 px-4 py-3 rounded-lg border border-gray-200 hover:border-brand-300 hover:bg-brand-50 transition-colors group"
                     >
                       <div className="flex items-center">
                         <FileText className="w-5 h-5 text-gray-700 mr-3 group-hover:text-gray-600" />
-                        <span className="font-medium text-gray-800 group-hover:text-indigo-700">Documentation</span>
+                        <span className="font-medium text-gray-800 group-hover:text-brand-700">Documentation</span>
                       </div>
                       <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-gray-600 group-hover:translate-x-1 transition-transform" />
                     </a>
@@ -399,7 +399,7 @@ const SuccessStories = () => {
                   transition={{ delay: 0.2 }}
                   className="flex items-center gap-2 mb-4"
                 >
-                  <div className="w-6 h-6 rounded-full bg-indigo-100 flex items-center justify-center">
+                  <div className="w-6 h-6 rounded-full bg-brand-100 flex items-center justify-center">
                     <Award className="w-3 h-3 text-gray-600" />
                   </div>
                   <span className="text-sm font-medium text-gray-600">Success Stories</span>
@@ -411,7 +411,7 @@ const SuccessStories = () => {
                   Discover how students, educators, and industry professionals collaborate to create impactful Final Year Projects. These success stories showcase the power of our platform in bridging academia and industry.
                 </p>
                 <div className="flex flex-wrap gap-3">
-                  <span className="inline-flex items-center bg-indigo-50 text-indigo-700 text-sm px-3 py-1 rounded-full">
+                  <span className="inline-flex items-center bg-brand-50 text-brand-700 text-sm px-3 py-1 rounded-full">
                     <Users className="w-4 h-4 mr-1" />
                     {stories.reduce((acc, story) => acc + story.studentGroup.members.length, 0)} Students
                   </span>
@@ -426,7 +426,7 @@ const SuccessStories = () => {
                 </div>
               </div>
               <div className="relative">
-                <div className="bg-gradient-to-br from-indigo-50 to-white p-8 rounded-3xl shadow-sm border border-gray-100 relative z-10">
+                <div className="bg-gradient-to-br from-brand-50 to-white p-8 rounded-3xl shadow-sm border border-gray-100 relative z-10">
                   <h2 className="text-2xl md:text-3xl font-semibold text-gray-800 mb-4">
                     Celebrating Academic Excellence
                   </h2>
@@ -456,7 +456,7 @@ const SuccessStories = () => {
                     <span className="text-sm text-gray-500">+{stories.length * 3} participants</span>
                   </div>
                 </div>
-                <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-indigo-100 rounded-2xl -z-0"></div>
+                <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-brand-100 rounded-2xl -z-0"></div>
               </div>
             </motion.div>
           </div>
@@ -529,7 +529,7 @@ const SuccessStories = () => {
                           </div>
                         </div> */}
                         <div className="absolute top-4 right-4">
-                          <span className="inline-flex items-center bg-indigo-50 text-indigo-700 text-xs px-2 py-1 rounded-full">
+                          <span className="inline-flex items-center bg-brand-50 text-brand-700 text-xs px-2 py-1 rounded-full">
                             {story.project.projectType}
                           </span>
                         </div>

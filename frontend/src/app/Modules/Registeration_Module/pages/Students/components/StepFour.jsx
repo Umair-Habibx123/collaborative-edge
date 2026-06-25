@@ -121,7 +121,7 @@ const StepFour = ({ students, updateStudents, filteredTypes, handleFileUpload, h
                                     placeholder="Student ID"
                                     value={student.studentId}
                                     onChange={(e) => handleStudentIdChange(index, e.target.value)}
-                                    className="w-full p-3 pl-10 bg-white/20 border border-gray-300 text-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 outline-none"
+                                    className="w-full p-3 pl-10 bg-white/20 border border-gray-300 text-gray-600 rounded-lg focus:ring-2 focus:ring-brand-500 outline-none"
                                 />
                                 <IdCard className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500 w-5 h-5" />
                                 {checkingIds[index] ? (
@@ -147,7 +147,7 @@ const StepFour = ({ students, updateStudents, filteredTypes, handleFileUpload, h
                                             updateStudents(index, "yearOfStudy", value);
                                         }
                                     }}
-                                    className="w-full p-3 pl-10 bg-white/20 border border-gray-300 text-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 outline-none"
+                                    className="w-full p-3 pl-10 bg-white/20 border border-gray-300 text-gray-600 rounded-lg focus:ring-2 focus:ring-brand-500 outline-none"
                                 />
                                 <CalendarDays className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500 w-5 h-5" />
                                 {student.yearOfStudy && !validateYearOfStudy(student.yearOfStudy) && (
@@ -164,7 +164,7 @@ const StepFour = ({ students, updateStudents, filteredTypes, handleFileUpload, h
                                     placeholder="Degree or Program"
                                     value={student.degreeOrProgram}
                                     onChange={(e) => updateStudents(index, "degreeOrProgram", e.target.value)}
-                                    className="w-full p-3 pl-10 bg-white/20 border border-gray-300 text-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 outline-none"
+                                    className="w-full p-3 pl-10 bg-white/20 border border-gray-300 text-gray-600 rounded-lg focus:ring-2 focus:ring-brand-500 outline-none"
                                 />
                                 <School className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500 w-5 h-5" />
                             </div>
@@ -175,7 +175,7 @@ const StepFour = ({ students, updateStudents, filteredTypes, handleFileUpload, h
                                     value={student.university}
                                     onChange={(e) => updateStudents(index, "university", e.target.value)}
                                     required
-                                    className="w-full p-3 pl-10 bg-white/20 border border-gray-300 text-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 outline-none"
+                                    className="w-full p-3 pl-10 bg-white/20 border border-gray-300 text-gray-600 rounded-lg focus:ring-2 focus:ring-brand-500 outline-none"
                                 >
                                     <option value="" disabled>Select University</option>
                                     {filteredTypes.map((university) => (
@@ -198,7 +198,7 @@ const StepFour = ({ students, updateStudents, filteredTypes, handleFileUpload, h
                                 accept=".jpg,.png,.pdf"
                                 multiple // Allow multiple file selection
                                 onChange={(e) => handleFileUpload(index, e)}
-                                className="w-full p-3 bg-white/20 border border-gray-300 text-gray-600 rounded-lg cursor-pointer file:mr-4 file:py-2 file:px-4 file:border-0 file:bg-purple-500 file:text-white hover:file:bg-purple-600"
+                                className="w-full p-3 bg-white/20 border border-gray-300 text-gray-600 rounded-lg cursor-pointer file:mr-4 file:py-2 file:px-4 file:border-0 file:bg-brand-500 file:text-white hover:file:bg-brand-600"
                             />
 
                             {/* Show uploaded files with remove option */}
@@ -236,14 +236,14 @@ const StepFour = ({ students, updateStudents, filteredTypes, handleFileUpload, h
                         animate={{ opacity: 1 }}
                         transition={{ duration: 0.3 }}
                     >
-                        <Loader2 className="animate-spin h-6 w-6 text-purple-600" />
-                        <span className="ml-2 text-purple-600 text-sm font-semibold">Processing...</span>
+                        <Loader2 className="animate-spin h-6 w-6 text-brand-600" />
+                        <span className="ml-2 text-brand-600 text-sm font-semibold">Processing...</span>
                     </motion.div>
                 ) : (
                     <motion.button
                         onClick={handleRegister}
                         disabled={!isFormValid() || loading || isAnyIdVerifying()}
-                        className={`cursor-pointer w-full bg-gradient-to-r from-purple-600 to-purple-500 text-white p-4 rounded-xl font-bold shadow-lg transition-all duration-300 mt-4 flex items-center justify-center gap-2 ${!isFormValid() || isAnyIdVerifying() ? "opacity-50 cursor-not-allowed" : "hover:from-purple-700 hover:to-purple-600"
+                        className={`cursor-pointer w-full bg-gradient-to-r from-brand-600 to-brand-500 text-white p-4 rounded-xl font-bold shadow-lg transition-all duration-300 mt-4 flex items-center justify-center gap-2 ${!isFormValid() || isAnyIdVerifying() ? "opacity-50 cursor-not-allowed" : "hover:from-brand-700 hover:to-brand-600"
                             }`}
                         whileHover={{ scale: isFormValid() && !isAnyIdVerifying() ? 1.05 : 1 }}
                         whileTap={{ scale: isFormValid() && !isAnyIdVerifying() ? 0.95 : 1 }}

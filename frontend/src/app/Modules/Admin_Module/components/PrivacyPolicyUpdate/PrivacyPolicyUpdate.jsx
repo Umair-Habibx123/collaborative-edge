@@ -189,11 +189,11 @@ const PrivacyPolicyUpdate = ({ theme }) => {
                 <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                     {/* Left side - Heading with icon */}
                     <div className="flex items-center gap-4 w-full sm:w-auto">
-                        <div className={`p-3 rounded-xl ${theme === "dark" ? "bg-gray-700" : "bg-blue-50"}`}>
-                            <FileText className="w-6 h-6 text-blue-500" />
+                        <div className={`p-3 rounded-xl ${theme === "dark" ? "bg-gray-700" : "bg-brand-50"}`}>
+                            <FileText className="w-6 h-6 text-brand-500" />
                         </div>
                         <div>
-                            <h1 className="text-2xl sm:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">
+                            <h1 className="text-2xl sm:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-brand-500 to-accent-500">
                                 Privacy Policy Update
                             </h1>
                             <p className={`text-sm flex items-center gap-1 ${theme === "dark" ? "text-gray-400" : "text-gray-600"}`}>
@@ -209,7 +209,7 @@ const PrivacyPolicyUpdate = ({ theme }) => {
                             id="role-select"
                             value={selectedRole}
                             onChange={handleRoleChange}
-                            className={`w-full p-3 pl-4 pr-10 rounded-lg border transition-all focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none appearance-none ${theme === "dark"
+                            className={`w-full p-3 pl-4 pr-10 rounded-lg border transition-all focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none appearance-none ${theme === "dark"
                                     ? "bg-gray-800 border-gray-700 text-white"
                                     : "bg-white border-gray-300 text-gray-900"
                                 }`}
@@ -231,7 +231,7 @@ const PrivacyPolicyUpdate = ({ theme }) => {
             {/* Loading Indicator */}
             {isFetching && (
                 <div className="flex justify-center items-center py-12">
-                    <Loader2 className="h-8 w-8 animate-spin text-blue-500" />
+                    <Loader2 className="h-8 w-8 animate-spin text-brand-500" />
                 </div>
             )}
 
@@ -263,14 +263,14 @@ const PrivacyPolicyUpdate = ({ theme }) => {
                                         type="text"
                                         value={editedPolicy.sections[index].title}
                                         onChange={(e) => handleInputChange(index, "title", e.target.value)}
-                                        className={`flex-1 w-full text-2xl font-semibold p-3 rounded-lg border transition-all focus:ring-2 focus:ring-blue-500 ${theme === "dark"
+                                        className={`flex-1 w-full text-2xl font-semibold p-3 rounded-lg border transition-all focus:ring-2 focus:ring-brand-500 ${theme === "dark"
                                             ? "bg-gray-700 border-gray-600 text-white"
                                             : "bg-gray-50 border-gray-300 text-gray-900"
                                             }`}
                                         disabled={isSaving}
                                     />
                                 ) : (
-                                    <h2 className="text-2xl font-semibold text-blue-600">{`${index + 1}. ${section.title}`}</h2>
+                                    <h2 className="text-2xl font-semibold text-brand-600">{`${index + 1}. ${section.title}`}</h2>
                                 )}
 
                                 {/* Action Buttons */}
@@ -278,7 +278,7 @@ const PrivacyPolicyUpdate = ({ theme }) => {
                                     {editingSection === index ? (
                                         <>
                                             {isSaving ? (
-                                                <Loader2 className="h-5 w-5 animate-spin text-blue-500" />
+                                                <Loader2 className="h-5 w-5 animate-spin text-brand-500" />
                                             ) : (
                                                 <>
                                                     <button
@@ -305,8 +305,8 @@ const PrivacyPolicyUpdate = ({ theme }) => {
                                         <button
                                             onClick={() => handleEditClick(index)}
                                             className={`p-2 rounded-full ${theme === "dark"
-                                                ? "bg-gray-700 hover:bg-gray-600 text-blue-400"
-                                                : "bg-gray-100 hover:bg-gray-200 text-blue-600"
+                                                ? "bg-gray-700 hover:bg-gray-600 text-brand-400"
+                                                : "bg-gray-100 hover:bg-gray-200 text-brand-600"
                                                 } transition-colors`}
                                             title="Edit section"
                                         >
@@ -333,7 +333,7 @@ const PrivacyPolicyUpdate = ({ theme }) => {
                                     <textarea
                                         value={editedPolicy.sections[index].content}
                                         onChange={(e) => handleInputChange(index, "content", e.target.value)}
-                                        className={`w-full p-3 rounded-lg border transition-all focus:ring-2 focus:ring-blue-500 min-h-[120px] ${theme === "dark"
+                                        className={`w-full p-3 rounded-lg border transition-all focus:ring-2 focus:ring-brand-500 min-h-[120px] ${theme === "dark"
                                             ? "bg-gray-700 border-gray-600 text-white"
                                             : "bg-gray-50 border-gray-300 text-gray-900"
                                             }`}
@@ -358,7 +358,7 @@ const PrivacyPolicyUpdate = ({ theme }) => {
                                                         type="text"
                                                         value={editedPolicy.sections[index].listItems[idx]}
                                                         onChange={(e) => handleInputChange(index, "listItems", e.target.value, idx)}
-                                                        className={`flex-1 w-full p-2 rounded-lg border transition-all focus:ring-2 focus:ring-blue-500 ${theme === "dark"
+                                                        className={`flex-1 w-full p-2 rounded-lg border transition-all focus:ring-2 focus:ring-brand-500 ${theme === "dark"
                                                             ? "bg-gray-700 border-gray-600 text-white"
                                                             : "bg-gray-50 border-gray-300 text-gray-900"
                                                             }`}
@@ -392,8 +392,8 @@ const PrivacyPolicyUpdate = ({ theme }) => {
                                 <button
                                     onClick={() => handleAddListItem(index)}
                                     className={`flex items-center gap-2 px-4 py-2 rounded-lg ${theme === "dark"
-                                        ? "bg-gray-700 hover:bg-gray-600 text-blue-400"
-                                        : "bg-gray-100 hover:bg-gray-200 text-blue-600"
+                                        ? "bg-gray-700 hover:bg-gray-600 text-brand-400"
+                                        : "bg-gray-100 hover:bg-gray-200 text-brand-600"
                                         } transition-colors mb-6`}
                                 >
                                     <Plus className="h-4 w-4" />
@@ -408,8 +408,8 @@ const PrivacyPolicyUpdate = ({ theme }) => {
                                 <button
                                     onClick={() => handleAddSection(index)}
                                     className={`absolute -right-2 -top-3.5 ${theme === "dark"
-                                        ? "bg-blue-600 hover:bg-blue-700 text-white"
-                                        : "bg-blue-500 hover:bg-blue-600 text-white"
+                                        ? "bg-brand-600 hover:bg-brand-700 text-white"
+                                        : "bg-brand-500 hover:bg-brand-600 text-white"
                                         } rounded-full p-2 transition-colors shadow-md`}
                                     title="Add new section"
                                 >

@@ -166,7 +166,7 @@ const PendingApprovals = ({ theme }) => {
                 <button
                     key={index}
                     onClick={() => typeof number === 'number' && setCurrentPage(number)}
-                    className={`px-4 py-2 rounded-lg transition-colors ${currentPage === number ? (theme === "dark" ? "bg-blue-600" : "bg-blue-500 text-white") : (theme === "dark" ? "bg-gray-700 hover:bg-gray-600" : "bg-gray-200 hover:bg-gray-300")} ${number === '...' ? "cursor-default" : ""}`}
+                    className={`px-4 py-2 rounded-lg transition-colors ${currentPage === number ? (theme === "dark" ? "bg-brand-600" : "bg-brand-500 text-white") : (theme === "dark" ? "bg-gray-700 hover:bg-gray-600" : "bg-gray-200 hover:bg-gray-300")} ${number === '...' ? "cursor-default" : ""}`}
                     disabled={number === '...'}
                 >
                     {number}
@@ -189,7 +189,7 @@ const PendingApprovals = ({ theme }) => {
             pending: "bg-yellow-500",
             approved: "bg-green-500",
             rejected: "bg-red-500",
-            needMoreInfo: "bg-blue-500",
+            needMoreInfo: "bg-brand-500",
         };
 
         const status = approvalStatuses[project._id] || "pending";
@@ -214,7 +214,7 @@ const PendingApprovals = ({ theme }) => {
     }
 
     return (
-        <div className={`p-6 ${theme === "dark" ? "bg-gray-900" : "bg-gray-50"} bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg shadow-lg`}>
+        <div className={`p-6 ${theme === "dark" ? "bg-gray-900" : "bg-gray-50"} bg-clip-text text-transparent bg-gradient-to-r from-brand-500 to-accent-500 rounded-lg shadow-lg`}>
             <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center">Approve/Reject Project For Your University</h2>
 
             {/* Search Bar */}

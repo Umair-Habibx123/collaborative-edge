@@ -321,7 +321,7 @@ const UserManagement = ({ theme }) => {
                 cell: (info) => (
                     <div className="flex space-x-2">
                         <button
-                            className="text-blue-500 hover:text-blue-700"
+                            className="text-brand-500 hover:text-brand-700"
                             onClick={() => handleView(info.row.original)}
                         >
                             <Eye className="mr-2" />
@@ -402,11 +402,11 @@ const UserManagement = ({ theme }) => {
             <div className={`p-6 rounded-b-xl ${theme === "dark" ? "bg-gradient-to-r from-gray-800 to-gray-900" : "bg-gradient-to-r from-white to-gray-50"}`}>
                 <div className="">
                     <div className="flex items-center gap-4">
-                        <div className={`p-3 rounded-xl ${theme === "dark" ? "bg-gray-700" : "bg-blue-50"}`}>
-                            <UserCog className="w-6 h-6 text-blue-500" />
+                        <div className={`p-3 rounded-xl ${theme === "dark" ? "bg-gray-700" : "bg-brand-50"}`}>
+                            <UserCog className="w-6 h-6 text-brand-500" />
                         </div>
                         <div>
-                            <h1 className="text-2xl sm:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">
+                            <h1 className="text-2xl sm:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-brand-500 to-accent-500">
                                 {categoryLabels[categoryFilter]} Management
                             </h1>
                             <p className={`text-sm flex items-center gap-1 ${theme === "dark" ? "text-gray-400" : "text-gray-600"}`}>
@@ -424,7 +424,7 @@ const UserManagement = ({ theme }) => {
                     {/* Left Sidebar for Graphs and Filters */}
                     <div className={`w-full lg:w-1/4 p-5 rounded-xl border ${theme === "dark" ? "border-gray-700 bg-gray-800" : "border-gray-200 bg-white"} shadow-sm`}>
                         <button
-                            className={`mb-6 w-full flex items-center justify-center gap-2 p-3 rounded-xl transition-all duration-300 ${theme === "dark" ? "bg-blue-600 hover:bg-blue-700" : "bg-blue-500 hover:bg-blue-600"} text-white hover:shadow-lg font-medium`}
+                            className={`mb-6 w-full flex items-center justify-center gap-2 p-3 rounded-xl transition-all duration-300 ${theme === "dark" ? "bg-brand-600 hover:bg-brand-700" : "bg-brand-500 hover:bg-brand-600"} text-white hover:shadow-lg font-medium`}
                             onClick={() => setIsSelectedOption(true)}
                         >
                             <Plus className="w-5 h-5" />
@@ -453,7 +453,7 @@ const UserManagement = ({ theme }) => {
                         {/* Export Buttons */}
                         <div className="mb-6 space-y-3">
                             <button
-                                className={`w-full flex items-center justify-center gap-2 p-3 rounded-lg ${theme === "dark" ? "bg-indigo-600 hover:bg-indigo-700" : "bg-indigo-500 hover:bg-indigo-600"} text-white transition-colors`}
+                                className={`w-full flex items-center justify-center gap-2 p-3 rounded-lg ${theme === "dark" ? "bg-brand-600 hover:bg-brand-700" : "bg-brand-500 hover:bg-brand-600"} text-white transition-colors`}
                                 onClick={() => generatePdfReport(filteredUsers)}
                             >
                                 <FileText className="w-5 h-5" />
@@ -471,7 +471,7 @@ const UserManagement = ({ theme }) => {
                         {/* Analytics Section */}
                         <div>
                             <div className="flex items-center gap-2 mb-4">
-                                <PieChart className="w-5 h-5 text-purple-500" />
+                                <PieChart className="w-5 h-5 text-brand-500" />
                                 <h3 className="font-medium">User Role Distribution</h3>
                             </div>
                             <div className="h-64">
@@ -572,9 +572,9 @@ const UserManagement = ({ theme }) => {
                                             <div className="flex flex-col items-center">
                                                 <div className="relative">
                                                     {/* Animated spinner */}
-                                                    <div className="w-12 h-12 rounded-full border-4 border-t-transparent border-blue-500 animate-spin"></div>
+                                                    <div className="w-12 h-12 rounded-full border-4 border-t-transparent border-brand-500 animate-spin"></div>
                                                     {/* Optional: Pulse animation */}
-                                                    <div className="absolute inset-0 rounded-full bg-blue-500 opacity-20 animate-ping"></div>
+                                                    <div className="absolute inset-0 rounded-full bg-brand-500 opacity-20 animate-ping"></div>
                                                 </div>
                                                 <p
                                                     className={`mt-2 text-sm ${theme === "dark" ? "text-gray-300" : "text-gray-700"
@@ -735,34 +735,34 @@ const UserManagement = ({ theme }) => {
                         </button>
 
                         <div className="flex items-center gap-3 mb-6">
-                            <UserPlus className="w-6 h-6 text-blue-500" />
+                            <UserPlus className="w-6 h-6 text-brand-500" />
                             <h2 className="text-xl font-bold">Add New User</h2>
                         </div>
 
                         <div className="space-y-3">
                             <button
-                                className={`flex items-center justify-between w-full p-4 rounded-lg ${theme === "dark" ? "bg-blue-600 hover:bg-blue-700" : "bg-blue-500 hover:bg-blue-600"} text-white transition-colors`}
+                                className={`flex items-center justify-between w-full p-4 rounded-lg ${theme === "dark" ? "bg-brand-600 hover:bg-brand-700" : "bg-brand-500 hover:bg-brand-600"} text-white transition-colors`}
                                 onClick={() => handleOptionSelect('student')}
                             >
                                 <span className="font-medium">Student</span>
                                 <ChevronRight className="w-5 h-5" />
                             </button>
                             <button
-                                className={`flex items-center justify-between w-full p-4 rounded-lg ${theme === "dark" ? "bg-blue-600 hover:bg-blue-700" : "bg-blue-500 hover:bg-blue-600"} text-white transition-colors`}
+                                className={`flex items-center justify-between w-full p-4 rounded-lg ${theme === "dark" ? "bg-brand-600 hover:bg-brand-700" : "bg-brand-500 hover:bg-brand-600"} text-white transition-colors`}
                                 onClick={() => handleOptionSelect('teacher')}
                             >
                                 <span className="font-medium">Teacher</span>
                                 <ChevronRight className="w-5 h-5" />
                             </button>
                             <button
-                                className={`flex items-center justify-between w-full p-4 rounded-lg ${theme === "dark" ? "bg-blue-600 hover:bg-blue-700" : "bg-blue-500 hover:bg-blue-600"} text-white transition-colors`}
+                                className={`flex items-center justify-between w-full p-4 rounded-lg ${theme === "dark" ? "bg-brand-600 hover:bg-brand-700" : "bg-brand-500 hover:bg-brand-600"} text-white transition-colors`}
                                 onClick={() => handleOptionSelect('industry')}
                             >
                                 <span className="font-medium">Industry</span>
                                 <ChevronRight className="w-5 h-5" />
                             </button>
                             <button
-                                className={`flex items-center justify-between w-full p-4 rounded-lg ${theme === "dark" ? "bg-blue-600 hover:bg-blue-700" : "bg-blue-500 hover:bg-blue-600"} text-white transition-colors`}
+                                className={`flex items-center justify-between w-full p-4 rounded-lg ${theme === "dark" ? "bg-brand-600 hover:bg-brand-700" : "bg-brand-500 hover:bg-brand-600"} text-white transition-colors`}
                                 onClick={() => handleOptionSelect('admin')}
                             >
                                 <span className="font-medium">Admin</span>

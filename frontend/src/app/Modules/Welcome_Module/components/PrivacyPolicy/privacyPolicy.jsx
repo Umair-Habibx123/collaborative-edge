@@ -107,12 +107,12 @@ const PrivacyPolicy = () => {
                             Privacy Policy
                         </h1>
                         {user && (
-                            <span className="text-indigo-600 text-lg sm:text-xl md:text-2xl font-medium bg-indigo-50 px-3 py-1 rounded-full">
+                            <span className="text-brand-600 text-lg sm:text-xl md:text-2xl font-medium bg-brand-50 px-3 py-1 rounded-full">
                                 {user.role.charAt(0).toUpperCase() + user.role.slice(1)} Version
                             </span>
                         )}
                     </div>
-                    <div className="w-20 sm:w-24 h-1.5 bg-indigo-500 mx-auto mt-3 sm:mt-4 rounded-full" />
+                    <div className="w-20 sm:w-24 h-1.5 bg-brand-500 mx-auto mt-3 sm:mt-4 rounded-full" />
 
                     <motion.div
                         className="mt-4 sm:mt-6 text-xs sm:text-sm text-gray-500 inline-flex items-center gap-2 px-3 sm:px-4 py-1 sm:py-2 bg-gray-100 rounded-full"
@@ -144,8 +144,8 @@ const PrivacyPolicy = () => {
                                 viewport={{ once: true, margin: "-50px" }}
                             >
                                 <div className="flex items-start">
-                                    <div className="flex-shrink-0 h-7 w-7 sm:h-8 sm:w-8 rounded-full bg-indigo-100 flex items-center justify-center mr-3 sm:mr-4 mt-0.5">
-                                        <span className="text-indigo-600 font-medium text-sm sm:text-base">{index + 1}</span>
+                                    <div className="flex-shrink-0 h-7 w-7 sm:h-8 sm:w-8 rounded-full bg-brand-100 flex items-center justify-center mr-3 sm:mr-4 mt-0.5">
+                                        <span className="text-brand-600 font-medium text-sm sm:text-base">{index + 1}</span>
                                     </div>
                                     <div className="flex-1">
                                         <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-800 mb-3 sm:mb-4">
@@ -158,7 +158,7 @@ const PrivacyPolicy = () => {
                                                     {section.listItems.map((item, itemIndex) => (
                                                         <li
                                                             key={itemIndex}
-                                                            className="relative before:absolute before:left-0 before:top-[0.6rem] sm:before:top-3 before:h-1.5 before:w-1.5 before:rounded-full before:bg-indigo-300 pl-3 sm:pl-4"
+                                                            className="relative before:absolute before:left-0 before:top-[0.6rem] sm:before:top-3 before:h-1.5 before:w-1.5 before:rounded-full before:bg-brand-300 pl-3 sm:pl-4"
                                                         >
                                                             {item}
                                                         </li>

@@ -252,7 +252,7 @@ const ViewSubmissions = () => {
                     <p className="text-lg mb-6">You must be logged in to view this content.</p>
                     <button
                         onClick={() => navigate('/login')}
-                        className={`px-6 py-3 ${theme === "dark" ? "bg-gradient-to-r from-blue-600 to-blue-700" : "bg-gradient-to-r from-blue-500 to-blue-600"} text-white rounded-lg hover:from-blue-600 hover:to-blue-700 transition-all duration-300 shadow-lg font-semibold flex items-center justify-center mx-auto`}
+                        className={`px-6 py-3 ${theme === "dark" ? "bg-gradient-to-r from-brand-600 to-brand-700" : "bg-gradient-to-r from-brand-500 to-brand-600"} text-white rounded-lg hover:from-brand-600 hover:to-brand-700 transition-all duration-300 shadow-lg font-semibold flex items-center justify-center mx-auto`}
                     >
                         <LogIn className="w-5 h-5 mr-2" />
                         Log In
@@ -299,7 +299,7 @@ const ViewSubmissions = () => {
                         <span>Back</span>
                     </button>
 
-                    <h2 className="text-3xl sm:text-4xl font-bold text-center bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+                    <h2 className="text-3xl sm:text-4xl font-bold text-center bg-gradient-to-r from-brand-500 via-brand-500 to-pink-500 bg-clip-text text-transparent">
                         Project Submissions
                     </h2>
 
@@ -308,14 +308,14 @@ const ViewSubmissions = () => {
                 </div>
 
                 {/* Summary Card */}
-                <div className={`rounded-2xl p-6 shadow-xl bg-gradient-to-r from-blue-600 to-purple-700 ${theme === "dark" ? "shadow-blue-900/20" : "shadow-blue-500/20"}`}>
+                <div className={`rounded-2xl p-6 shadow-xl bg-gradient-to-r from-brand-600 to-brand-700 ${theme === "dark" ? "shadow-brand-900/20" : "shadow-brand-500/20"}`}>
                     <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                         <div className="space-y-2">
                             <div className="flex items-center gap-3">
                                 <BarChart2 className="w-6 h-6 text-white" />
                                 <h2 className="text-xl font-semibold text-white">Submission Analytics</h2>
                             </div>
-                            <p className="text-blue-100 flex items-center gap-2">
+                            <p className="text-brand-100 flex items-center gap-2">
                                 <FileText className="w-4 h-4" />
                                 <span>{submissions.totalSubmissions || 0} submissions</span>
                                 <span className="mx-1">•</span>
@@ -327,7 +327,7 @@ const ViewSubmissions = () => {
                         <button
                             className={`w-full sm:w-auto px-6 py-3 font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl active:scale-95 flex items-center justify-center space-x-2 ${isProjectExpired(project.duration.endDate)
                                 ? "bg-gray-400 text-gray-700 cursor-not-allowed"
-                                : " bg-white/90 hover:bg-white text-blue-700 hover:text-blue-800 shadow-md cursor-pointer"
+                                : " bg-white/90 hover:bg-white text-brand-700 hover:text-brand-800 shadow-md cursor-pointer"
                                 }`}
                             onClick={!isProjectExpired(project.duration.endDate) ? handleSubmitClick : undefined}
                             disabled={isProjectExpired(project.duration.endDate)}
@@ -378,10 +378,10 @@ const ViewSubmissions = () => {
                                     <span
                                         className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${theme === 'dark'
                                             ? selectionDetails.status.IndustryCompleted
-                                                ? 'bg-blue-800 text-blue-200'
+                                                ? 'bg-brand-800 text-brand-200'
                                                 : 'bg-gray-700 text-gray-300'
                                             : selectionDetails.status.IndustryCompleted
-                                                ? 'bg-blue-100 text-blue-800'
+                                                ? 'bg-brand-100 text-brand-800'
                                                 : 'bg-gray-100 text-gray-600'
                                             }`}
                                     >
@@ -390,10 +390,10 @@ const ViewSubmissions = () => {
                                     <span
                                         className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${theme === 'dark'
                                             ? selectionDetails.status.TeacherCompleted
-                                                ? 'bg-purple-800 text-purple-200'
+                                                ? 'bg-brand-800 text-brand-200'
                                                 : 'bg-gray-700 text-gray-300'
                                             : selectionDetails.status.TeacherCompleted
-                                                ? 'bg-purple-100 text-purple-800'
+                                                ? 'bg-brand-100 text-brand-800'
                                                 : 'bg-gray-100 text-gray-600'
                                             }`}
                                     >
@@ -413,10 +413,10 @@ const ViewSubmissions = () => {
                                         <span
                                             className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${theme === 'dark'
                                                 ? selectionDetails.status.IndustryCompleted
-                                                    ? 'bg-blue-800 text-blue-200'
+                                                    ? 'bg-brand-800 text-brand-200'
                                                     : 'bg-gray-700 text-gray-300'
                                                 : selectionDetails.status.IndustryCompleted
-                                                    ? 'bg-blue-100 text-blue-800'
+                                                    ? 'bg-brand-100 text-brand-800'
                                                     : 'bg-gray-100 text-gray-600'
                                                 }`}
                                         >
@@ -425,10 +425,10 @@ const ViewSubmissions = () => {
                                         <span
                                             className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${theme === 'dark'
                                                 ? selectionDetails.status.TeacherCompleted
-                                                    ? 'bg-purple-800 text-purple-200'
+                                                    ? 'bg-brand-800 text-brand-200'
                                                     : 'bg-gray-700 text-gray-300'
                                                 : selectionDetails.status.TeacherCompleted
-                                                    ? 'bg-purple-100 text-purple-800'
+                                                    ? 'bg-brand-100 text-brand-800'
                                                     : 'bg-gray-100 text-gray-600'
                                                 }`}
                                         >
@@ -448,7 +448,7 @@ const ViewSubmissions = () => {
                 <div className={`rounded-2xl overflow-hidden shadow-xl ${theme === "dark" ? "bg-gray-900/80 border border-gray-800" : "bg-white border border-gray-100"}`}>
                     {/* Panel Header */}
                     <div className={`p-6 border-b ${theme === "dark" ? "border-gray-800" : "border-gray-100"} flex items-center gap-3`}>
-                        <FolderOpen className="w-6 h-6 text-blue-500" />
+                        <FolderOpen className="w-6 h-6 text-brand-500" />
                         <h3 className="text-xl font-semibold">All Submissions</h3>
                         <span className={`ml-auto px-3 py-1 rounded-full text-sm ${theme === "dark" ? "bg-gray-800 text-gray-300" : "bg-gray-100 text-gray-600"}`}>
                             {submissions.submissions?.length || 0} items
@@ -465,11 +465,11 @@ const ViewSubmissions = () => {
                                         onClick={() => toggleSubmission(submission.submissionId)}
                                     >
                                         <div className="flex items-start gap-4">
-                                            <div className={`p-2 rounded-lg ${theme === "dark" ? "bg-gray-800" : "bg-blue-50"}`}>
+                                            <div className={`p-2 rounded-lg ${theme === "dark" ? "bg-gray-800" : "bg-brand-50"}`}>
                                                 {expandedSubmissions[submission.submissionId] ? (
-                                                    <ChevronDown className="w-5 h-5 text-blue-500" />
+                                                    <ChevronDown className="w-5 h-5 text-brand-500" />
                                                 ) : (
-                                                    <ChevronRight className="w-5 h-5 text-blue-500" />
+                                                    <ChevronRight className="w-5 h-5 text-brand-500" />
                                                 )}
                                             </div>
 
@@ -478,7 +478,7 @@ const ViewSubmissions = () => {
                                                     <h4 className="font-medium truncate">
                                                         Submission #{submission.submissionId.split('_')[1]}
                                                     </h4>
-                                                    <div className={`inline-flex px-3 py-1 rounded-full text-xs font-medium ${theme === "dark" ? "bg-gray-800 text-blue-300" : "bg-blue-100 text-blue-600"}`}>
+                                                    <div className={`inline-flex px-3 py-1 rounded-full text-xs font-medium ${theme === "dark" ? "bg-gray-800 text-brand-300" : "bg-brand-100 text-brand-600"}`}>
                                                         {submission.files.length} file{submission.files.length !== 1 ? 's' : ''}
                                                     </div>
                                                 </div>
@@ -511,7 +511,7 @@ const ViewSubmissions = () => {
                                                 {submission.comments && (
                                                     <div className={`p-4 rounded-lg ${theme === "dark" ? "bg-gray-800" : "bg-gray-100"} border ${theme === "dark" ? "border-gray-700" : "border-gray-200"}`}>
                                                         <div className="flex gap-3">
-                                                            <MessageSquare className="flex-shrink-0 mt-0.5 text-blue-500" size={18} />
+                                                            <MessageSquare className="flex-shrink-0 mt-0.5 text-brand-500" size={18} />
                                                             <div>
                                                                 <p className="font-medium mb-1.5">Comments</p>
                                                                 <p className="text-sm">{submission.comments}</p>
@@ -523,7 +523,7 @@ const ViewSubmissions = () => {
                                                 {/* Files Section */}
                                                 <div className="space-y-3">
                                                     <h5 className="font-medium flex items-center gap-2">
-                                                        <Folder className="w-5 h-5 text-blue-500" />
+                                                        <Folder className="w-5 h-5 text-brand-500" />
                                                         Submitted Files
                                                     </h5>
                                                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
@@ -534,7 +534,7 @@ const ViewSubmissions = () => {
                                                             >
                                                                 <div className="flex items-center justify-between gap-2">
                                                                     <div className="flex items-center min-w-0">
-                                                                        <FileText className="flex-shrink-0 mr-2 text-blue-500" size={18} />
+                                                                        <FileText className="flex-shrink-0 mr-2 text-brand-500" size={18} />
                                                                         <span className="truncate">{file.fileName}</span>
                                                                     </div>
 
@@ -542,7 +542,7 @@ const ViewSubmissions = () => {
                                                                         href={`${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}${file.fileUrl}`}
                                                                         target="_blank"
                                                                         rel="noopener noreferrer"
-                                                                        className="cursor-pointer p-1.5 rounded-full hover:bg-blue-500/10 hover:text-blue-500 transition-colors"
+                                                                        className="cursor-pointer p-1.5 rounded-full hover:bg-brand-500/10 hover:text-brand-500 transition-colors"
                                                                         title="Download"
                                                                     >
                                                                         <Download size={16} />
@@ -589,7 +589,7 @@ const ViewSubmissions = () => {
                                 <button
                                     className={`w-full sm:w-auto px-6 py-3 font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl active:scale-95 flex items-center justify-center space-x-2 ${isProjectExpired(project.duration.endDate)
                                         ? "bg-gray-400 text-gray-700 cursor-not-allowed"
-                                        : "bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white shadow-md cursor-pointer"
+                                        : "bg-gradient-to-r from-brand-500 to-accent-500 hover:from-brand-600 hover:to-brand-600 text-white shadow-md cursor-pointer"
                                         }`}
                                     onClick={!isProjectExpired(project.duration.endDate) ? handleSubmitClick : undefined}
                                     disabled={isProjectExpired(project.duration.endDate)}
@@ -655,7 +655,7 @@ const ViewSubmissions = () => {
 
                                 <button
                                     onClick={() => setIsCompletedModalOpen(false)}
-                                    className={`px-6 py-3 rounded-lg ${theme === "dark" ? "bg-blue-600 hover:bg-blue-700" : "bg-blue-500 hover:bg-blue-600"} text-white transition-colors duration-300`}
+                                    className={`px-6 py-3 rounded-lg ${theme === "dark" ? "bg-brand-600 hover:bg-brand-700" : "bg-brand-500 hover:bg-brand-600"} text-white transition-colors duration-300`}
                                 >
                                     Understood
                                 </button>

@@ -79,7 +79,7 @@ const ResetPassword = () => {
     };
 
     return (
-        <div className="flex items-center justify-center -mt-[70px] md:-mt-[90px] min-h-screen bg-gradient-to-br from-purple-600 to-blue-500 p-4">
+        <div className="flex items-center justify-center -mt-[70px] md:-mt-[90px] min-h-screen bg-gradient-to-br from-brand-600 to-brand-500 p-4">
             <ToastContainer />
             <div className="w-full max-w-md p-8 bg-white rounded-xl shadow-2xl">
                 <h2 className="text-3xl font-extrabold text-center text-gray-900">Reset Password</h2>
@@ -89,7 +89,7 @@ const ResetPassword = () => {
                 <div className="mt-6">
                     <input
                         type="password"
-                        className="w-full p-3 border border-gray-300 rounded-lg focus:ring-4 focus:ring-purple-400 focus:outline-none transition"
+                        className="w-full p-3 border border-gray-300 rounded-lg focus:ring-4 focus:ring-brand-400 focus:outline-none transition"
                         placeholder="Enter new password"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
@@ -100,7 +100,7 @@ const ResetPassword = () => {
                 <button
                     onClick={handleReset}
                     disabled={loading || !token || !isTokenValid}
-                    className="w-full mt-4 py-3 bg-purple-600 text-white rounded-lg shadow-lg hover:bg-purple-700 transition disabled:bg-gray-400 text-lg font-semibold"
+                    className="w-full mt-4 py-3 bg-brand-600 text-white rounded-lg shadow-lg hover:bg-brand-700 transition disabled:bg-gray-400 text-lg font-semibold"
                 >
                     {loading ? "Resetting..." : "Reset Password"}
                 </button>

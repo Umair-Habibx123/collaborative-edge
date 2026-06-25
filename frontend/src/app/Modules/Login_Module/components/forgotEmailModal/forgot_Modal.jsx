@@ -100,7 +100,7 @@ const ForgotPasswordModal = ({ isOpen, onClose }) => {
             <h2 className="text-2xl font-semibold text-gray-800 text-center">Reset Password</h2>
             <p className="text-sm text-gray-500 text-center mt-1">Enter your email to receive a reset link.</p>
 
-            <div className="mt-4 flex items-center border rounded-md p-2 shadow-sm focus-within:ring-2 focus-within:ring-purple-500">
+            <div className="mt-4 flex items-center border rounded-md p-2 shadow-sm focus-within:ring-2 focus-within:ring-brand-500">
                 <Mail className="text-gray-400" size={20} />
                 <input
                     type="email"
@@ -120,7 +120,7 @@ const ForgotPasswordModal = ({ isOpen, onClose }) => {
             <button
                 onClick={handlePasswordReset}
                 disabled={loading || cooldown > 0}
-                className="w-full mt-4 py-2 bg-purple-600 text-white rounded-md shadow-md hover:bg-purple-700 transition disabled:bg-purple-400"
+                className="w-full mt-4 py-2 bg-brand-600 text-white rounded-md shadow-md hover:bg-brand-700 transition disabled:bg-brand-400"
             >
                 {cooldown > 0 ? `Send another after ${formatCooldownTime()}` : loading ? "Sending..." : "Send Reset Link"}
             </button>

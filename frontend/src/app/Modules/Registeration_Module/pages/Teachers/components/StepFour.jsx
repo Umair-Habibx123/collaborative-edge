@@ -123,7 +123,7 @@ const StepFour = ({
                                     value={teacher.employeeId}
                                     // onChange={(e) => updateTeachers(index, "employeeId", e.target.value)}
                                     onChange={(e) => handleTeacherIdChange(index, e.target.value)}
-                                    className="w-full p-3 pl-10 bg-white/20 border border-gray-300 text-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 outline-none"
+                                    className="w-full p-3 pl-10 bg-white/20 border border-gray-300 text-gray-600 rounded-lg focus:ring-2 focus:ring-brand-500 outline-none"
                                 />
                                 <IdCard className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500 w-5 h-5" />
                                 {checkingIds[index] ? (
@@ -145,7 +145,7 @@ const StepFour = ({
                                     placeholder="Designation"
                                     value={teacher.designation}
                                     onChange={(e) => updateTeachers(index, "designation", e.target.value)}
-                                    className="w-full p-3 pl-10 bg-white/20 border border-gray-300 text-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 outline-none"
+                                    className="w-full p-3 pl-10 bg-white/20 border border-gray-300 text-gray-600 rounded-lg focus:ring-2 focus:ring-brand-500 outline-none"
                                 />
                                 <GraduationCap className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500 w-5 h-5" />
                             </div>
@@ -157,7 +157,7 @@ const StepFour = ({
                                     placeholder="Department"
                                     value={teacher.department}
                                     onChange={(e) => updateTeachers(index, "department", e.target.value)}
-                                    className="w-full p-3 pl-10 bg-white/20 border border-gray-300 text-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 outline-none"
+                                    className="w-full p-3 pl-10 bg-white/20 border border-gray-300 text-gray-600 rounded-lg focus:ring-2 focus:ring-brand-500 outline-none"
                                 />
                                 <Warehouse className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500 w-5 h-5" />
                             </div>
@@ -168,7 +168,7 @@ const StepFour = ({
                                     value={teacher.university}
                                     onChange={(e) => updateTeachers(index, "university", e.target.value)}
                                     required
-                                    className="w-full p-3 pl-10 bg-white/20 border border-gray-300 text-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 outline-none"
+                                    className="w-full p-3 pl-10 bg-white/20 border border-gray-300 text-gray-600 rounded-lg focus:ring-2 focus:ring-brand-500 outline-none"
                                 >
                                     <option value="" disabled>Select University</option>
                                     {filteredTypes.map((university) => (
@@ -191,7 +191,7 @@ const StepFour = ({
                                 accept=".jpg,.png,.pdf"
                                 multiple // Allow multiple file selection
                                 onChange={(e) => handleFileUpload(index, e)}
-                                className="w-full p-3 bg-white/20 border border-gray-300 text-gray-600 rounded-lg cursor-pointer file:mr-4 file:py-2 file:px-4 file:border-0 file:bg-purple-500 file:text-white hover:file:bg-purple-600"
+                                className="w-full p-3 bg-white/20 border border-gray-300 text-gray-600 rounded-lg cursor-pointer file:mr-4 file:py-2 file:px-4 file:border-0 file:bg-brand-500 file:text-white hover:file:bg-brand-600"
                             />
 
                             {/* Show uploaded files with remove option */}
@@ -229,14 +229,14 @@ const StepFour = ({
                         animate={{ opacity: 1 }}
                         transition={{ duration: 0.3 }}
                     >
-                        <Loader2 className="animate-spin h-6 w-6 text-purple-600" />
-                        <span className="ml-2 text-purple-600 text-sm font-semibold">Processing...</span>
+                        <Loader2 className="animate-spin h-6 w-6 text-brand-600" />
+                        <span className="ml-2 text-brand-600 text-sm font-semibold">Processing...</span>
                     </motion.div>
                 ) : (
                     <motion.button
                         onClick={handleRegister}
                         disabled={!isFormValid() || loading || isAnyIdVerifying()}
-                        className={`cursor-pointer w-full bg-gradient-to-r from-purple-600 to-purple-500 text-white p-4 rounded-xl font-bold shadow-lg transition-all duration-300 mt-4 flex items-center justify-center gap-2 ${!isFormValid() || isAnyIdVerifying() ? "opacity-50 cursor-not-allowed" : "hover:from-purple-700 hover:to-purple-600"
+                        className={`cursor-pointer w-full bg-gradient-to-r from-brand-600 to-brand-500 text-white p-4 rounded-xl font-bold shadow-lg transition-all duration-300 mt-4 flex items-center justify-center gap-2 ${!isFormValid() || isAnyIdVerifying() ? "opacity-50 cursor-not-allowed" : "hover:from-brand-700 hover:to-brand-600"
                             }`}
                         whileHover={{ scale: isFormValid() && !isAnyIdVerifying() ? 1.05 : 1 }}
                         whileTap={{ scale: isFormValid() && !isAnyIdVerifying() ? 0.95 : 1 }}

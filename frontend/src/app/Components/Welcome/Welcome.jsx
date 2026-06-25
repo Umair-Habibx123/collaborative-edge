@@ -37,7 +37,7 @@ const Welcome = () => {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="text-3xl md:text-4xl font-bold text-gray-800 text-center md:text-left leading-tight"
         >
-          Welcome to <span className="text-purple-600">Collaborative Edge</span> <br /> FYP Collaboration System
+          Welcome to <span className="text-brand-600">Collaborative Edge</span> <br /> FYP Collaboration System
         </motion.h1>
 
         <motion.p
@@ -59,7 +59,7 @@ const Welcome = () => {
         initial={{ opacity: 0, x: 50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8 }}
-        className="md:w-1/3 p-6 md:p-12 flex md:flex-col flex-col-reverse justify-center bg-gradient-to-br from-purple-600 to-purple-700 items-center w-full"
+        className="md:w-1/3 p-6 md:p-12 flex md:flex-col flex-col-reverse justify-center bg-gradient-to-br from-brand-600 to-brand-700 items-center w-full"
       >
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -71,7 +71,7 @@ const Welcome = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => navigate("/login", { replace: true })}
-            className="cursor-pointer w-full py-3 font-bold bg-white text-purple-600 rounded-lg shadow-lg hover:bg-gray-50 hover:text-purple-700 transition-all"
+            className="cursor-pointer w-full py-3 font-bold bg-white text-brand-600 rounded-lg shadow-lg hover:bg-gray-50 hover:text-brand-700 transition-all"
           >
             LOGIN
           </motion.button>
@@ -80,7 +80,7 @@ const Welcome = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => navigate("/roleSelection", { replace: true })}
-            className="cursor-pointer w-full py-3 mt-4 font-bold bg-transparent border-2 border-white text-white rounded-lg shadow-lg hover:bg-white hover:text-purple-600 transition-all"
+            className="cursor-pointer w-full py-3 mt-4 font-bold bg-transparent border-2 border-white text-white rounded-lg shadow-lg hover:bg-white hover:text-brand-600 transition-all"
           >
             DON&apos;T HAVE AN ACCOUNT?
           </motion.button>

@@ -77,6 +77,11 @@ StudentSelectionSchema.methods.updateRoleStatus = async function(
   return this.save();
 };
 
+// Speed up the common lookups by selection id, group leader and membership.
+StudentSelectionSchema.index({ "studentSelection.selectionId": 1 });
+StudentSelectionSchema.index({ "studentSelection.groupLeader": 1 });
+StudentSelectionSchema.index({ "studentSelection.groupMembers": 1 });
+
 const StudentSelection = model("StudentSelection", StudentSelectionSchema);
 
 export default StudentSelection;

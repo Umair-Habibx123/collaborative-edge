@@ -81,11 +81,11 @@ const ViewModal = ({ user, onClose, theme }) => {
                         <div className="flex items-center justify-center gap-2 mt-2">
                             <span className={`inline-block px-3 py-1 rounded-full text-xs font-medium ${
                                 user.role === "admin" 
-                                    ? "bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200" 
+                                    ? "bg-brand-100 text-brand-800 dark:bg-brand-900 dark:text-brand-200" 
                                     : user.role === "industry"
-                                    ? "bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200"
+                                    ? "bg-brand-100 text-brand-800 dark:bg-brand-900 dark:text-brand-200"
                                     : user.role === "teacher"
-                                    ? "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200"
+                                    ? "bg-brand-100 text-brand-800 dark:bg-brand-900 dark:text-brand-200"
                                     : "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200"
                             }`}>
                                 {user.role}

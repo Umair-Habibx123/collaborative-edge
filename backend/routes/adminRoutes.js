@@ -10,6 +10,7 @@ import dotenv from "dotenv";
 import axios from "axios";
 dotenv.config();
 import { getAllProjects } from "../controllers/adminProjectDataController.js";
+import { protect, authorize } from "../middleware/authMiddleware.js";
 
 
 const router = Router();
@@ -19,6 +20,9 @@ router.use((req, res, next) => {
   console.log(`[${new Date().toISOString()}] ${req.method} ${req.url}`);
   next();
 });
+
+// Every endpoint in this router is administrative — require an authenticated admin.
+router.use(protect, authorize("admin"));
 
 router.get("/fetchAllUsers", async (req, res) => {
   try {
@@ -140,7 +144,6 @@ router.get("/fetchEachUserFullDetails", async (req, res) => {
         ? `${process.env.VITE_REACT_APP_BACKEND_BASEURL}${user.profilePic}`
         : null,
       role: user.role,
-      password: user.password,
       status: user.status,
       createdAt: user.createdAt,
       updatedAt: user.updatedAt,

@@ -82,7 +82,7 @@ const HowItWorks = () => {
                         </p>
                     </div>
                     <div className="relative">
-                        <div className="bg-gradient-to-br from-indigo-50 to-white p-8 rounded-3xl shadow-sm border border-gray-100 relative z-10">
+                        <div className="bg-gradient-to-br from-brand-50 to-white p-8 rounded-3xl shadow-sm border border-gray-100 relative z-10">
                             <h2 className="text-2xl md:text-3xl font-semibold text-gray-800 mb-4">
                                 Simplifying Project Submission and Approval
                             </h2>
@@ -90,7 +90,7 @@ const HowItWorks = () => {
                                 We make it easy for industry professionals to submit ideas and for educators to review them, ensuring students access high-quality, relevant projects that prepare them for real-world challenges.
                             </p>
                         </div>
-                        <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-indigo-100 rounded-2xl -z-0"></div>
+                        <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-brand-100 rounded-2xl -z-0"></div>
                     </div>
                 </motion.div>
             </div>

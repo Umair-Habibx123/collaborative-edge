@@ -130,7 +130,7 @@ const ProjectStatusChart = ({ data, theme }) => {
                             theme === "dark" 
                                 ? "bg-gray-800 text-gray-200 border-gray-700 hover:bg-gray-700" 
                                 : "bg-white text-gray-800 border-gray-200 hover:bg-gray-50"
-                        } border shadow-xs focus:ring-2 focus:ring-indigo-500/30 focus:border-indigo-500`}
+                        } border shadow-xs focus:ring-2 focus:ring-brand-500/30 focus:border-brand-500`}
                     >
                         <option value="desc">Most First</option>
                         <option value="asc">Least First</option>
@@ -143,7 +143,7 @@ const ProjectStatusChart = ({ data, theme }) => {
                             theme === "dark" 
                                 ? "bg-gray-800 text-gray-200 border-gray-700 hover:bg-gray-700" 
                                 : "bg-white text-gray-800 border-gray-200 hover:bg-gray-50"
-                        } border shadow-xs focus:ring-2 focus:ring-indigo-500/30 focus:border-indigo-500`}
+                        } border shadow-xs focus:ring-2 focus:ring-brand-500/30 focus:border-brand-500`}
                     >
                         <option value={5}>Top 5</option>
                         <option value={10}>Top 10</option>
@@ -158,7 +158,7 @@ const ProjectStatusChart = ({ data, theme }) => {
                         theme === "dark" 
                             ? "bg-gray-800 text-gray-300 border-gray-700 hover:bg-gray-700" 
                             : "bg-white text-gray-600 border-gray-200 hover:bg-gray-50"
-                    } border shadow-xs hover:text-indigo-600 hover:border-indigo-200`}
+                    } border shadow-xs hover:text-brand-600 hover:border-brand-200`}
                 >
                     <RefreshCcw className="w-3 h-3" />
                     <span>Reset</span>

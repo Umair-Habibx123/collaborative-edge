@@ -111,7 +111,7 @@ const UniversityProjects = ({ theme }) => {
             );
         } else if (status === "approved_by_other") {
             return (
-                <span className="bg-blue-500 text-white px-2 py-1 rounded-full text-sm">Supervised by someone else</span>
+                <span className="bg-brand-500 text-white px-2 py-1 rounded-full text-sm">Supervised by someone else</span>
             );
         } else if (status === "pending") {
             return <span className="bg-yellow-500 text-white px-2 py-1 rounded-full text-sm">Waiting for supervision</span>;
@@ -169,7 +169,7 @@ const UniversityProjects = ({ theme }) => {
                 <button
                     key={index}
                     onClick={() => typeof number === 'number' && setCurrentPage(number)}
-                    className={`px-4 py-2 rounded-lg transition-colors ${currentPage === number ? (theme === "dark" ? "bg-blue-600" : "bg-blue-500 text-white") : (theme === "dark" ? "bg-gray-700 hover:bg-gray-600" : "bg-gray-200 hover:bg-gray-300")} ${number === '...' ? "cursor-default" : ""}`}
+                    className={`px-4 py-2 rounded-lg transition-colors ${currentPage === number ? (theme === "dark" ? "bg-brand-600" : "bg-brand-500 text-white") : (theme === "dark" ? "bg-gray-700 hover:bg-gray-600" : "bg-gray-200 hover:bg-gray-300")} ${number === '...' ? "cursor-default" : ""}`}
                     disabled={number === '...'}
                 >
                     {number}
@@ -188,7 +188,7 @@ const UniversityProjects = ({ theme }) => {
     };
 
     return (
-        <div className={`p-6 ${theme === "dark" ? "bg-gray-900" : "bg-gray-50"} bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg shadow-lg`}>
+        <div className={`p-6 ${theme === "dark" ? "bg-gray-900" : "bg-gray-50"} bg-clip-text text-transparent bg-gradient-to-r from-brand-500 to-accent-500 rounded-lg shadow-lg`}>
             <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center">Apply For Supervision of Any project</h2>
 
             <div className={`mb-8 flex items-center border ${theme === "dark" ? "border-gray-700" : "border-gray-300"} rounded-lg p-2 shadow-sm`}>
