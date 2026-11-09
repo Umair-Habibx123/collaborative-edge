@@ -2,9 +2,12 @@
 
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { Bot, X, User, ImageIcon, Send, MessageCircle, XCircle, Copy, Share2, Maximize, Minimize, Trash2 } from 'lucide-react';
-import { GoogleGenerativeAI } from '@google/generative-ai';
 import { useAuth } from '../../../auth/AuthContext';
 import { toast, ToastContainer } from "react-toastify";
+
+// Messages go through our backend (POST /api/ai/chat), which holds the Gemini API key.
+// The key must never be in the browser: every VITE_ variable ends up in the public JavaScript.
+const BACKEND_URL = import.meta.env.VITE_REACT_APP_BACKEND_BASEURL || "";
 
 const Chatbot = ({ isOpen, onClose, className }) => {
     const { user } = useAuth();
@@ -17,9 +20,6 @@ const Chatbot = ({ isOpen, onClose, className }) => {
     const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
     const messagesEndRef = useRef(null);
     const fileInputRef = useRef(null);
-    const chatSessionRef = useRef(null);
-    const modelVersions = ["gemini-1.5-flash", "gemini-2.0-flash", "gemini-2.5-pro-exp-03-25"];
-    const genAI = useRef(null);
     const chatContainerRef = useRef(null);
 
     // This useEffect will run whenever isOpen changes
@@ -31,21 +31,7 @@ const Chatbot = ({ isOpen, onClose, className }) => {
     }, [isOpen]);
 
     useEffect(() => {
-        const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
-        if (apiKey) {
-            genAI.current = new GoogleGenerativeAI(apiKey);
-            initializeChatSession();
-        } else {
-            console.error("API key is missing");
-        }
-
         loadChatHistory();
-
-        return () => {
-            if (chatSessionRef.current) {
-                chatSessionRef.current = null;
-            }
-        };
     }, [user._id]);
 
     useEffect(() => {
@@ -72,16 +58,10 @@ const Chatbot = ({ isOpen, onClose, className }) => {
         const savedChats = localStorage.getItem(`chat_history_${user._id}`);
         if (savedChats) {
             try {
-                const parsedChats = JSON.parse(savedChats);
-                setMessages(parsedChats);
-
-                const geminiHistory = transformMessagesToGeminiFormat(parsedChats);
-                await initializeChatSession(geminiHistory);
+                setMessages(JSON.parse(savedChats));
             } catch (error) {
                 console.error("Error parsing chat history:", error);
             }
-        } else {
-            await initializeChatSession([]);
         }
     };
 
@@ -90,30 +70,6 @@ const Chatbot = ({ isOpen, onClose, className }) => {
             role: message.sender === 'user' ? 'user' : 'model',
             parts: [{ text: message.text }]
         }));
-    };
-
-    const initializeChatSession = async (history = []) => {
-        if (!genAI.current) return;
-
-        try {
-            const model = genAI.current.getGenerativeModel({
-                model: modelVersions[0],
-            });
-
-            if (history.length > 0 && history[0].role !== 'user') {
-                throw new Error("First message in history must be from user");
-            }
-
-            chatSessionRef.current = await model.startChat({
-                history: history,
-                generationConfig: {
-                    maxOutputTokens: 1000,
-                    temperature: 1.9,
-                },
-            });
-        } catch (error) {
-            console.error("Error initializing chat session:", error);
-        }
     };
 
     const saveChatHistory = useCallback(() => {
@@ -131,7 +87,7 @@ const Chatbot = ({ isOpen, onClose, className }) => {
     };
 
     const handleSendMessage = async () => {
-        if ((!inputMessage.trim() && uploadedImages.length === 0) || !genAI.current) return;
+        if (!inputMessage.trim() && uploadedImages.length === 0) return;
 
         const userMessage = inputMessage;
         setInputMessage("");
@@ -161,27 +117,50 @@ const Chatbot = ({ isOpen, onClose, className }) => {
             setMessages(prev => [...prev, botMessageObj]);
             saveChatHistory();
 
-            let result;
             const prompt = userMessage || "Please describe or analyze these images";
+            const history = transformMessagesToGeminiFormat(
+                messages.filter(message => message.text && !message.isStreaming)
+            );
 
-            if (uploadedImages.length > 0) {
-                const imageParts = uploadedImages.map(file => ({
-                    inlineData: {
-                        data: file.base64,
-                        mimeType: file.type
-                    }
-                }));
-                result = await chatSessionRef.current.sendMessageStream([prompt, ...imageParts]);
-            } else {
-                result = await chatSessionRef.current.sendMessageStream(prompt);
+            const response = await fetch(`${BACKEND_URL}/api/ai/chat`, {
+                method: "POST",
+                credentials: "include",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    history,
+                    message: prompt,
+                    images: uploadedImages.map(file => ({ data: file.base64, mimeType: file.type })),
+                }),
+            });
+            if (!response.ok || !response.body) {
+                const problem = await response.json().catch(() => ({}));
+                throw new Error(problem.error || `The assistant is unavailable right now (${response.status}).`);
             }
 
+            // The reply streams as server-sent events: one "data: {json}" line per chunk.
             let fullResponse = "";
-            for await (const chunk of result.stream) {
-                const chunkText = chunk.text();
-                fullResponse += chunkText;
-
-                if (chunkText) {
+            let buffered = "";
+            const reader = response.body.getReader();
+            const decoder = new TextDecoder();
+            for (;;) {
+                const { done, value } = await reader.read();
+                if (done) break;
+                buffered += decoder.decode(value, { stream: true });
+                const lines = buffered.split("\n");
+                buffered = lines.pop();
+                for (const line of lines) {
+                    if (!line.startsWith("data:")) continue;
+                    let event;
+                    try {
+                        event = JSON.parse(line.slice(5));
+                    } catch {
+                        continue;
+                    }
+                    const chunkText = (event.candidates?.[0]?.content?.parts || [])
+                        .map(part => part.text || "")
+                        .join("");
+                    if (!chunkText) continue;
+                    fullResponse += chunkText;
                     setMessages(prev => prev.map(msg =>
                         msg.id === botMessageId
                             ? { ...msg, text: fullResponse }
@@ -206,10 +185,6 @@ const Chatbot = ({ isOpen, onClose, className }) => {
                 timestamp: new Date().toISOString()
             }]);
             saveChatHistory();
-
-            if (error.message.includes('session')) {
-                initializeChatSession();
-            }
         } finally {
             setIsLoading(false);
         }

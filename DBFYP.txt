@@ -9,10 +9,10 @@ project status can be managed with the portal. Where teachers and industry repre
 1. Users Collection (General)
 
 {
-  "_id": "numl-f21-40813@numls.edu.pk",
+  "_id": "student1@university.edu",
   "username": "Umair",
-  "email": "numl-f21-40813@numls.edu.pk",
-  "password": "$2a$10$OyndCNou7vLDqZpb2TClM.1acz1eL70WWYvDVMT.P2wl5acTtcqnu",
+  "email": "student1@university.edu",
+  "password": "<bcrypt hash>",
   "profilePic": "https://th.bing.com/th/id/OIP.cEie_pmgXcu1Blpul3mrfgHaFjrs=1&pid=ImgDetMain",
   "role": "student", // Enum: ["student", "teacher", "industry"]
   "status": "pending", // Enum: ["verified", "pending", "banned"]
@@ -23,8 +23,8 @@ project status can be managed with the portal. Where teachers and industry repre
 2. Students Collection (Separate)
 
 {
-  "_id": "numl-f21-40813@numls.edu.pk", // Same as user's _id
-  "studentId": "numl-f21-40813",
+  "_id": "student1@university.edu", // Same as user's _id
+  "studentId": "f21-00001",
   "degreeOrProgram": "BSc Software Engineering",
   "yearOfStudy": 2025,
   "university": "National University of Modern Languages (NUML)",
@@ -243,7 +243,7 @@ student submit project after completion
   "submissions": [
     {
       "submissionId": "sub_001",
-      "submittedById": "numl-f21-40813@numls.edu.pk", // Student ID
+      "submittedById": "student1@university.edu", // Student ID
       "submittedByName": "Umair Habib", // Student Name
       "files": [
         {
@@ -257,7 +257,7 @@ student submit project after completion
     },
     {
       "submissionId": "sub_002",
-      "submittedById": "numl-f21-40813@numls.edu.pk", // Student ID
+      "submittedById": "student1@university.edu", // Student ID
       "submittedByName": "Umair Habib", // Student Name
       "files": [
         {
@@ -504,7 +504,7 @@ Stores reviews for groups...
   "type": "groupMemberChange",
   "status": "pending",
   "requestedBy": {
-    "userId": "numl-f21-40813@numls.edu.pk",
+    "userId": "student1@university.edu",
     "role": "student",
     "name": "Umair Habib"
   },

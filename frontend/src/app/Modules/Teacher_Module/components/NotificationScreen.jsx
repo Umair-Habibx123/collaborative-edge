@@ -174,6 +174,9 @@ const NotificationScreen = ({ theme, onClose }) => {
         return recipient?.read;
     };
 
+    const getRecipient = (notification) =>
+        notification?.recipients?.find(r => r.userId === user.email);
+
     const getActionStatus = (notification) => {
         const recipient = notification.recipients.find(r => r.userId === user.email);
         return recipient?.responded ? recipient.response : null;
@@ -669,10 +672,10 @@ const NotificationScreen = ({ theme, onClose }) => {
                                                     <CheckCircle className="w-4 h-4" />
                                                     You've {getActionStatus(selectedNotification)} this request
                                                 </p>
-                                                {recipient?.comments && (
+                                                {getRecipient(selectedNotification)?.comments && (
                                                     <p className={`mt-3 text-sm ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'
                                                         }`}>
-                                                        {recipient.comments}
+                                                        {getRecipient(selectedNotification).comments}
                                                     </p>
                                                 )}
                                             </motion.div>

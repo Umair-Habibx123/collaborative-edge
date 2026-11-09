@@ -34,13 +34,21 @@ export const authenticate = async (email, password) => {
   const user = await User.findOne({ email }).select("+password");
   if (!user) throw new ApiError(401, "Invalid email or password.");
 
-  // Accept either a bcrypt-verified password OR a direct match against the
-  // stored value (intentional design choice — supports records whose password
-  // was saved un-hashed).
-  const isPasswordValid = await bcrypt.compare(password, user.password);
-  const isDirectMatch = password === user.password;
-  if (!isPasswordValid && !isDirectMatch) {
+  // Normal case: the stored value is a bcrypt hash, so only bcrypt.compare counts.
+  // Older records may hold an un-hashed password. Those are still accepted by direct
+  // match, then hashed straight away. A direct match against a bcrypt hash is never
+  // accepted: otherwise anyone who saw the hash could log in by typing it.
+  const stored = typeof user.password === "string" ? user.password : "";
+  const isBcryptHash = /^\$2[aby]\$\d{2}\$/.test(stored);
+  const isPasswordValid = isBcryptHash
+    ? await bcrypt.compare(password, stored)
+    : stored.length > 0 && password === stored;
+  if (!isPasswordValid) {
     throw new ApiError(401, "Invalid email or password.");
+  }
+  if (!isBcryptHash) {
+    user.password = await bcrypt.hash(password, 10);
+    await user.save();
   }
 
   if (user.status !== "verified") {

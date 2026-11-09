@@ -136,13 +136,7 @@ const ProjectForm = ({ theme }) => {
             return;
         }
 
-        if (selection === "Individual" && (!maxStudent || maxStudent < 1)) {
-            toast.warning("Please specify the maximum number of students. (must be greater than 1)");
-            setIsModalOpen(false);
-            setFormSubmitLoading(false);
-            return;
-        }
-
+        // Individual projects are switched off in constants.js (SELECTION), so only Group is handled.
         if (selection === "Group" && (!maxStudentsPerGroup || maxStudentsPerGroup < 1)) {
             toast.warning("Please specify the number of students per group.");
             setIsModalOpen(false);
@@ -227,8 +221,6 @@ const ProjectForm = ({ theme }) => {
         if (selection === "Group") {
             formData.append("maxStudentsPerGroup", maxStudentsPerGroup);
             formData.append("maxGroups", maxGroups);
-        } else if (selection === "Individual") {
-            formData.append("maxStudent", maxStudent);
         }
 
         const uploadedFiles = [];

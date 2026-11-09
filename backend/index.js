@@ -15,6 +15,7 @@ import AdminRoutes from "./routes/adminRoutes.js";
 import EmailRoutes from "./routes/emailRoutes.js";
 import GrisFsRoutes from "./routes/gridFsRoutes.js";
 import notificationsRoutes from "./routes/notificationRoutes.js"
+import aiRoutes from "./routes/aiRoutes.js";
 import { getUsersByYear, getUsersByMonth, getUsersByWeek, getUsersByRole, getProjectsByType, getProjectsByIndustry, getProjectsByRepresentative, } from "./controllers/adminGraphController.js";
 import {
     getProjectsBySkills,
@@ -114,6 +115,7 @@ app.use("/admin", AdminRoutes);
 app.use("/", EmailRoutes);
 app.use("/", GrisFsRoutes);
 app.use("/api" , notificationsRoutes);
+app.use("/api", aiRoutes);
 
 
 // admin graphs
